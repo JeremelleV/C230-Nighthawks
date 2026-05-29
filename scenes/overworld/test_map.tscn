@@ -150,7 +150,6 @@ tile_set = SubResource("TileSet_j7x2h")
 position = Vector2(753, 945)
 destination_level_tag = "test_map_2"
 destination_door_tag = "tm2_n"
-spawn_direction = "down"
 
 [node name="CollisionShape2D" parent="doors/door_tm1_s" index="0" unique_id=909259009]
 position = Vector2(-10, -47)

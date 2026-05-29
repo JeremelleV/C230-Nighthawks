@@ -11,6 +11,7 @@ enum State {
 @export_category("Stats")
 @export var speed: int = 400
 
+var is_first_spawn: bool = true
 var state: State = State.DOWN
 var move_direction: Vector2 = Vector2.ZERO
 var spawn_walk_timer: float = 0.0
@@ -34,10 +35,10 @@ func _on_spawn(position: Vector2, direction: String):
 	match direction:
 		"up":
 			state = State.UP
-			move_direction = Vector2.ZERO
+			move_direction = Vector2.UP
 		"down":
 			state = State.DOWN
-			move_direction = Vector2.ZERO
+			move_direction = Vector2.DOWN
 		"left":
 			state = State.RUN
 			$Sprite2D.flip_h = true
@@ -46,6 +47,12 @@ func _on_spawn(position: Vector2, direction: String):
 			state = State.RUN
 			$Sprite2D.flip_h = false
 			move_direction = Vector2.RIGHT
+
+	if is_first_spawn:
+		is_first_spawn = false
+		move_direction = Vector2.ZERO
+		update_animation()
+		return
 
 	# short walk-in on spawn
 	spawn_walk_timer = SPAWN_WALK_DURATION
