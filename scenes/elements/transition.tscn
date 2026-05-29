@@ -1,0 +1,74 @@
+[gd_scene format=3 uid="uid://pwar3p5oh14c"]
+
+[ext_resource type="Script" uid="uid://cm1dpp5ngdbmm" path="res://scripts/elements/transition.gd" id="1_6lraa"]
+
+[sub_resource type="Animation" id="Animation_o2xo0"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:color:a")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [0.0]
+}
+
+[sub_resource type="Animation" id="Animation_h28ty"]
+resource_name = "fade_in"
+length = 0.4
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:color:a")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.4),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [1.0, 0.0]
+}
+
+[sub_resource type="Animation" id="Animation_6lraa"]
+resource_name = "fade_out"
+length = 0.4
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:color:a")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.4),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [0.0, 1.0]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_h28ty"]
+_data = {
+&"RESET": SubResource("Animation_o2xo0"),
+&"fade_in": SubResource("Animation_h28ty"),
+&"fade_out": SubResource("Animation_6lraa")
+}
+
+[node name="Transition" type="CanvasLayer" unique_id=936457946]
+layer = 10
+script = ExtResource("1_6lraa")
+
+[node name="ColorRect" type="ColorRect" parent="." unique_id=853032488]
+modulate = Color(0, 0, 0, 1)
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+scale = Vector2(50.726772, 29.43792)
+color = Color(0, 0, 0, 0)
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="ColorRect" unique_id=1896236840]
+libraries/ = SubResource("AnimationLibrary_h28ty")

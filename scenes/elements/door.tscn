@@ -1,0 +1,14 @@
+[gd_scene format=3 uid="uid://cqyqa0r34yr31"]
+
+[ext_resource type="Script" uid="uid://b6jkfxmbw8fxb" path="res://scripts/elements/door.gd" id="1_2xcpy"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_e708x"]
+size = Vector2(138, 128)
+
+[node name="door" type="Area2D" unique_id=1568456997]
+script = ExtResource("1_2xcpy")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=909259009]
+shape = SubResource("RectangleShape2D_e708x")
+
+[node name="spawn" type="Marker2D" parent="." unique_id=1319578235]
