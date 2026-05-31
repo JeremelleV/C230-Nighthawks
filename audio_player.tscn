@@ -1,6 +1,0 @@
-[gd_scene format=3 uid="uid://dcqjrggaih608"]
-
-[ext_resource type="Script" uid="uid://crgtw7kkgfvsa" path="res://scripts/overworld/audio_player.gd" id="1_81fu2"]
-
-[node name="AudioStreamPlayer" type="AudioStreamPlayer" unique_id=722974881]
-script = ExtResource("1_81fu2")

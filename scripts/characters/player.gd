@@ -17,10 +17,14 @@ var move_direction: Vector2 = Vector2.ZERO
 var spawn_walk_timer: float = 0.0
 const SPAWN_WALK_DURATION: float = 0.3
 
+var footstep_timer: float = 0.0 #testing
+const FOOTSTEP_INTERVAL: float = 0.35 #testing
+
 @onready var animation_tree: AnimationTree = $AnimationTree
 @onready var animation_playback: AnimationNodeStateMachinePlayback = $AnimationTree["parameters/playback"]
 @onready var animation_player: AnimationPlayer = $AnimationPlayer
 
+@onready var walk_audio: AudioStreamPlayer2D = $WalkAudio #testing
 
 # animation always starts off
 func _ready() -> void:
@@ -74,10 +78,10 @@ func _physics_process(delta: float) -> void:
 			update_animation()
 		return
 
-	movement_loop()
+	movement_loop(delta) #testing: delta added 
 
 
-func movement_loop() -> void:
+func movement_loop(delta: float) -> void:
 	move_direction.x = int(Input.is_action_pressed("right")) - int(Input.is_action_pressed("left"))
 	move_direction.y = int(Input.is_action_pressed("down")) - int(Input.is_action_pressed("up"))
 	var motion: Vector2 = move_direction.normalized() * speed
@@ -86,6 +90,16 @@ func movement_loop() -> void:
 	update_state()
 	handle_flip()
 	update_animation()
+	
+	#testing
+	if move_direction != Vector2.ZERO:
+		footstep_timer -= delta
+		if footstep_timer <= 0.0:
+			walk_audio.pitch_scale = randf_range(0.95, 1.05)
+			walk_audio.play()
+			footstep_timer = FOOTSTEP_INTERVAL
+	else:
+		footstep_timer = 0.0
 
 
 func update_state() -> void:

@@ -2,6 +2,7 @@
 
 [ext_resource type="Texture2D" uid="uid://cfl6jwwtdi1vh" path="res://assets/sprites/characters/placeholder_player.png" id="1_1hmtu"]
 [ext_resource type="Script" uid="uid://bcxd5i5knecmm" path="res://scripts/characters/player.gd" id="1_635qg"]
+[ext_resource type="AudioStream" uid="uid://dwv0it345y5pe" path="res://assets/audio/walk_on_grass.mp3" id="3_58kc7"]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_635qg"]
 radius = 25.0
@@ -136,3 +137,7 @@ libraries/ = SubResource("AnimationLibrary_bjvvg")
 [node name="AnimationTree" type="AnimationTree" parent="." unique_id=1286304323]
 tree_root = SubResource("AnimationNodeStateMachine_7wli1")
 anim_player = NodePath("../AnimationPlayer")
+
+[node name="WalkAudio" type="AudioStreamPlayer2D" parent="." unique_id=1778058637]
+stream = ExtResource("3_58kc7")
+volume_db = -20.0
