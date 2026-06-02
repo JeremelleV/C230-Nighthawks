@@ -2,6 +2,9 @@ extends Node
 
 const scene_test_map = preload("res://scenes/overworld/test_map.tscn")
 const scene_test_map_2 = preload("res://scenes/overworld/test_map_2.tscn")
+const scene_zone_1_start = preload("res://scenes/overworld/zone_1_start.tscn")
+const scene_zone_2 = preload("res://scenes/overworld/zone_2.tscn")
+
 const transition_scene = preload("res://scenes/elements/transition.tscn")
 
 var player_scene = preload("res://scenes/entities/player/player.tscn")
@@ -51,11 +54,13 @@ func _get_scene(level_tag: String) -> PackedScene:
 	match level_tag:
 		"test_map": return scene_test_map
 		"test_map_2": return scene_test_map_2
+		"zone_1_start": return scene_zone_1_start
+		"zone_2": return scene_zone_2
 	return null
 
 
-func trigger_player_spawn(position: Vector2, direction: String):
+func trigger_player_spawn(spawn_position: Vector2, direction: String):
 	# add player to new scene root after it loads
 	get_tree().current_scene.add_child(_player_instance)
-	on_trigger_player_spawn.emit(position, direction)
+	on_trigger_player_spawn.emit(spawn_position, direction)
 	spawn_door_tag = null
