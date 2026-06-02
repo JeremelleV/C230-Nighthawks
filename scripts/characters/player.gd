@@ -32,8 +32,8 @@ func _ready() -> void:
 	NavigationManager.on_trigger_player_spawn.connect(_on_spawn)
 
 
-func _on_spawn(position: Vector2, direction: String):
-	global_position = position
+func _on_spawn(given_position: Vector2, direction: String):
+	global_position = given_position
 
 	# set state and flip based on incoming direction
 	match direction:
