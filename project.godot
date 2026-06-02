@@ -14,6 +14,11 @@ config/name="Red Dominion"
 run/main_scene="uid://bjups5w777d4j"
 config/features=PackedStringArray("4.6", "GL Compatibility")
 config/icon="res://icon.svg"
+config/run/main_scene="res://scenes/main/TestScene.tscn"
+
+[autoload]
+
+DialogueManager="*res://scripts/systems/DialogueManager.gd"
 
 [autoload]
 
