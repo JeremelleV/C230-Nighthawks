@@ -119,6 +119,7 @@ transitions = ["Start", "down", SubResource("AnimationNodeStateMachineTransition
 
 [node name="Player" type="CharacterBody2D" unique_id=1786461374]
 script = ExtResource("1_635qg")
+speed = 250
 
 [node name="Sprite2D" type="Sprite2D" parent="." unique_id=1067562721]
 position = Vector2(0, -16)
