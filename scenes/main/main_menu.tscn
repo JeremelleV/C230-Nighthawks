@@ -1,0 +1,93 @@
+[gd_scene format=3 uid="uid://d4jw7n6f4oll8"]
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_1i17u"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_sd5it"]
+corner_radius_top_left = 16
+corner_radius_top_right = 16
+corner_radius_bottom_right = 16
+corner_radius_bottom_left = 16
+shadow_size = 5
+shadow_offset = Vector2(0, 5)
+
+[node name="main_menu" type="Control" unique_id=857176783]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="Panel" type="Panel" parent="." unique_id=2108922160]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_styles/panel = SubResource("StyleBoxTexture_1i17u")
+
+[node name="Button" type="Button" parent="." unique_id=99260955]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -224.5
+offset_top = -64.5
+offset_right = 224.5
+offset_bottom = 64.5
+grow_horizontal = 2
+grow_vertical = 2
+size_flags_vertical = 3
+theme_override_font_sizes/font_size = 35
+theme_override_styles/normal = SubResource("StyleBoxFlat_sd5it")
+text = "Start"
+
+[node name="Button2" type="Button" parent="." unique_id=352599529]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -224.5
+offset_top = 87.0
+offset_right = 224.5
+offset_bottom = 161.0
+grow_horizontal = 2
+grow_vertical = 2
+size_flags_vertical = 3
+theme_override_font_sizes/font_size = 35
+theme_override_styles/normal = SubResource("StyleBoxFlat_sd5it")
+text = "Settings"
+
+[node name="Button3" type="Button" parent="." unique_id=1196093645]
+layout_mode = 0
+offset_left = 349.0
+offset_top = 510.0
+offset_right = 798.0
+offset_bottom = 584.0
+size_flags_vertical = 3
+theme_override_font_sizes/font_size = 35
+theme_override_styles/normal = SubResource("StyleBoxFlat_sd5it")
+text = "Quit"
+
+[node name="Label" type="Label" parent="." unique_id=1706870687]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -209.0
+offset_top = -226.0
+offset_right = 212.0
+offset_bottom = -123.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_font_sizes/font_size = 49
+text = "Red Dominion"
+horizontal_alignment = 1
+vertical_alignment = 1
