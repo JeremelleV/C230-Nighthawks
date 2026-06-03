@@ -19,16 +19,7 @@ config/run/main_scene="res://scenes/main/TestScene.tscn"
 [autoload]
 
 DialogueManager="*res://scripts/systems/DialogueManager.gd"
-
-[autoload]
-
 NavigationManager="*uid://bynocmky8jli4"
-
-[display]
-
-window/size/viewport_width=1920
-window/size/viewport_height=1080
-window/stretch/scale=2.0
 
 [input]
 
