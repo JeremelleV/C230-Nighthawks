@@ -1,0 +1,198 @@
+[gd_scene format=3 uid="uid://ikjcknxwvr6e"]
+
+[ext_resource type="Script" uid="uid://dg86n1kxappqf" path="res://BattleSystem.gd" id="1_ip7xm"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_ip7xm"]
+corner_radius_top_left = 15
+corner_radius_top_right = 15
+corner_radius_bottom_right = 15
+corner_radius_bottom_left = 15
+corner_detail = 15
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_oxp8w"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_7sfm4"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_i431l"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_6t8i5"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_dw4jg"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_0npn6"]
+corner_radius_top_left = 15
+corner_radius_top_right = 15
+corner_radius_bottom_right = 15
+corner_radius_bottom_left = 15
+corner_detail = 11
+
+[node name="Node2D" type="Node2D" unique_id=521893375 node_paths=PackedStringArray("player_labels", "enemy_labels")]
+script = ExtResource("1_ip7xm")
+player_labels = [NodePath("CanvasLayer/player1/Label"), NodePath("CanvasLayer/player2/Label"), NodePath("CanvasLayer/player3/Label"), NodePath("CanvasLayer/player4/Label")]
+enemy_labels = [NodePath("CanvasLayer/enemy1/Label"), NodePath("CanvasLayer/enemy2/Label"), NodePath("CanvasLayer/enemy3/Label"), NodePath("CanvasLayer/enemy4/Label")]
+
+[node name="CanvasLayer" type="CanvasLayer" parent="." unique_id=755948315]
+
+[node name="player1" type="ColorRect" parent="CanvasLayer" unique_id=626854497]
+offset_left = 60.0
+offset_top = 772.0
+offset_right = 163.0
+offset_bottom = 945.0
+color = Color(0.71829337, 0.71177024, 0.8939573, 1)
+
+[node name="Label" type="Label" parent="CanvasLayer/player1" unique_id=437321615]
+layout_mode = 0
+offset_right = 97.0
+offset_bottom = 49.0
+text = "Name:
+Hp 100/100"
+
+[node name="player4" type="ColorRect" parent="CanvasLayer" unique_id=2015223312]
+offset_left = 69.0
+offset_top = 76.0
+offset_right = 172.0
+offset_bottom = 249.0
+color = Color(0.71829337, 0.71177024, 0.8939573, 1)
+
+[node name="Label" type="Label" parent="CanvasLayer/player4" unique_id=1225908752]
+layout_mode = 0
+offset_top = -1.0
+offset_right = 97.0
+offset_bottom = 48.0
+text = "Name:
+Hp 100/100"
+
+[node name="player3" type="ColorRect" parent="CanvasLayer" unique_id=651504658]
+offset_left = 59.0
+offset_top = 310.0
+offset_right = 162.0
+offset_bottom = 483.0
+color = Color(0.71829337, 0.71177024, 0.8939573, 1)
+
+[node name="Label" type="Label" parent="CanvasLayer/player3" unique_id=1800093355]
+layout_mode = 0
+offset_top = -1.0
+offset_right = 97.0
+offset_bottom = 48.0
+text = "Name:
+Hp 100/100"
+
+[node name="player2" type="ColorRect" parent="CanvasLayer" unique_id=932323646]
+offset_left = 60.0
+offset_top = 538.0
+offset_right = 163.0
+offset_bottom = 711.0
+color = Color(0.71829337, 0.71177024, 0.8939573, 1)
+
+[node name="Label" type="Label" parent="CanvasLayer/player2" unique_id=23017657]
+layout_mode = 0
+offset_top = -1.0
+offset_right = 97.0
+offset_bottom = 48.0
+text = "Name:
+Hp 100/100"
+
+[node name="enemy1" type="ColorRect" parent="CanvasLayer" unique_id=320760429]
+offset_left = 1683.0
+offset_top = 774.0
+offset_right = 1786.0
+offset_bottom = 947.0
+color = Color(0.9662439, 0.6084216, 0.7558147, 1)
+
+[node name="Label" type="Label" parent="CanvasLayer/enemy1" unique_id=210612150]
+layout_mode = 0
+offset_top = -1.0
+offset_right = 97.0
+offset_bottom = 48.0
+text = "Name:
+Hp 100/100"
+
+[node name="enemy4" type="ColorRect" parent="CanvasLayer" unique_id=1453941526]
+offset_left = 1655.0
+offset_top = 98.0
+offset_right = 1758.0
+offset_bottom = 271.0
+color = Color(0.9662439, 0.6084216, 0.7558147, 1)
+
+[node name="Label" type="Label" parent="CanvasLayer/enemy4" unique_id=242543614]
+layout_mode = 0
+offset_top = -1.0
+offset_right = 97.0
+offset_bottom = 48.0
+text = "Name:
+Hp 100/100"
+
+[node name="enemy3" type="ColorRect" parent="CanvasLayer" unique_id=1449767556]
+offset_left = 1675.0
+offset_top = 327.0
+offset_right = 1778.0
+offset_bottom = 500.0
+color = Color(0.9662439, 0.6084216, 0.7558147, 1)
+
+[node name="Label" type="Label" parent="CanvasLayer/enemy3" unique_id=1498399990]
+layout_mode = 0
+offset_top = -1.0
+offset_right = 97.0
+offset_bottom = 48.0
+text = "Name:
+Hp 100/100"
+
+[node name="enemy2" type="ColorRect" parent="CanvasLayer" unique_id=56439528]
+offset_left = 1678.0
+offset_top = 552.0
+offset_right = 1781.0
+offset_bottom = 725.0
+color = Color(0.9662439, 0.6084216, 0.7558147, 1)
+
+[node name="Label" type="Label" parent="CanvasLayer/enemy2" unique_id=66899625]
+layout_mode = 0
+offset_top = -1.0
+offset_right = 97.0
+offset_bottom = 48.0
+text = "Name:
+Hp 100/100"
+
+[node name="ColorRect" type="ColorRect" parent="CanvasLayer" unique_id=1189959655]
+offset_left = 269.0
+offset_top = 920.0
+offset_right = 1571.0
+offset_bottom = 1048.0
+color = Color(0.61079496, 0.5742272, 0.5877648, 1)
+
+[node name="HBoxContainer" type="HBoxContainer" parent="CanvasLayer" unique_id=175781720]
+anchors_preset = 12
+anchor_top = 1.0
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = 284.0
+offset_top = -127.0
+offset_right = -363.0
+offset_bottom = -45.0
+grow_horizontal = 2
+grow_vertical = 0
+size_flags_horizontal = 3
+theme_override_constants/separation = 29
+
+[node name="Button" type="Button" parent="CanvasLayer/HBoxContainer" unique_id=434758157]
+layout_mode = 2
+size_flags_horizontal = 3
+theme_override_styles/normal_mirrored = SubResource("StyleBoxFlat_ip7xm")
+theme_override_styles/pressed_mirrored = SubResource("StyleBoxFlat_oxp8w")
+theme_override_styles/hover_mirrored = SubResource("StyleBoxFlat_7sfm4")
+theme_override_styles/hover_pressed = SubResource("StyleBoxFlat_i431l")
+theme_override_styles/hover_pressed_mirrored = SubResource("StyleBoxFlat_6t8i5")
+theme_override_styles/disabled_mirrored = SubResource("StyleBoxFlat_dw4jg")
+text = "Attack"
+
+[node name="Button2" type="Button" parent="CanvasLayer/HBoxContainer" unique_id=307113882]
+layout_mode = 2
+size_flags_horizontal = 3
+theme_override_styles/normal_mirrored = SubResource("StyleBoxFlat_0npn6")
+text = "Item"
+
+[node name="Button3" type="Button" parent="CanvasLayer/HBoxContainer" unique_id=504285176]
+layout_mode = 2
+size_flags_horizontal = 3
+text = "Block"
+
+[connection signal="pressed" from="CanvasLayer/HBoxContainer/Button" to="." method="_on_button_pressed"]

@@ -1,0 +1,6 @@
+[gd_scene format=3 uid="uid://bhss2rc30pepk"]
+
+[ext_resource type="Script" uid="uid://dg86n1kxappqf" path="res://BattleSystem.gd" id="1_sy5k4"]
+
+[node name="Node" type="Node" unique_id=2099795168]
+script = ExtResource("1_sy5k4")
