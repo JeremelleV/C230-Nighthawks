@@ -1,0 +1,113 @@
+[gd_scene format=3 uid="uid://bdhw4prtmhw7e"]
+
+[ext_resource type="Script" uid="uid://bg4ah87pabryu" path="res://scripts/elements/pause_menu.gd" id="1_sxsxs"]
+[ext_resource type="FontFile" uid="uid://bcvfhp67mv8pw" path="res://assets/ui/fonts/PixelOperator.ttf" id="2_o3hrf"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_xgeum"]
+bg_color = Color(0.5411765, 0.12156863, 0.078431375, 1)
+border_width_left = 2
+border_width_top = 2
+border_width_right = 2
+border_width_bottom = 2
+border_color = Color(0.8627451, 0.69803923, 0.68235296, 1)
+shadow_size = 3
+shadow_offset = Vector2(0, 3)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_riycc"]
+bg_color = Color(0.4070458, 0.08176155, 0.04833261, 1)
+border_width_left = 2
+border_width_top = 2
+border_width_right = 2
+border_width_bottom = 2
+border_color = Color(0.8627451, 0.69803923, 0.68235296, 1)
+shadow_size = 3
+shadow_offset = Vector2(0, 3)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_duj7x"]
+bg_color = Color(0.4070458, 0.08176155, 0.04833261, 1)
+border_width_left = 2
+border_width_top = 2
+border_width_right = 2
+border_width_bottom = 2
+border_color = Color(0.8627451, 0.69803923, 0.68235296, 1)
+shadow_size = 3
+shadow_offset = Vector2(0, 3)
+
+[node name="pause_menu" type="CanvasLayer" unique_id=969019913]
+process_mode = 3
+script = ExtResource("1_sxsxs")
+
+[node name="ColorRect" type="ColorRect" parent="." unique_id=170450957]
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+color = Color(0, 0, 0, 0.60784316)
+
+[node name="button_resume" type="Button" parent="." unique_id=170547006]
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -136.0
+offset_top = -62.0
+offset_right = 136.0
+offset_bottom = -2.0
+grow_horizontal = 2
+grow_vertical = 2
+size_flags_vertical = 3
+theme_override_colors/font_color = Color(0.8627451, 0.69803923, 0.68235296, 1)
+theme_override_fonts/font = ExtResource("2_o3hrf")
+theme_override_font_sizes/font_size = 41
+theme_override_styles/normal = SubResource("StyleBoxFlat_xgeum")
+theme_override_styles/pressed = SubResource("StyleBoxFlat_riycc")
+theme_override_styles/hover = SubResource("StyleBoxFlat_duj7x")
+text = "Resume"
+
+[node name="button_settings" type="Button" parent="." unique_id=1665528084]
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -136.0
+offset_top = 2.0
+offset_right = 136.0
+offset_bottom = 62.0
+grow_horizontal = 2
+grow_vertical = 2
+size_flags_vertical = 3
+theme_override_colors/font_color = Color(0.8627451, 0.69803923, 0.68235296, 1)
+theme_override_fonts/font = ExtResource("2_o3hrf")
+theme_override_font_sizes/font_size = 41
+theme_override_styles/normal = SubResource("StyleBoxFlat_xgeum")
+theme_override_styles/pressed = SubResource("StyleBoxFlat_riycc")
+theme_override_styles/hover = SubResource("StyleBoxFlat_duj7x")
+text = "Settings"
+
+[node name="button_main_menu" type="Button" parent="." unique_id=1340857233]
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -136.0
+offset_top = 67.0
+offset_right = 136.0
+offset_bottom = 127.0
+grow_horizontal = 2
+grow_vertical = 2
+size_flags_vertical = 3
+theme_override_colors/font_color = Color(0.8627451, 0.69803923, 0.68235296, 1)
+theme_override_fonts/font = ExtResource("2_o3hrf")
+theme_override_font_sizes/font_size = 41
+theme_override_styles/normal = SubResource("StyleBoxFlat_xgeum")
+theme_override_styles/pressed = SubResource("StyleBoxFlat_riycc")
+theme_override_styles/hover = SubResource("StyleBoxFlat_duj7x")
+text = "Main Menu"
+
+[connection signal="pressed" from="button_resume" to="." method="_on_button_resume_pressed"]
+[connection signal="pressed" from="button_settings" to="." method="_on_button_settings_pressed"]
+[connection signal="pressed" from="button_main_menu" to="." method="_on_button_main_menu_pressed"]

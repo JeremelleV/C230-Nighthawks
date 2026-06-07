@@ -4,8 +4,12 @@ const scene_test_map = preload("res://scenes/overworld/test_map.tscn")
 const scene_test_map_2 = preload("res://scenes/overworld/test_map_2.tscn")
 const scene_zone_1_start = preload("res://scenes/overworld/zone_1_start.tscn")
 const scene_zone_2 = preload("res://scenes/overworld/zone_2.tscn")
+const scene_main_menu = preload("res://scenes/main/main_menu.tscn")
 
 const transition_scene = preload("res://scenes/elements/transition.tscn")
+
+var pause_menu_scene = preload("res://scenes/main/pause_menu.tscn")
+var _pause_menu
 
 var player_scene = preload("res://scenes/entities/player/player.tscn")
 var _player_instance
@@ -15,6 +19,8 @@ signal on_trigger_player_spawn
 var spawn_door_tag
 var _transition
 
+var in_game: bool = false
+
 
 func _ready() -> void:
 	_player_instance = player_scene.instantiate()
@@ -22,6 +28,10 @@ func _ready() -> void:
 	# transition overlay
 	_transition = transition_scene.instantiate()
 	add_child(_transition)
+	
+	# pause menu
+	_pause_menu = pause_menu_scene.instantiate()
+	add_child(_pause_menu)
 
 
 func go_to_level(level_tag, destination_tag):
@@ -64,3 +74,17 @@ func trigger_player_spawn(spawn_position: Vector2, direction: String):
 	get_tree().current_scene.add_child(_player_instance)
 	on_trigger_player_spawn.emit(spawn_position, direction)
 	spawn_door_tag = null
+	in_game = true
+
+
+func go_to_main_menu() -> void:
+	in_game = false
+	get_tree().paused = false
+	if _player_instance.get_parent():
+		_player_instance.get_parent().remove_child(_player_instance)
+	await _transition.fade_out()
+	get_tree().change_scene_to_packed(scene_main_menu)
+	await get_tree().process_frame
+	await get_tree().process_frame
+	await _transition.fade_in()
+	

@@ -11,7 +11,7 @@ config_version=5
 [application]
 
 config/name="Red Dominion"
-run/main_scene="uid://bjups5w777d4j"
+run/main_scene="uid://d4jw7n6f4oll8"
 config/features=PackedStringArray("4.6", "GL Compatibility")
 config/icon="res://icon.svg"
 config/run/main_scene="res://scenes/main/TestScene.tscn"
@@ -20,12 +20,6 @@ config/run/main_scene="res://scenes/main/TestScene.tscn"
 
 DialogueManager="*res://scripts/systems/DialogueManager.gd"
 NavigationManager="*uid://bynocmky8jli4"
-
-[display]
-
-window/size/viewport_width=1920
-window/size/viewport_height=1080
-window/stretch/scale=2.0
 
 [input]
 
