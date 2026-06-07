@@ -42,7 +42,15 @@ func _ready() -> void:
 	_typewriter_timer.timeout.connect(_tick_typewriter)
 	add_child(_typewriter_timer)
 
+	_apply_theme()
 	hide()
+
+
+func _apply_theme() -> void:
+	UIStyle.style_panel($Panel)
+	_speaker_label.add_theme_color_override("font_color", UIStyle.TEXT_SPEAKER)
+	_dialogue_text.add_theme_color_override("default_color", UIStyle.TEXT)
+	_continue_hint.add_theme_color_override("font_color", UIStyle.TEXT_MUTED)
 
 
 func _input(event: InputEvent) -> void:
@@ -124,6 +132,7 @@ func _build_choice_buttons() -> void:
 	for i in _pending_choices.size():
 		var btn := Button.new()
 		btn.text = _pending_choices[i]["label"]
+		UIStyle.style_button(btn)
 		var idx := i
 		btn.pressed.connect(func(): DialogueManager.make_choice(idx))
 		_choices_container.add_child(btn)
