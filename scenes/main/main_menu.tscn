@@ -1,8 +1,28 @@
 [gd_scene format=3 uid="uid://d4jw7n6f4oll8"]
 
+[ext_resource type="Script" uid="uid://7iiyoym6afj8" path="res://scripts/elements/main_menu.gd" id="1_sd5it"]
+
 [sub_resource type="StyleBoxTexture" id="StyleBoxTexture_1i17u"]
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_sd5it"]
+corner_radius_top_left = 16
+corner_radius_top_right = 16
+corner_radius_bottom_right = 16
+corner_radius_bottom_left = 16
+shadow_size = 5
+shadow_offset = Vector2(0, 5)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_5vafy"]
+bg_color = Color(0.4313402, 0.43134028, 0.43134007, 1)
+corner_radius_top_left = 16
+corner_radius_top_right = 16
+corner_radius_bottom_right = 16
+corner_radius_bottom_left = 16
+shadow_size = 5
+shadow_offset = Vector2(0, 5)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_byqcc"]
+bg_color = Color(0.8127795, 0.4858482, 0.59380126, 1)
 corner_radius_top_left = 16
 corner_radius_top_right = 16
 corner_radius_bottom_right = 16
@@ -17,6 +37,7 @@ anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
+script = ExtResource("1_sd5it")
 
 [node name="Panel" type="Panel" parent="." unique_id=2108922160]
 layout_mode = 1
@@ -25,56 +46,10 @@ anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
+mouse_filter = 2
 theme_override_styles/panel = SubResource("StyleBoxTexture_1i17u")
 
-[node name="Button" type="Button" parent="." unique_id=99260955]
-layout_mode = 1
-anchors_preset = 8
-anchor_left = 0.5
-anchor_top = 0.5
-anchor_right = 0.5
-anchor_bottom = 0.5
-offset_left = -224.5
-offset_top = -64.5
-offset_right = 224.5
-offset_bottom = 64.5
-grow_horizontal = 2
-grow_vertical = 2
-size_flags_vertical = 3
-theme_override_font_sizes/font_size = 35
-theme_override_styles/normal = SubResource("StyleBoxFlat_sd5it")
-text = "Start"
-
-[node name="Button2" type="Button" parent="." unique_id=352599529]
-layout_mode = 1
-anchors_preset = 8
-anchor_left = 0.5
-anchor_top = 0.5
-anchor_right = 0.5
-anchor_bottom = 0.5
-offset_left = -224.5
-offset_top = 87.0
-offset_right = 224.5
-offset_bottom = 161.0
-grow_horizontal = 2
-grow_vertical = 2
-size_flags_vertical = 3
-theme_override_font_sizes/font_size = 35
-theme_override_styles/normal = SubResource("StyleBoxFlat_sd5it")
-text = "Settings"
-
-[node name="Button3" type="Button" parent="." unique_id=1196093645]
-layout_mode = 0
-offset_left = 349.0
-offset_top = 510.0
-offset_right = 798.0
-offset_bottom = 584.0
-size_flags_vertical = 3
-theme_override_font_sizes/font_size = 35
-theme_override_styles/normal = SubResource("StyleBoxFlat_sd5it")
-text = "Quit"
-
-[node name="Label" type="Label" parent="." unique_id=1706870687]
+[node name="game_title" type="Label" parent="." unique_id=1706870687]
 layout_mode = 1
 anchors_preset = 8
 anchor_left = 0.5
@@ -91,3 +66,82 @@ theme_override_font_sizes/font_size = 49
 text = "Red Dominion"
 horizontal_alignment = 1
 vertical_alignment = 1
+
+[node name="button_start" type="Button" parent="." unique_id=99260955]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -219.625
+offset_top = -54.375
+offset_right = 219.625
+offset_bottom = 54.375
+grow_horizontal = 2
+grow_vertical = 2
+size_flags_vertical = 3
+theme_override_font_sizes/font_size = 35
+theme_override_styles/normal = SubResource("StyleBoxFlat_sd5it")
+theme_override_styles/normal_mirrored = SubResource("StyleBoxFlat_sd5it")
+theme_override_styles/pressed = SubResource("StyleBoxFlat_5vafy")
+theme_override_styles/pressed_mirrored = SubResource("StyleBoxFlat_sd5it")
+theme_override_styles/hover = SubResource("StyleBoxFlat_byqcc")
+theme_override_styles/hover_mirrored = SubResource("StyleBoxFlat_sd5it")
+theme_override_styles/hover_pressed = SubResource("StyleBoxFlat_sd5it")
+theme_override_styles/hover_pressed_mirrored = SubResource("StyleBoxFlat_sd5it")
+text = "Start"
+
+[node name="button_settings" type="Button" parent="." unique_id=352599529]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -205.0
+offset_top = 79.0
+offset_right = 206.0
+offset_bottom = 131.0
+grow_horizontal = 2
+grow_vertical = 2
+size_flags_vertical = 3
+theme_override_font_sizes/font_size = 27
+theme_override_styles/normal = SubResource("StyleBoxFlat_sd5it")
+theme_override_styles/normal_mirrored = SubResource("StyleBoxFlat_sd5it")
+theme_override_styles/pressed = SubResource("StyleBoxFlat_5vafy")
+theme_override_styles/pressed_mirrored = SubResource("StyleBoxFlat_sd5it")
+theme_override_styles/hover = SubResource("StyleBoxFlat_byqcc")
+theme_override_styles/hover_mirrored = SubResource("StyleBoxFlat_sd5it")
+theme_override_styles/hover_pressed = SubResource("StyleBoxFlat_sd5it")
+theme_override_styles/hover_pressed_mirrored = SubResource("StyleBoxFlat_sd5it")
+text = "Settings"
+
+[node name="button_quit" type="Button" parent="." unique_id=1196093645]
+layout_mode = 1
+anchors_preset = 7
+anchor_left = 0.5
+anchor_top = 1.0
+anchor_right = 0.5
+anchor_bottom = 1.0
+offset_left = -204.0
+offset_top = -176.0
+offset_right = 204.0
+offset_bottom = -124.0
+grow_horizontal = 2
+grow_vertical = 0
+size_flags_vertical = 3
+theme_override_font_sizes/font_size = 27
+theme_override_styles/normal = SubResource("StyleBoxFlat_sd5it")
+theme_override_styles/normal_mirrored = SubResource("StyleBoxFlat_sd5it")
+theme_override_styles/pressed = SubResource("StyleBoxFlat_5vafy")
+theme_override_styles/pressed_mirrored = SubResource("StyleBoxFlat_sd5it")
+theme_override_styles/hover = SubResource("StyleBoxFlat_byqcc")
+theme_override_styles/hover_mirrored = SubResource("StyleBoxFlat_sd5it")
+theme_override_styles/hover_pressed = SubResource("StyleBoxFlat_sd5it")
+theme_override_styles/hover_pressed_mirrored = SubResource("StyleBoxFlat_sd5it")
+text = "Quit"
+
+[connection signal="pressed" from="button_start" to="." method="_on_button_start_pressed"]
+[connection signal="pressed" from="button_settings" to="." method="_on_button_settings_pressed"]
+[connection signal="pressed" from="button_quit" to="." method="_on_button_quit_pressed"]
