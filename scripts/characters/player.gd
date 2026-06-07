@@ -31,6 +31,10 @@ func _ready() -> void:
 func _on_spawn(given_position: Vector2, direction: String):
 	global_position = given_position
 
+	# reset first spawn if coming from main menu
+	if not NavigationManager.in_game:
+		is_first_spawn = true
+
 	# set state and flip based on incoming direction
 	match direction:
 		"up":
