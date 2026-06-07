@@ -1,0 +1,166 @@
+[gd_scene format=3 uid="uid://d4jw7n6f4oll8"]
+
+[ext_resource type="Script" uid="uid://7iiyoym6afj8" path="res://scripts/elements/main_menu.gd" id="1_sd5it"]
+[ext_resource type="FontFile" uid="uid://blxo7ienbbt5q" path="res://assets/ui/fonts/batmfa__.ttf" id="2_byqcc"]
+[ext_resource type="Texture2D" uid="uid://dg4bpbnl56qys" path="res://assets/ui/placeholder_main_menu_background_1.png" id="2_w6ykx"]
+[ext_resource type="FontFile" uid="uid://bcvfhp67mv8pw" path="res://assets/ui/fonts/PixelOperator.ttf" id="4_w6ykx"]
+[ext_resource type="AudioStream" uid="uid://4fkj0rmbkb0e" path="res://assets/audio/button_click.mp3" id="5_swlpu"]
+[ext_resource type="AudioStream" uid="uid://c2phppay8mpwy" path="res://assets/audio/button_hover.mp3" id="6_nm0l4"]
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_hiibk"]
+texture = ExtResource("2_w6ykx")
+modulate_color = Color(0.2159017, 0.21590173, 0.2159017, 1)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_sd5it"]
+bg_color = Color(0.5411765, 0.12156863, 0.078431375, 1)
+border_width_left = 2
+border_width_top = 2
+border_width_right = 2
+border_width_bottom = 2
+border_color = Color(0.8627451, 0.69803923, 0.68235296, 1)
+shadow_size = 3
+shadow_offset = Vector2(0, 3)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_w6ykx"]
+bg_color = Color(0.4070458, 0.08176155, 0.04833261, 1)
+border_width_left = 2
+border_width_top = 2
+border_width_right = 2
+border_width_bottom = 2
+border_color = Color(0.8627451, 0.69803923, 0.68235296, 1)
+shadow_size = 3
+shadow_offset = Vector2(0, 3)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_hiibk"]
+bg_color = Color(0.4070458, 0.08176155, 0.04833261, 1)
+border_width_left = 2
+border_width_top = 2
+border_width_right = 2
+border_width_bottom = 2
+border_color = Color(0.8627451, 0.69803923, 0.68235296, 1)
+shadow_size = 3
+shadow_offset = Vector2(0, 3)
+
+[node name="main_menu" type="Control" unique_id=857176783]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_sd5it")
+
+[node name="Panel" type="Panel" parent="." unique_id=2108922160]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+mouse_filter = 2
+theme_override_styles/panel = SubResource("StyleBoxTexture_hiibk")
+
+[node name="game_title" type="Label" parent="." unique_id=1706870687]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -337.0
+offset_top = -248.0
+offset_right = 338.0
+offset_bottom = -145.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_colors/font_color = Color(0.8627451, 0.69803923, 0.68235296, 1)
+theme_override_colors/font_shadow_color = Color(0.5411765, 0.12156863, 0.078431375, 1)
+theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
+theme_override_constants/shadow_offset_y = 10
+theme_override_constants/outline_size = 14
+theme_override_constants/shadow_outline_size = 28
+theme_override_fonts/font = ExtResource("2_byqcc")
+theme_override_font_sizes/font_size = 75
+text = "Red Dominion"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="button_start" type="Button" parent="." unique_id=99260955]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -136.0
+offset_top = -62.0
+offset_right = 136.0
+offset_bottom = -2.0
+grow_horizontal = 2
+grow_vertical = 2
+size_flags_vertical = 3
+theme_override_colors/font_color = Color(0.8627451, 0.69803923, 0.68235296, 1)
+theme_override_fonts/font = ExtResource("4_w6ykx")
+theme_override_font_sizes/font_size = 41
+theme_override_styles/normal = SubResource("StyleBoxFlat_sd5it")
+theme_override_styles/pressed = SubResource("StyleBoxFlat_w6ykx")
+theme_override_styles/hover = SubResource("StyleBoxFlat_hiibk")
+text = "Start"
+
+[node name="button_settings" type="Button" parent="." unique_id=352599529]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -136.0
+offset_top = 3.0
+offset_right = 136.0
+offset_bottom = 63.0
+grow_horizontal = 2
+grow_vertical = 2
+size_flags_vertical = 3
+theme_override_colors/font_color = Color(0.8627451, 0.69803923, 0.68235296, 1)
+theme_override_fonts/font = ExtResource("4_w6ykx")
+theme_override_font_sizes/font_size = 41
+theme_override_styles/normal = SubResource("StyleBoxFlat_sd5it")
+theme_override_styles/pressed = SubResource("StyleBoxFlat_w6ykx")
+theme_override_styles/hover = SubResource("StyleBoxFlat_hiibk")
+text = "Settings"
+
+[node name="button_quit" type="Button" parent="." unique_id=1196093645]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -136.0
+offset_top = 67.0
+offset_right = 136.0
+offset_bottom = 127.0
+grow_horizontal = 2
+grow_vertical = 2
+size_flags_vertical = 3
+theme_override_colors/font_color = Color(0.8627451, 0.69803923, 0.68235296, 1)
+theme_override_fonts/font = ExtResource("4_w6ykx")
+theme_override_font_sizes/font_size = 41
+theme_override_styles/normal = SubResource("StyleBoxFlat_sd5it")
+theme_override_styles/pressed = SubResource("StyleBoxFlat_w6ykx")
+theme_override_styles/hover = SubResource("StyleBoxFlat_hiibk")
+text = "Quit"
+
+[node name="button_click" type="AudioStreamPlayer" parent="." unique_id=419688800]
+stream = ExtResource("5_swlpu")
+
+[node name="button_hover" type="AudioStreamPlayer" parent="." unique_id=397131998]
+stream = ExtResource("6_nm0l4")
+volume_db = -15.0
+
+[connection signal="mouse_entered" from="button_start" to="." method="_on_button_start_mouse_entered"]
+[connection signal="pressed" from="button_start" to="." method="_on_button_start_pressed"]
+[connection signal="mouse_entered" from="button_settings" to="." method="_on_button_settings_mouse_entered"]
+[connection signal="pressed" from="button_settings" to="." method="_on_button_settings_pressed"]
+[connection signal="mouse_entered" from="button_quit" to="." method="_on_button_quit_mouse_entered"]
+[connection signal="pressed" from="button_quit" to="." method="_on_button_quit_pressed"]

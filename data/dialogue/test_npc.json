@@ -1,84 +1,84 @@
 [
-    {
-        "id": "test_npc_intro",
-        "lines": [
-            {
-                "speaker": "Scout",
-                "text": "You smell like humans. Actually — you ARE a human. That's unusual. We don't get many of those out in the Dustplains."
-            },
-            {
-                "speaker": "Scout",
-                "text": "You crash-landed? Near the eastern ridge? That explains the smoke. Also explains why you're still alive — the crystals keep the Lich's patrols away from that side."
-            },
-            {
-                "speaker": "You",
-                "text": "...",
-                "choices": [
-                    {
-                        "label": "Ask about the area",
-                        "next": "scout_area"
-                    },
-                    {
-                        "label": "Ask about the Lich",
-                        "next": "scout_lich"
-                    },
-                    {
-                        "label": "Ask about the factions",
-                        "next": "scout_factions",
-                        "rep_delta": { "crystal_faction": 2 }
-                    },
-                    {
-                        "label": "Say nothing and leave"
-                    }
-                ]
-            }
-        ]
-    },
-    {
-        "id": "scout_area",
-        "lines": [
-            {
-                "speaker": "Scout",
-                "text": "The Dustplains. Driest region on Mars — this planet's Mars, anyway. Five regions total. You landed in the safest one. Relatively."
-            },
-            {
-                "speaker": "Scout",
-                "text": "Head north to find the Crystal Grove. East leads to the Mons Approach. I wouldn't go east yet."
-            }
-        ]
-    },
-    {
-        "id": "scout_lich",
-        "lines": [
-            {
-                "speaker": "Scout",
-                "text": "We don't say that name out loud. Not near open ground."
-            },
-            {
-                "speaker": "Scout",
-                "text": "He sits at the top of Olympus Mons and has since before any faction's memory. He's been getting worse lately. More active. You arriving might have something to do with that."
-            },
-            {
-                "speaker": "Scout",
-                "text": "If you're serious about doing something about him — you'll need every faction you can get. Every single one."
-            }
-        ]
-    },
-    {
-        "id": "scout_factions",
-        "lines": [
-            {
-                "speaker": "Scout",
-                "text": "Factions. We've got a few. The Crystal Faction to the north — powerful mages, very territorial. The Nomad Tribes move constantly, hard to find but valuable allies."
-            },
-            {
-                "speaker": "Scout",
-                "text": "And then there are those who serve the figure on Olympus Mons. You'll know them by their silence."
-            },
-            {
-                "speaker": "Scout",
-                "text": "Choose who you trust carefully. Some alliances lock out others."
-            }
-        ]
-    }
+	{
+		"id": "test_npc_intro",
+		"lines": [
+			{
+				"speaker": "Scout",
+				"text": "You smell like humans. Actually — you ARE a human. That's unusual. We don't get many of those out in the Dustplains."
+			},
+			{
+				"speaker": "Scout",
+				"text": "You crash-landed? Near the eastern ridge? That explains the smoke. Also explains why you're still alive — the crystals keep the Lich's patrols away from that side."
+			},
+			{
+				"speaker": "You",
+				"text": "...",
+				"choices": [
+					{
+						"label": "Ask about the area",
+						"next": "scout_area"
+					},
+					{
+						"label": "Ask about the Lich",
+						"next": "scout_lich"
+					},
+					{
+						"label": "Ask about the factions",
+						"next": "scout_factions",
+						"rep_delta": { "crystal_faction": 2 }
+					},
+					{
+						"label": "Say nothing and leave"
+					}
+				]
+			}
+		]
+	},
+	{
+		"id": "scout_area",
+		"lines": [
+			{
+				"speaker": "Scout",
+				"text": "The Dustplains. Driest region on Mars — this planet's Mars, anyway. Five regions total. You landed in the safest one. Relatively."
+			},
+			{
+				"speaker": "Scout",
+				"text": "Head north to find the Crystal Grove. East leads to the Mons Approach. I wouldn't go east yet."
+			}
+		]
+	},
+	{
+		"id": "scout_lich",
+		"lines": [
+			{
+				"speaker": "Scout",
+				"text": "We don't say that name out loud. Not near open ground."
+			},
+			{
+				"speaker": "Scout",
+				"text": "He sits at the top of Olympus Mons and has since before any faction's memory. He's been getting worse lately. More active. You arriving might have something to do with that."
+			},
+			{
+				"speaker": "Scout",
+				"text": "If you're serious about doing something about him — you'll need every faction you can get. Every single one."
+			}
+		]
+	},
+	{
+		"id": "scout_factions",
+		"lines": [
+			{
+				"speaker": "Scout",
+				"text": "Factions. We've got a few. The Crystal Faction to the north — powerful mages, very territorial. The Nomad Tribes move constantly, hard to find but valuable allies."
+			},
+			{
+				"speaker": "Scout",
+				"text": "And then there are those who serve the figure on Olympus Mons. You'll know them by their silence."
+			},
+			{
+				"speaker": "Scout",
+				"text": "Choose who you trust carefully. Some alliances lock out others."
+			}
+		]
+	}
 ]

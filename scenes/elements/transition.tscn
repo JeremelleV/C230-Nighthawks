@@ -68,6 +68,7 @@ anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
 scale = Vector2(50.726772, 29.43792)
+mouse_filter = 2
 color = Color(0, 0, 0, 0)
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="ColorRect" unique_id=1896236840]
