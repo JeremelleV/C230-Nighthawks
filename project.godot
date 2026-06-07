@@ -19,9 +19,6 @@ config/run/main_scene="res://scenes/main/TestScene.tscn"
 [autoload]
 
 DialogueManager="*res://scripts/systems/DialogueManager.gd"
-
-[autoload]
-
 NavigationManager="*uid://bynocmky8jli4"
 
 [display]
