@@ -19,17 +19,26 @@ func _input(event: InputEvent) -> void:
 			visible = true
 			get_tree().paused = true
 
+func _on_button_resume_mouse_entered() -> void:
+	$button_hover.play()
 
 func _on_button_resume_pressed() -> void:
+	$button_click.play()
 	visible = false
 	get_tree().paused = false
 
+func _on_button_settings_mouse_entered() -> void:
+	$button_hover.play()
 
 func _on_button_settings_pressed() -> void:
+	$button_click.play()
 	pass # Replace with function body.
 
+func _on_button_main_menu_mouse_entered() -> void:
+	$button_hover.play()
 
 func _on_button_main_menu_pressed() -> void:
+	$button_click.play()
 	NavigationManager.go_to_main_menu()
 	visible = false
 	get_tree().paused = false
