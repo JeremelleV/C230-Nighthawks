@@ -119,6 +119,7 @@ states/up/position = Vector2(365, 57)
 transitions = ["Start", "down", SubResource("AnimationNodeStateMachineTransition_5sj0x"), "down", "up", SubResource("AnimationNodeStateMachineTransition_ovg4i"), "up", "down", SubResource("AnimationNodeStateMachineTransition_7wli1"), "down", "run", SubResource("AnimationNodeStateMachineTransition_j0oqr"), "run", "down", SubResource("AnimationNodeStateMachineTransition_xy2vv"), "run", "up", SubResource("AnimationNodeStateMachineTransition_r4dfn"), "up", "run", SubResource("AnimationNodeStateMachineTransition_70kwc")]
 
 [node name="Player" type="CharacterBody2D" unique_id=1786461374]
+y_sort_enabled = true
 script = ExtResource("1_635qg")
 speed = 250
 
@@ -129,10 +130,11 @@ hframes = 4
 vframes = 3
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=437958350]
-position = Vector2(-1, -3)
+position = Vector2(0, -10)
 shape = SubResource("CircleShape2D_635qg")
 
 [node name="Camera2D" type="Camera2D" parent="." unique_id=1774826900]
+position = Vector2(0, -22)
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="." unique_id=327662656]
 libraries/ = SubResource("AnimationLibrary_bjvvg")
