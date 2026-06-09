@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://x2h78iu2sigr"
-path="res://.godot/imported/jungle_creature_1.png-d67f58d09d7f9f0f2b0552c7f6dcfb5e.ctex"
+uid="uid://cq8vb1p601557"
+path="res://.godot/imported/astronaut_1_player_partymember.png-414907cb94f9fb315583e6cc2a782f83.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assets/sprites/enemies/jungle_creature_1.png"
-dest_files=["res://.godot/imported/jungle_creature_1.png-d67f58d09d7f9f0f2b0552c7f6dcfb5e.ctex"]
+source_file="res://assets/sprites/characters/astronaut_1_player_partymember.png"
+dest_files=["res://.godot/imported/astronaut_1_player_partymember.png-414907cb94f9fb315583e6cc2a782f83.ctex"]
 
 [params]
 
