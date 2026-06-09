@@ -4,6 +4,7 @@
 [ext_resource type="Texture2D" uid="uid://3qsfxpowfsso" path="res://assets/sprites/tilesets/placeholder_background_color.png" id="1_o88kd"]
 [ext_resource type="Texture2D" uid="uid://ei2n7u0b8421" path="res://assets/sprites/tilesets/placeholder_tilemap2.png" id="2_1ogry"]
 [ext_resource type="PackedScene" uid="uid://cqyqa0r34yr31" path="res://scenes/elements/door.tscn" id="3_1ogry"]
+[ext_resource type="Script" uid="uid://dbs03u1kb5jqj" path="res://scripts/overworld/footstep_tilemap.gd" id="4_314qw"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_j8rgc"]
 texture = ExtResource("1_o88kd")
@@ -24,6 +25,7 @@ texture_region_size = Vector2i(64, 64)
 0:0/0/terrains_peering_bit/right_side = 0
 0:0/0/terrains_peering_bit/bottom_right_corner = 0
 0:0/0/terrains_peering_bit/bottom_side = 0
+0:0/0/custom_data_0 = "grass"
 1:0/0 = 0
 1:0/0/terrain_set = 0
 1:0/0/terrain = 0
@@ -33,6 +35,7 @@ texture_region_size = Vector2i(64, 64)
 1:0/0/terrains_peering_bit/bottom_side = 0
 1:0/0/terrains_peering_bit/bottom_left_corner = 0
 1:0/0/terrains_peering_bit/left_side = 0
+1:0/0/custom_data_0 = "grass"
 2:0/0 = 0
 2:0/0/terrain_set = 0
 2:0/0/terrain = 0
@@ -40,6 +43,7 @@ texture_region_size = Vector2i(64, 64)
 2:0/0/terrains_peering_bit/bottom_side = 0
 2:0/0/terrains_peering_bit/bottom_left_corner = 0
 2:0/0/terrains_peering_bit/left_side = 0
+2:0/0/custom_data_0 = "grass"
 2:1/0 = 0
 2:1/0/terrain_set = 0
 2:1/0/terrain = 0
@@ -49,6 +53,7 @@ texture_region_size = Vector2i(64, 64)
 2:1/0/terrains_peering_bit/left_side = 0
 2:1/0/terrains_peering_bit/top_left_corner = 0
 2:1/0/terrains_peering_bit/top_side = 0
+2:1/0/custom_data_0 = "grass"
 2:2/0 = 0
 2:2/0/terrain_set = 0
 2:2/0/terrain = 0
@@ -56,6 +61,7 @@ texture_region_size = Vector2i(64, 64)
 2:2/0/terrains_peering_bit/left_side = 0
 2:2/0/terrains_peering_bit/top_left_corner = 0
 2:2/0/terrains_peering_bit/top_side = 0
+2:2/0/custom_data_0 = "grass"
 1:2/0 = 0
 1:2/0/terrain_set = 0
 1:2/0/terrain = 0
@@ -65,6 +71,7 @@ texture_region_size = Vector2i(64, 64)
 1:2/0/terrains_peering_bit/top_left_corner = 0
 1:2/0/terrains_peering_bit/top_side = 0
 1:2/0/terrains_peering_bit/top_right_corner = 0
+1:2/0/custom_data_0 = "grass"
 0:2/0 = 0
 0:2/0/terrain_set = 0
 0:2/0/terrain = 0
@@ -72,6 +79,7 @@ texture_region_size = Vector2i(64, 64)
 0:2/0/terrains_peering_bit/right_side = 0
 0:2/0/terrains_peering_bit/top_side = 0
 0:2/0/terrains_peering_bit/top_right_corner = 0
+0:2/0/custom_data_0 = "grass"
 0:1/0 = 0
 0:1/0/terrain_set = 0
 0:1/0/terrain = 0
@@ -81,6 +89,7 @@ texture_region_size = Vector2i(64, 64)
 0:1/0/terrains_peering_bit/bottom_side = 0
 0:1/0/terrains_peering_bit/top_side = 0
 0:1/0/terrains_peering_bit/top_right_corner = 0
+0:1/0/custom_data_0 = "grass"
 1:1/0 = 0
 1:1/0/terrain_set = 0
 1:1/0/terrain = 0
@@ -92,6 +101,7 @@ texture_region_size = Vector2i(64, 64)
 1:1/0/terrains_peering_bit/top_left_corner = 0
 1:1/0/terrains_peering_bit/top_side = 0
 1:1/0/terrains_peering_bit/top_right_corner = 0
+1:1/0/custom_data_0 = "grass"
 
 [sub_resource type="TileSet" id="TileSet_pne2w"]
 tile_size = Vector2i(64, 64)
@@ -100,6 +110,8 @@ physics_layer_0/collision_mask = 0
 terrain_set_0/mode = 0
 terrain_set_0/terrain_0/name = "ground"
 terrain_set_0/terrain_0/color = Color(0.5, 0.34375, 0.25, 1)
+custom_data_layer_0/name = "footstep_sound"
+custom_data_layer_0/type = 4
 sources/0 = SubResource("TileSetAtlasSource_ukbix")
 
 [node name="test_map2" type="Node2D" unique_id=2074588885]
@@ -113,6 +125,7 @@ tile_set = SubResource("TileSet_314qw")
 [node name="ground" type="TileMapLayer" parent="." unique_id=784225188]
 tile_map_data = PackedByteArray("AAAJAAUAAAAAAAAAAAAJAAYAAAAAAAEAAAAJAAcAAAABAAEAAAAKAAcAAAABAAEAAAAKAAgAAAABAAEAAAALAAgAAAACAAEAAAALAAkAAAACAAEAAAAOAAYAAAACAAIAAAANAAYAAAABAAIAAAANAAUAAAABAAEAAAAMAAUAAAABAAEAAAALAAUAAAABAAEAAAALAAYAAAABAAEAAAAKAAYAAAABAAEAAAAKAAUAAAABAAEAAAALAAcAAAABAAEAAAAMAAcAAAACAAIAAAAMAAYAAAABAAEAAAAKAAQAAAAAAAAAAAALAAQAAAABAAAAAAAMAAQAAAABAAEAAAANAAQAAAABAAEAAAAOAAQAAAABAAEAAAAPAAQAAAABAAEAAAAQAAQAAAABAAIAAAAUAAUAAAAAAAEAAAAVAAUAAAABAAEAAAAWAAUAAAABAAEAAAAXAAUAAAACAAAAAAAOAAUAAAABAAEAAAAPAAUAAAACAAIAAAARAAQAAAACAAIAAAAUAAYAAAAAAAEAAAAVAAYAAAABAAEAAAAWAAYAAAABAAEAAAAXAAYAAAACAAEAAAALAAoAAAACAAEAAAALAAsAAAACAAEAAAALAAwAAAABAAEAAAALAA0AAAABAAEAAAALAA4AAAABAAIAAAAMAA4AAAABAAIAAAAMAA0AAAABAAEAAAAMAAwAAAACAAAAAAANAA0AAAABAAAAAAAOAA0AAAABAAEAAAAPAA0AAAABAAEAAAAQAA0AAAABAAEAAAARAA0AAAABAAIAAAASAA0AAAACAAIAAAASAAwAAAABAAEAAAATAAwAAAACAAIAAAATAAsAAAABAAEAAAAUAAsAAAACAAIAAAAUAAoAAAABAAEAAAAVAAoAAAACAAIAAAAVAAkAAAACAAEAAAAVAAgAAAABAAEAAAAVAAcAAAABAAEAAAAUAAcAAAABAAEAAAATAAcAAAAAAAAAAAATAAgAAAAAAAEAAAATAAkAAAABAAEAAAATAAoAAAABAAEAAAASAAoAAAAAAAEAAAASAAsAAAABAAEAAAARAAsAAAABAAAAAAAQAAsAAAABAAAAAAAQAAwAAAABAAEAAAAPAAwAAAABAAEAAAAOAAwAAAAAAAAAAAAPAAsAAAAAAAAAAAASAAkAAAAAAAAAAAARAAwAAAABAAEAAAAUAAkAAAABAAEAAAAUAAgAAAABAAEAAAAKAAwAAAABAAEAAAAKAAsAAAABAAEAAAAJAAsAAAABAAEAAAAJAAoAAAABAAEAAAAKAAoAAAABAAEAAAAKAAkAAAABAAEAAAAJAAgAAAABAAEAAAAJAAkAAAABAAEAAAAKAA4AAAABAAIAAAAKAA0AAAABAAEAAAANAA4AAAABAAIAAAAOAA4AAAABAAIAAAAWAAgAAAACAAIAAAAWAAcAAAABAAEAAAAXAAcAAAACAAIAAAAWAAQAAAACAAAAAAAVAAQAAAABAAEAAAAUAAQAAAABAAEAAAATAAQAAAAAAAIAAAASAAMAAAABAAIAAAATAAMAAAABAAEAAAAUAAMAAAABAAEAAAAVAAMAAAACAAEAAAAVAAIAAAACAAAAAAAUAAIAAAABAAEAAAAPAAMAAAABAAEAAAAOAAMAAAABAAAAAAANAAMAAAABAAAAAAAMAAMAAAAAAAAAAAAQAAMAAAABAAEAAAARAAMAAAABAAEAAAARAAIAAAABAAAAAAAQAAIAAAABAAAAAAAPAAIAAAAAAAAAAAASAAIAAAABAAEAAAATAAIAAAABAAEAAAAJAAwAAAAAAAEAAAAJAA0AAAAAAAEAAAAJAA4AAAAAAAIAAAAIAAsAAAAAAAIAAAAIAAoAAAABAAEAAAAIAAkAAAABAAEAAAAIAAgAAAABAAEAAAAIAAcAAAAAAAAAAAAPAA4AAAABAAIAAAAQAA4AAAACAAIAAAAHAAgAAAABAAAAAAAGAAgAAAABAAAAAAAFAAgAAAABAAAAAAAEAAgAAAABAAAAAAADAAgAAAABAAAAAAACAAgAAAABAAAAAAABAAgAAAABAAAAAAAAAAgAAAABAAAAAAD//wgAAAAAAAAAAAD//wkAAAAAAAEAAAD//woAAAAAAAIAAAAAAAoAAAABAAIAAAABAAoAAAABAAIAAAACAAoAAAABAAIAAAADAAoAAAABAAIAAAAEAAoAAAABAAIAAAAFAAoAAAABAAIAAAAGAAoAAAABAAIAAAAHAAoAAAABAAIAAAAHAAkAAAABAAEAAAAGAAkAAAABAAEAAAAFAAkAAAABAAEAAAAEAAkAAAABAAEAAAADAAkAAAABAAEAAAACAAkAAAABAAEAAAABAAkAAAABAAEAAAAAAAkAAAABAAEAAAASAAEAAAABAAEAAAASAAAAAAABAAEAAAASAP//AAABAAEAAAASAP7/AAABAAEAAAASAP3/AAAAAAEAAAATAP3/AAABAAEAAAATAPz/AAABAAAAAAAUAP3/AAACAAEAAAAUAP7/AAACAAEAAAAUAP//AAACAAEAAAATAP//AAABAAEAAAATAAAAAAABAAEAAAATAAEAAAABAAEAAAAUAAEAAAACAAEAAAAUAAAAAAACAAEAAAATAP7/AAABAAEAAAASAPz/AAAAAAAAAAAUAPz/AAACAAAAAAA=")
 tile_set = SubResource("TileSet_pne2w")
+script = ExtResource("4_314qw")
 
 [node name="doors" type="Node" parent="." unique_id=264935890]
 

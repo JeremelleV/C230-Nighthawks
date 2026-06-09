@@ -40,6 +40,34 @@ tracks/0/keys = {
 "update": 1,
 "values": [0, 1, 2, 3]
 }
+tracks/1/type = "method"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath(".")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0.1, 0.3),
+"transitions": PackedFloat32Array(1, 1),
+"values": [{
+"args": [],
+"method": &"_play_footstep"
+}, {
+"args": [],
+"method": &"_play_footstep"
+}]
+}
+tracks/2/type = "method"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath(".")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(),
+"transitions": PackedFloat32Array(),
+"values": []
+}
 
 [sub_resource type="Animation" id="Animation_nh4ur"]
 resource_name = "run"
@@ -58,6 +86,34 @@ tracks/0/keys = {
 "update": 1,
 "values": [4, 5, 6, 7]
 }
+tracks/1/type = "method"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath(".")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0.1, 0.3),
+"transitions": PackedFloat32Array(1, 1),
+"values": [{
+"args": [],
+"method": &"_play_footstep"
+}, {
+"args": [],
+"method": &"_play_footstep"
+}]
+}
+tracks/2/type = "method"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath(".")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(),
+"transitions": PackedFloat32Array(),
+"values": []
+}
 
 [sub_resource type="Animation" id="Animation_bjvvg"]
 resource_name = "up"
@@ -75,6 +131,34 @@ tracks/0/keys = {
 "transitions": PackedFloat32Array(1, 1, 1, 1),
 "update": 1,
 "values": [8, 9, 10, 11]
+}
+tracks/1/type = "method"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath(".")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0.1, 0.3),
+"transitions": PackedFloat32Array(1, 1),
+"values": [{
+"args": [],
+"method": &"_play_footstep"
+}, {
+"args": [],
+"method": &"_play_footstep"
+}]
+}
+tracks/2/type = "method"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath(".")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(),
+"transitions": PackedFloat32Array(),
+"values": []
 }
 
 [sub_resource type="AnimationLibrary" id="AnimationLibrary_bjvvg"]
@@ -119,6 +203,7 @@ states/up/position = Vector2(365, 57)
 transitions = ["Start", "down", SubResource("AnimationNodeStateMachineTransition_5sj0x"), "down", "up", SubResource("AnimationNodeStateMachineTransition_ovg4i"), "up", "down", SubResource("AnimationNodeStateMachineTransition_7wli1"), "down", "run", SubResource("AnimationNodeStateMachineTransition_j0oqr"), "run", "down", SubResource("AnimationNodeStateMachineTransition_xy2vv"), "run", "up", SubResource("AnimationNodeStateMachineTransition_r4dfn"), "up", "run", SubResource("AnimationNodeStateMachineTransition_70kwc")]
 
 [node name="Player" type="CharacterBody2D" unique_id=1786461374]
+y_sort_enabled = true
 script = ExtResource("1_635qg")
 speed = 250
 
@@ -129,10 +214,11 @@ hframes = 4
 vframes = 3
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=437958350]
-position = Vector2(-1, -3)
+position = Vector2(0, -10)
 shape = SubResource("CircleShape2D_635qg")
 
 [node name="Camera2D" type="Camera2D" parent="." unique_id=1774826900]
+position = Vector2(0, -22)
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="." unique_id=327662656]
 libraries/ = SubResource("AnimationLibrary_bjvvg")

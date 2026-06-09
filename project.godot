@@ -24,6 +24,7 @@ AudioPlayer="*uid://crgtw7kkgfvsa"
 EconomyManager="*res://scripts/systems/EconomyManager.gd"
 InventoryManager="*res://scripts/systems/InventoryManager.gd"
 ShopManager="*res://scripts/systems/ShopManager.gd"
+FootstepSoundManager="*uid://c4d7dxj6r4sv8"
 
 [input]
 
