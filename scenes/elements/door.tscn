@@ -3,12 +3,13 @@
 [ext_resource type="Script" uid="uid://b6jkfxmbw8fxb" path="res://scripts/elements/door.gd" id="1_2xcpy"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_e708x"]
-size = Vector2(52, 52.75)
+size = Vector2(224, 204)
 
 [node name="door" type="Area2D" unique_id=1568456997]
 script = ExtResource("1_2xcpy")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=909259009]
+position = Vector2(0, 1)
 shape = SubResource("RectangleShape2D_e708x")
 
 [node name="spawn" type="Marker2D" parent="." unique_id=1319578235]
