@@ -8,6 +8,10 @@
 [ext_resource type="Texture2D" uid="uid://v3o5fuycv7hd" path="res://assets/sprites/tilesets/jungle_tree_tileset.png" id="5_18a8x"]
 [ext_resource type="Texture2D" uid="uid://dpin3234oeqh3" path="res://assets/props/house_1.png" id="6_8yey6"]
 [ext_resource type="Texture2D" uid="uid://b4clgk5hwt0d5" path="res://assets/props/house_2.png" id="7_2nvop"]
+[ext_resource type="PackedScene" uid="uid://845hmsyjb8iu" path="res://scenes/entities/npc.tscn" id="9_8yey6"]
+[ext_resource type="Texture2D" uid="uid://b250ej3o5acgt" path="res://assets/sprites/characters/sprite_sheet_alien_civ.png" id="10_2nvop"]
+[ext_resource type="PackedScene" path="res://scenes/ui/shop/ShopUI.tscn" id="11_2nvop"]
+[ext_resource type="PackedScene" path="res://scenes/ui/dialogue/DialogueBox.tscn" id="12_sjfqg"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_7gboy"]
 texture = ExtResource("3_tmumg")
@@ -632,6 +636,57 @@ physics_layer_0/collision_mask = 0
 sources/0 = SubResource("TileSetAtlasSource_sjfqg")
 sources/1 = SubResource("TileSetAtlasSource_xx7c4")
 
+[sub_resource type="AtlasTexture" id="AtlasTexture_sjfqg"]
+atlas = ExtResource("10_2nvop")
+region = Rect2(35, 0, 27, 33)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_8yey6"]
+atlas = ExtResource("10_2nvop")
+region = Rect2(35, 35, 27, 33)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_2nvop"]
+atlas = ExtResource("10_2nvop")
+region = Rect2(35, 35, 27, 33)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_xx7c4"]
+atlas = ExtResource("10_2nvop")
+region = Rect2(35, 67, 27, 33)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_3w5u0"]
+animations = [{
+"frames": [{
+"duration": 15.0,
+"texture": SubResource("AtlasTexture_sjfqg")
+}],
+"loop": true,
+"name": &"down",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_8yey6")
+}],
+"loop": true,
+"name": &"left",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_2nvop")
+}],
+"loop": true,
+"name": &"right",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_xx7c4")
+}],
+"loop": true,
+"name": &"up",
+"speed": 5.0
+}]
+
 [node name="zone_1_start" type="Node2D" unique_id=579272200]
 y_sort_enabled = true
 script = ExtResource("1_b8ck8")
@@ -671,6 +726,21 @@ destination_door_tag = "zone_2"
 [node name="spawn" parent="doors/door_zone_1_start" index="1" unique_id=1319578235]
 position = Vector2(6, -264)
 
+[node name="npc_dustplains_trader" parent="." unique_id=93047514 instance=ExtResource("9_8yey6")]
+position = Vector2(2480, 3007)
+has_shop = true
+shop_id = "dustplains_trader"
+sprite_frames = SubResource("SpriteFrames_3w5u0")
+idle_sequence = Array[String](["down", "right", "down", "left"])
+
+[node name="CollisionShape2D" parent="npc_dustplains_trader/InteractionArea" parent_id_path=PackedInt32Array(93047514, 886098454) index="0" unique_id=1299023387]
+position = Vector2(1, 9.5)
+
+[node name="ShopUI" parent="." unique_id=2073960939 instance=ExtResource("11_2nvop")]
+
+[node name="DialogueBox" parent="." unique_id=457813804 instance=ExtResource("12_sjfqg")]
+
 [connection signal="body_entered" from="doors/door_zone_1_start" to="doors/door_zone_1_start" method="_on_body_entered"]
 
 [editable path="doors/door_zone_1_start"]
+[editable path="npc_dustplains_trader"]

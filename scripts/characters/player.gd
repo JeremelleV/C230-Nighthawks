@@ -30,6 +30,26 @@ const FOOTSTEP_INTERVAL: float = 0.35 #testing
 func _ready() -> void:
 	animation_tree.set_active(false)
 	NavigationManager.on_trigger_player_spawn.connect(_on_spawn)
+	DialogueManager.dialogue_started.connect(_on_dialogue_started)
+	DialogueManager.dialogue_finished.connect(_on_dialogue_finished)
+	ShopManager.shop_opened.connect(_on_shop_opened)
+	ShopManager.shop_closed.connect(_on_shop_closed)
+
+
+func _on_shop_opened(_shop: Dictionary) -> void:
+	set_physics_process(false)
+
+
+func _on_shop_closed() -> void:
+	set_physics_process(true)
+
+
+func _on_dialogue_started(_id: String) -> void:
+	set_physics_process(false) # freeze movement
+
+
+func _on_dialogue_finished() -> void:
+	set_physics_process(true)
 
 
 func _on_spawn(given_position: Vector2, direction: String):

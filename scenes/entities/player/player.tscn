@@ -118,7 +118,7 @@ states/up/node = SubResource("AnimationNodeAnimation_1murt")
 states/up/position = Vector2(365, 57)
 transitions = ["Start", "down", SubResource("AnimationNodeStateMachineTransition_5sj0x"), "down", "up", SubResource("AnimationNodeStateMachineTransition_ovg4i"), "up", "down", SubResource("AnimationNodeStateMachineTransition_7wli1"), "down", "run", SubResource("AnimationNodeStateMachineTransition_j0oqr"), "run", "down", SubResource("AnimationNodeStateMachineTransition_xy2vv"), "run", "up", SubResource("AnimationNodeStateMachineTransition_r4dfn"), "up", "run", SubResource("AnimationNodeStateMachineTransition_70kwc")]
 
-[node name="Player" type="CharacterBody2D" unique_id=1786461374]
+[node name="Player" type="CharacterBody2D" unique_id=1786461374 groups=["player"]]
 y_sort_enabled = true
 script = ExtResource("1_635qg")
 speed = 250
