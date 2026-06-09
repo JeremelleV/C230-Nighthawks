@@ -941,7 +941,7 @@ sprite_frames = SubResource("SpriteFrames_3w5u0")
 idle_sequence = Array[String](["down", "right", "down", "left"])
 
 [node name="CollisionShape2D" parent="npc_dustplains_trader/InteractionArea" parent_id_path=PackedInt32Array(93047514, 886098454) index="0" unique_id=1299023387]
-position = Vector2(1, 9.5)
+position = Vector2(0.5, 14)
 
 [node name="npc_test_npc_intro" parent="." unique_id=1327451291 instance=ExtResource("9_8yey6")]
 position = Vector2(2445, 2689)

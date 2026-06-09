@@ -65,12 +65,15 @@ func _interact() -> void:
 		_interaction_ended_tween = null
 	
 	_face_player()
+	$InteractionPrompt.hide()
+	
 	# if this npc has a shop, open it, otherwise start dialogue
 	# TODO might want to change this logic if we want dialogue before shop open
 	if has_shop and shop_id != "":
 		ShopManager.open_shop(shop_id)
 	elif dialogue_id != "":
 		DialogueManager.start_dialogue(dialogue_id)
+	
 
 
 func _on_interaction_area_body_entered(body: Node2D) -> void:
