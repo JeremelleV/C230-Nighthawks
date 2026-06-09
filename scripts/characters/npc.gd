@@ -13,6 +13,8 @@ var _current_idle: String = "down"
 var _sequence_index: int = 0
 var _idle_timer: Timer
 var _player_nearby: bool = false
+var _in_interaction: bool = false
+var _interaction_ended_tween: SceneTreeTimer = null
 
 
 func _ready() -> void:
@@ -32,12 +34,18 @@ func _ready() -> void:
 func _play_current_idle() -> void:
 	var anim: String = idle_sequence[_sequence_index]
 	_current_idle = anim
-	$AnimatedSprite2D.flip_h = anim.ends_with("left")
-	$AnimatedSprite2D.play(anim.replace("left","right") if anim.ends_with("left") else anim)
+	if anim.ends_with("left"):
+		$AnimatedSprite2D.flip_h = true
+		$AnimatedSprite2D.play("right")
+	else:
+		$AnimatedSprite2D.flip_h = false
+		$AnimatedSprite2D.play(anim)
 
 
 func _on_idle_timer_timeout() -> void:
 	if idle_sequence.size() <= 1:
+		return
+	if _in_interaction:
 		return
 	_sequence_index = (_sequence_index + 1) % idle_sequence.size()
 	_play_current_idle()
@@ -50,7 +58,12 @@ func _unhandled_input(event: InputEvent) -> void:
 
 
 func _interact() -> void:
+	_in_interaction = true
 	_idle_timer.stop()
+	# cancel any pending interaction ended delay
+	if _interaction_ended_tween != null:
+		_interaction_ended_tween = null
+	
 	_face_player()
 	# if this npc has a shop, open it, otherwise start dialogue
 	# TODO might want to change this logic if we want dialogue before shop open
@@ -73,13 +86,19 @@ func _on_interaction_area_body_exited(body: Node2D) -> void:
 
 
 func _on_interaction_ended() -> void:
-	await get_tree().create_timer(3.0).timeout
-	$AnimatedSprite2D.flip_h = false
+	_idle_timer.stop()
+	_sequence_index = 0
+	_interaction_ended_tween = get_tree().create_timer(3.0)
+	await _interaction_ended_tween.timeout
+	if _interaction_ended_tween == null:
+		return
+	_in_interaction = false
 	_play_current_idle()
 	_idle_timer.start()
 
 
 func _face_player() -> void:
+	_idle_timer.stop()
 	var player = get_tree().get_first_node_in_group("player")
 	if not player:
 		return
@@ -97,4 +116,4 @@ func _face_player() -> void:
 		else:
 			$AnimatedSprite2D.play("down")
 
-		$AnimatedSprite2D.stop()
+	$AnimatedSprite2D.stop()

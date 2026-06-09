@@ -687,6 +687,159 @@ animations = [{
 "speed": 5.0
 }]
 
+[sub_resource type="AtlasTexture" id="AtlasTexture_3w5u0"]
+atlas = ExtResource("10_2nvop")
+region = Rect2(105, 0, 27, 33)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_diu26"]
+atlas = ExtResource("10_2nvop")
+region = Rect2(105, 35, 27, 33)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_by876"]
+atlas = ExtResource("10_2nvop")
+region = Rect2(105, 35, 27, 33)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_q0fac"]
+atlas = ExtResource("10_2nvop")
+region = Rect2(105, 67, 27, 33)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_2tckd"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_3w5u0")
+}],
+"loop": true,
+"name": &"down",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_diu26")
+}],
+"loop": true,
+"name": &"left",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_by876")
+}],
+"loop": true,
+"name": &"right",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_q0fac")
+}],
+"loop": true,
+"name": &"up",
+"speed": 5.0
+}]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_ty7hw"]
+atlas = ExtResource("10_2nvop")
+region = Rect2(70, 0, 27, 33)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_rhsuh"]
+atlas = ExtResource("10_2nvop")
+region = Rect2(70, 35, 27, 33)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_pqu38"]
+atlas = ExtResource("10_2nvop")
+region = Rect2(70, 35, 27, 33)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_v6tdx"]
+atlas = ExtResource("10_2nvop")
+region = Rect2(70, 67, 27, 33)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_40l0h"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_ty7hw")
+}],
+"loop": true,
+"name": &"down",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_rhsuh")
+}],
+"loop": true,
+"name": &"left",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_pqu38")
+}],
+"loop": true,
+"name": &"right",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_v6tdx")
+}],
+"loop": true,
+"name": &"up",
+"speed": 5.0
+}]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_v6a16"]
+atlas = ExtResource("10_2nvop")
+region = Rect2(105, 0, 27, 33)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_56mtj"]
+atlas = ExtResource("10_2nvop")
+region = Rect2(105, 35, 27, 33)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_nrpw2"]
+atlas = ExtResource("10_2nvop")
+region = Rect2(105, 35, 27, 33)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_inksd"]
+atlas = ExtResource("10_2nvop")
+region = Rect2(105, 67, 27, 33)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_ve7vu"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_v6a16")
+}],
+"loop": true,
+"name": &"down",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_56mtj")
+}],
+"loop": true,
+"name": &"left",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_nrpw2")
+}],
+"loop": true,
+"name": &"right",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_inksd")
+}],
+"loop": true,
+"name": &"up",
+"speed": 5.0
+}]
+
 [node name="zone_1_start" type="Node2D" unique_id=579272200]
 y_sort_enabled = true
 script = ExtResource("1_b8ck8")
@@ -736,6 +889,36 @@ idle_sequence = Array[String](["down", "right", "down", "left"])
 [node name="CollisionShape2D" parent="npc_dustplains_trader/InteractionArea" parent_id_path=PackedInt32Array(93047514, 886098454) index="0" unique_id=1299023387]
 position = Vector2(1, 9.5)
 
+[node name="npc_test_npc_intro" parent="." unique_id=1327451291 instance=ExtResource("9_8yey6")]
+position = Vector2(2445, 2689)
+dialogue_id = "test_npc_intro"
+sprite_frames = SubResource("SpriteFrames_2tckd")
+idle_sequence = Array[String](["right", "down", "left", "down"])
+idle_flip_interval = 7.0
+
+[node name="CollisionShape2D" parent="npc_test_npc_intro/InteractionArea" parent_id_path=PackedInt32Array(1327451291, 886098454) index="0" unique_id=1299023387]
+position = Vector2(1, 9.5)
+
+[node name="npc_scout_lich" parent="." unique_id=425234253 instance=ExtResource("9_8yey6")]
+position = Vector2(2951, 2590)
+dialogue_id = "scout_lich"
+sprite_frames = SubResource("SpriteFrames_40l0h")
+idle_sequence = Array[String](["left", "down", "right", "down"])
+idle_flip_interval = 6.0
+
+[node name="CollisionShape2D" parent="npc_scout_lich/InteractionArea" parent_id_path=PackedInt32Array(425234253, 886098454) index="0" unique_id=1299023387]
+position = Vector2(1, 9.5)
+
+[node name="npc_scout_factions" parent="." unique_id=569977418 instance=ExtResource("9_8yey6")]
+position = Vector2(2839, 3269)
+dialogue_id = "scout_factions"
+sprite_frames = SubResource("SpriteFrames_ve7vu")
+idle_sequence = Array[String](["up", "left"])
+idle_flip_interval = 5.0
+
+[node name="CollisionShape2D" parent="npc_scout_factions/InteractionArea" parent_id_path=PackedInt32Array(569977418, 886098454) index="0" unique_id=1299023387]
+position = Vector2(1, 9.5)
+
 [node name="ShopUI" parent="." unique_id=2073960939 instance=ExtResource("11_2nvop")]
 
 [node name="DialogueBox" parent="." unique_id=457813804 instance=ExtResource("12_sjfqg")]
@@ -744,3 +927,6 @@ position = Vector2(1, 9.5)
 
 [editable path="doors/door_zone_1_start"]
 [editable path="npc_dustplains_trader"]
+[editable path="npc_test_npc_intro"]
+[editable path="npc_scout_lich"]
+[editable path="npc_scout_factions"]
