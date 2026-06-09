@@ -1,0 +1,60 @@
+[gd_scene format=3 uid="uid://845hmsyjb8iu"]
+
+[ext_resource type="Script" uid="uid://lb6vt1kth647" path="res://scripts/characters/npc.gd" id="1_iify0"]
+[ext_resource type="FontFile" uid="uid://bcvfhp67mv8pw" path="res://assets/ui/fonts/PixelOperator.ttf" id="2_4kvco"]
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_iify0"]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_4kvco"]
+radius = 9.0
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_n61dp"]
+size = Vector2(68, 61.5)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_n61dp"]
+bg_color = Color(0.4745098, 0, 0, 1)
+border_width_left = 1
+border_width_top = 1
+border_width_right = 1
+border_width_bottom = 1
+border_color = Color(0.8627451, 0.69803923, 0.68235296, 1)
+border_blend = true
+corner_radius_top_left = 3
+corner_radius_top_right = 3
+corner_radius_bottom_right = 3
+corner_radius_bottom_left = 3
+shadow_color = Color(0.4745098, 0, 0, 1)
+shadow_size = 1
+
+[node name="npc" type="CharacterBody2D" unique_id=1327451291]
+script = ExtResource("1_iify0")
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="." unique_id=525224675]
+sprite_frames = SubResource("SpriteFrames_iify0")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=679406785]
+position = Vector2(0, 10)
+shape = SubResource("CircleShape2D_4kvco")
+
+[node name="InteractionArea" type="Area2D" parent="." unique_id=886098454]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="InteractionArea" unique_id=1299023387]
+position = Vector2(0, 1.25)
+shape = SubResource("RectangleShape2D_n61dp")
+
+[node name="InteractionPrompt" type="Label" parent="." unique_id=1961178334]
+visible = false
+offset_left = -7.0
+offset_top = -38.0
+offset_right = 11.0
+offset_bottom = -20.0
+theme_override_colors/font_color = Color(0.8627451, 0.69803923, 0.68235296, 1)
+theme_override_fonts/font = ExtResource("2_4kvco")
+theme_override_font_sizes/font_size = 16
+theme_override_styles/normal = SubResource("StyleBoxFlat_n61dp")
+text = "E"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[connection signal="body_entered" from="InteractionArea" to="." method="_on_interaction_area_body_entered"]
+[connection signal="body_exited" from="InteractionArea" to="." method="_on_interaction_area_body_exited"]
