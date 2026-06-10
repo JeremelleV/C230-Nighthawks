@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://baiga0kvxwip1"
-path="res://.godot/imported/som_rock_12.png-496533d178e3c0f9cf04316b308c7297.ctex"
+uid="uid://dd1gmg0m756bb"
+path="res://.godot/imported/som_beast.png-2d2182319e3ae9b2632801f72bc5acd4.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assets/props/som_rock_12.png"
-dest_files=["res://.godot/imported/som_rock_12.png-496533d178e3c0f9cf04316b308c7297.ctex"]
+source_file="res://assets/sprites/enemies/som_beast.png"
+dest_files=["res://.godot/imported/som_beast.png-2d2182319e3ae9b2632801f72bc5acd4.ctex"]
 
 [params]
 

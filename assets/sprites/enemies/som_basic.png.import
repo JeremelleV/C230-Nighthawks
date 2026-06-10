@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://b250ej3o5acgt"
-path="res://.godot/imported/sprite_sheet_alien_civ.png-c91762a561497c212917a5b4076525f6.ctex"
+uid="uid://bjrrtodex4pkn"
+path="res://.godot/imported/som_basic.png-7a7e63550936c1d2d0723a84c94ae78e.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assets/sprites/characters/sprite_sheet_alien_civ.png"
-dest_files=["res://.godot/imported/sprite_sheet_alien_civ.png-c91762a561497c212917a5b4076525f6.ctex"]
+source_file="res://assets/sprites/enemies/som_basic.png"
+dest_files=["res://.godot/imported/som_basic.png-7a7e63550936c1d2d0723a84c94ae78e.ctex"]
 
 [params]
 

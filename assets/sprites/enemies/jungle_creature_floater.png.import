@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://cquq0fxmorg6b"
-path="res://.godot/imported/som_rock_7.png-67fb174f64a8f2c9f8e4e65a3a69796e.ctex"
+uid="uid://b0xrk0iyaussp"
+path="res://.godot/imported/jungle_creature_floater.png-42303ee55cee72540cb8434ad1c00bf2.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assets/props/som_rock_7.png"
-dest_files=["res://.godot/imported/som_rock_7.png-67fb174f64a8f2c9f8e4e65a3a69796e.ctex"]
+source_file="res://assets/sprites/enemies/jungle_creature_floater.png"
+dest_files=["res://.godot/imported/jungle_creature_floater.png-42303ee55cee72540cb8434ad1c00bf2.ctex"]
 
 [params]
 

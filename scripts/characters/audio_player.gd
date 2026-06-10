@@ -3,7 +3,7 @@ extends AudioStreamPlayer
 
 const level_music = preload("res://assets/audio/space_explore.mp3")
 
-func _play_music(music: AudioStream, volume = -30.0):
+func _play_music(music: AudioStream, volume = -25.0):
 	if stream == music and playing: #testing
 		return
 	stream = music
