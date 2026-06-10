@@ -2,14 +2,14 @@
 
 [ext_resource type="Script" uid="uid://7iiyoym6afj8" path="res://scripts/elements/main_menu.gd" id="1_sd5it"]
 [ext_resource type="FontFile" uid="uid://blxo7ienbbt5q" path="res://assets/ui/fonts/batmfa__.ttf" id="2_byqcc"]
-[ext_resource type="Texture2D" uid="uid://dg4bpbnl56qys" path="res://assets/ui/placeholder_main_menu_background_1.png" id="2_w6ykx"]
+[ext_resource type="Texture2D" uid="uid://cdfven3ml42lr" path="res://assets/ui/menu_background_planet.png" id="2_swlpu"]
 [ext_resource type="FontFile" uid="uid://bcvfhp67mv8pw" path="res://assets/ui/fonts/PixelOperator.ttf" id="4_w6ykx"]
 [ext_resource type="AudioStream" uid="uid://4fkj0rmbkb0e" path="res://assets/audio/button_click.mp3" id="5_swlpu"]
 [ext_resource type="AudioStream" uid="uid://c2phppay8mpwy" path="res://assets/audio/button_hover.mp3" id="6_nm0l4"]
 
 [sub_resource type="StyleBoxTexture" id="StyleBoxTexture_hiibk"]
-texture = ExtResource("2_w6ykx")
-modulate_color = Color(0.2159017, 0.21590173, 0.2159017, 1)
+texture = ExtResource("2_swlpu")
+modulate_color = Color(0.8089983, 0.8089983, 0.8089982, 1)
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_sd5it"]
 bg_color = Color(0.06309579, 0.037863392, 0.16373473, 1)
@@ -23,7 +23,7 @@ corner_radius_top_right = 9
 corner_radius_bottom_right = 9
 corner_radius_bottom_left = 9
 shadow_color = Color(0.0627451, 0.039215688, 0.16470589, 1)
-shadow_size = 6
+shadow_size = 4
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_swlpu"]
 bg_color = Color(0.10529519, 0.07112902, 0.24176136, 1)
@@ -37,7 +37,7 @@ corner_radius_top_right = 9
 corner_radius_bottom_right = 9
 corner_radius_bottom_left = 9
 shadow_color = Color(0.0627451, 0.039215688, 0.16470589, 1)
-shadow_size = 6
+shadow_size = 4
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_nm0l4"]
 bg_color = Color(0.10529519, 0.07112902, 0.24176136, 1)
@@ -51,7 +51,7 @@ corner_radius_top_right = 9
 corner_radius_bottom_right = 9
 corner_radius_bottom_left = 9
 shadow_color = Color(0.0627451, 0.039215688, 0.16470589, 1)
-shadow_size = 6
+shadow_size = 4
 
 [node name="main_menu" type="Control" unique_id=857176783]
 layout_mode = 3
@@ -86,8 +86,8 @@ offset_bottom = -62.0
 grow_horizontal = 2
 grow_vertical = 2
 theme_override_colors/font_color = Color(0.8627451, 0.69803923, 0.68235296, 1)
-theme_override_colors/font_shadow_color = Color(0.19302139, 0.021664236, 0.011073003, 1)
-theme_override_colors/font_outline_color = Color(0, 0, 0, 0.50980395)
+theme_override_colors/font_shadow_color = Color(0, 0, 0, 1)
+theme_override_colors/font_outline_color = Color(0.4745098, 0, 0, 1)
 theme_override_constants/shadow_offset_y = 10
 theme_override_constants/outline_size = 14
 theme_override_constants/shadow_outline_size = 28

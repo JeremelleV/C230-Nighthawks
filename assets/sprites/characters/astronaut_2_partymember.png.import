@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://b250ej3o5acgt"
-path="res://.godot/imported/sprite_sheet_alien_civ.png-c91762a561497c212917a5b4076525f6.ctex"
+uid="uid://ct88vs028n1ps"
+path="res://.godot/imported/astronaut_2_partymember.png-da28ef14c512be5af2baeafb6dc63a8f.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assets/sprites/characters/sprite_sheet_alien_civ.png"
-dest_files=["res://.godot/imported/sprite_sheet_alien_civ.png-c91762a561497c212917a5b4076525f6.ctex"]
+source_file="res://assets/sprites/characters/astronaut_2_partymember.png"
+dest_files=["res://.godot/imported/astronaut_2_partymember.png-da28ef14c512be5af2baeafb6dc63a8f.ctex"]
 
 [params]
 

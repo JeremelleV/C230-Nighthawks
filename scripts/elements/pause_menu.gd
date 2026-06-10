@@ -32,8 +32,9 @@ func _on_button_settings_mouse_entered() -> void:
 
 func _on_button_settings_pressed() -> void:
 	$button_click.play()
-	pass # Replace with function body.
-
+	pass
+	
+	
 func _on_button_main_menu_mouse_entered() -> void:
 	$button_hover.play()
 

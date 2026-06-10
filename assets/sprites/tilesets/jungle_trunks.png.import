@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://xu0oxfsmwqd2"
-path="res://.godot/imported/som_rock_8.png-d6c0cbdebfc2c35c6530792d195142e1.ctex"
+uid="uid://de2y61hovh870"
+path="res://.godot/imported/jungle_trunks.png-0ceefbc078858e9243d70e99951bf6df.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assets/props/som_rock_8.png"
-dest_files=["res://.godot/imported/som_rock_8.png-d6c0cbdebfc2c35c6530792d195142e1.ctex"]
+source_file="res://assets/sprites/tilesets/jungle_trunks.png"
+dest_files=["res://.godot/imported/jungle_trunks.png-0ceefbc078858e9243d70e99951bf6df.ctex"]
 
 [params]
 

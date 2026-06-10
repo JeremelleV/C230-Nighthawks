@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://d0w12ib1367ei"
-path="res://.godot/imported/sidewalk_tileset.png-3a14d57f83e2d7191c2560c5f6caf4cb.ctex"
+uid="uid://dd1gmg0m756bb"
+path="res://.godot/imported/som_beast.png-2d2182319e3ae9b2632801f72bc5acd4.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assets/sprites/tilesets/sidewalk_tileset.png"
-dest_files=["res://.godot/imported/sidewalk_tileset.png-3a14d57f83e2d7191c2560c5f6caf4cb.ctex"]
+source_file="res://assets/sprites/enemies/som_beast.png"
+dest_files=["res://.godot/imported/som_beast.png-2d2182319e3ae9b2632801f72bc5acd4.ctex"]
 
 [params]
 

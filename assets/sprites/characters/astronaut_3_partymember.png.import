@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://b24s4f1dkfbp7"
-path="res://.godot/imported/som_rock_1.png-41b1bdc236259db28f580526b016b9ad.ctex"
+uid="uid://clpjgbf3yemgs"
+path="res://.godot/imported/astronaut_3_partymember.png-a74d0dd48d9b82c8b13ca5e8dc2f7179.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assets/props/som_rock_1.png"
-dest_files=["res://.godot/imported/som_rock_1.png-41b1bdc236259db28f580526b016b9ad.ctex"]
+source_file="res://assets/sprites/characters/astronaut_3_partymember.png"
+dest_files=["res://.godot/imported/astronaut_3_partymember.png-a74d0dd48d9b82c8b13ca5e8dc2f7179.ctex"]
 
 [params]
 
