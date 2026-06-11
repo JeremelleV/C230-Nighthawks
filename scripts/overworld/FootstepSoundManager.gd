@@ -1,18 +1,23 @@
 extends Node
+var enabled: bool = true #testing
 
 const footstep_volume = {
-	"road": -21,
-	"grass": -14
+	"road": -12,
+	"grass": -18,
+	"stone": -17
 }
 
 var tilemaps:Array[TileMapLayer] = []
 
 const footstep_sounds = {
-	"road":preload("res://assets/audio/walk_on_road.mp3"),
-	"grass":preload("res://assets/audio/walk_on_grass.mp3")
+	"road":preload("res://assets/audio/walk_on_path.wav"),
+	"grass":preload("res://assets/audio/walk_on_grass.mp3"),
+	"stone":preload("res://assets/audio/walk_on_stone.mp3")
 }
 
 func play_footstep(position: Vector2):
+	if not enabled:
+		return
 	var tile_data = []
 	for tilemap in tilemaps:
 		if not is_instance_valid(tilemap):

@@ -11,10 +11,14 @@ config_version=5
 [application]
 
 config/name="Red Dominion"
-run/main_scene="uid://bjups5w777d4j"
+run/main_scene="uid://d4jw7n6f4oll8"
 config/features=PackedStringArray("4.6", "GL Compatibility")
 config/icon="res://icon.svg"
 config/run/main_scene="res://scenes/main/TestScene.tscn"
+
+[audio]
+
+buses/default_bus_layout="uid://cimhw4b4tkuqx"
 
 [autoload]
 
@@ -25,6 +29,7 @@ EconomyManager="*res://scripts/systems/EconomyManager.gd"
 InventoryManager="*res://scripts/systems/InventoryManager.gd"
 ShopManager="*res://scripts/systems/ShopManager.gd"
 FootstepSoundManager="*uid://c4d7dxj6r4sv8"
+AudioSettings="*uid://c2pecebpppdps"
 
 [display]
 
