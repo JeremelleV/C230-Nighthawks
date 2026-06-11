@@ -1,17 +1,17 @@
 [gd_scene format=4 uid="uid://bhxqhmvxaipq4"]
 
 [ext_resource type="Script" uid="uid://boj30dwqkwnuj" path="res://scripts/overworld/zone_2.gd" id="1_tqe2s"]
-[ext_resource type="Texture2D" uid="uid://0d83v85unw6e" path="res://assets/sprites/tilesets/jungle_floor_tile.png" id="2_flbpo"]
+[ext_resource type="Texture2D" uid="uid://dg4eu2wihug6o" path="res://assets/sprites/tilesets/jungle_floor_tile.png" id="2_flbpo"]
 [ext_resource type="PackedScene" uid="uid://cqyqa0r34yr31" path="res://scenes/elements/door.tscn" id="3_3d5t7"]
 [ext_resource type="Script" uid="uid://dbs03u1kb5jqj" path="res://scripts/overworld/footstep_tilemap.gd" id="3_fusml"]
 [ext_resource type="Texture2D" uid="uid://qfnh3df2155v" path="res://assets/sprites/tilesets/jungle_grass_tileset.png" id="3_jesxk"]
-[ext_resource type="Texture2D" uid="uid://d0w12ib1367ei" path="res://assets/sprites/tilesets/sidewalk_tileset.png" id="4_fusml"]
-[ext_resource type="Texture2D" uid="uid://v3o5fuycv7hd" path="res://assets/sprites/tilesets/jungle_tree_tileset.png" id="5_3kaoc"]
+[ext_resource type="Texture2D" uid="uid://bi5tl1eytyy54" path="res://assets/sprites/tilesets/sidewalk_tileset.png" id="4_fusml"]
+[ext_resource type="Texture2D" uid="uid://bxfyxipscph0j" path="res://assets/sprites/tilesets/jungle_tree_tileset.png" id="5_3kaoc"]
 [ext_resource type="Texture2D" uid="uid://de2y61hovh870" path="res://assets/sprites/tilesets/jungle_trunks.png" id="5_ao12m"]
-[ext_resource type="Texture2D" uid="uid://dpin3234oeqh3" path="res://assets/props/house_1.png" id="6_0ytv7"]
-[ext_resource type="Texture2D" uid="uid://b4clgk5hwt0d5" path="res://assets/props/house_2.png" id="7_ao12m"]
+[ext_resource type="Texture2D" uid="uid://bm0kjkrhhnea1" path="res://assets/props/house_1.png" id="6_0ytv7"]
+[ext_resource type="Texture2D" uid="uid://jyyfq854abtn" path="res://assets/props/house_2.png" id="7_ao12m"]
 [ext_resource type="PackedScene" uid="uid://845hmsyjb8iu" path="res://scenes/entities/npc.tscn" id="9_fusml"]
-[ext_resource type="Texture2D" uid="uid://b250ej3o5acgt" path="res://assets/sprites/characters/sprite_sheet_alien_civ.png" id="10_3kaoc"]
+[ext_resource type="Texture2D" uid="uid://d1enrl58gnban" path="res://assets/sprites/characters/sprite_sheet_alien_civ.png" id="10_3kaoc"]
 [ext_resource type="PackedScene" path="res://scenes/ui/dialogue/DialogueBox.tscn" id="11_3kaoc"]
 [ext_resource type="PackedScene" path="res://scenes/ui/shop/ShopUI.tscn" id="12_0ytv7"]
 
@@ -27,7 +27,7 @@ custom_data_layer_0/name = "footstep_sound"
 custom_data_layer_0/type = 4
 sources/0 = SubResource("TileSetAtlasSource_5tue0")
 
-[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_y0d21"]
+[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_hv0g8"]
 texture = ExtResource("3_jesxk")
 margins = Vector2i(1, 1)
 separation = Vector2i(1, 1)
@@ -371,7 +371,7 @@ terrain_set_0/terrain_0/name = "grass"
 terrain_set_0/terrain_0/color = Color(0.5, 0.34375, 0.25, 1)
 custom_data_layer_0/name = "footstep_sound"
 custom_data_layer_0/type = 4
-sources/0 = SubResource("TileSetAtlasSource_y0d21")
+sources/0 = SubResource("TileSetAtlasSource_hv0g8")
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_odhgm"]
 texture = ExtResource("4_fusml")
@@ -499,7 +499,7 @@ custom_data_layer_0/name = "footstep_sound"
 custom_data_layer_0/type = 4
 sources/0 = SubResource("TileSetAtlasSource_odhgm")
 
-[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_hv0g8"]
+[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_y0d21"]
 texture = ExtResource("5_ao12m")
 margins = Vector2i(4, 4)
 separation = Vector2i(4, 0)
@@ -529,9 +529,9 @@ physics_layer_0/collision_mask = 0
 terrain_set_0/mode = 0
 terrain_set_0/terrain_0/name = "Terrain 0"
 terrain_set_0/terrain_0/color = Color(0.5, 0.34375, 0.25, 1)
-sources/0 = SubResource("TileSetAtlasSource_hv0g8")
+sources/0 = SubResource("TileSetAtlasSource_y0d21")
 
-[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_mv0sq"]
+[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_xvwr2"]
 texture = ExtResource("5_3kaoc")
 margins = Vector2i(1, 1)
 separation = Vector2i(1, 1)
@@ -672,7 +672,7 @@ physics_layer_0/collision_mask = 0
 terrain_set_0/mode = 0
 terrain_set_0/terrain_0/name = "jungle_ground"
 terrain_set_0/terrain_0/color = Color(0.5, 0.34375, 0.25, 1)
-sources/0 = SubResource("TileSetAtlasSource_mv0sq")
+sources/0 = SubResource("TileSetAtlasSource_xvwr2")
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_j1fku"]
 texture = ExtResource("6_0ytv7")
@@ -858,6 +858,8 @@ position = Vector2(21, -269)
 
 [node name="door_zone_2_E" parent="doors" unique_id=1114438091 instance=ExtResource("3_3d5t7")]
 position = Vector2(3459, 2344)
+destination_level_tag = "zone_3"
+destination_door_tag = "zone_3_W"
 spawn_direction = "left"
 
 [node name="CollisionShape2D" parent="doors/door_zone_2_E" index="0" unique_id=909259009]
