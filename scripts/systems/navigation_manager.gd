@@ -4,6 +4,7 @@ const scene_test_map = preload("res://scenes/overworld/test_map.tscn")
 const scene_test_map_2 = preload("res://scenes/overworld/test_map_2.tscn")
 const scene_zone_1_start = preload("res://scenes/overworld/zone_1_start.tscn")
 const scene_zone_2 = preload("res://scenes/overworld/zone_2.tscn")
+const scene_zone_3 = preload("res://scenes/overworld/zone_3.tscn")
 const scene_main_menu = preload("res://scenes/main/main_menu.tscn")
 
 const transition_scene = preload("res://scenes/elements/transition.tscn")
@@ -66,6 +67,7 @@ func _get_scene(level_tag: String) -> PackedScene:
 		"test_map_2": return scene_test_map_2
 		"zone_1_start": return scene_zone_1_start
 		"zone_2": return scene_zone_2
+		"zone_3": return scene_zone_3
 	return null
 
 
