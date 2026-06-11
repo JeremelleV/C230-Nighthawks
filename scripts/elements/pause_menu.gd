@@ -1,6 +1,9 @@
 extends CanvasLayer
 
 
+@export var controls_menu: CanvasLayer
+
+
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
 	process_mode = Node.PROCESS_MODE_ALWAYS
@@ -19,24 +22,31 @@ func _input(event: InputEvent) -> void:
 			visible = true
 			get_tree().paused = true
 
+
 func _on_button_resume_mouse_entered() -> void:
 	$button_hover.play()
+
 
 func _on_button_resume_pressed() -> void:
 	$button_click.play()
 	visible = false
 	get_tree().paused = false
 
+
 func _on_button_settings_mouse_entered() -> void:
 	$button_hover.play()
 
+
 func _on_button_settings_pressed() -> void:
 	$button_click.play()
-	pass
-	
-	
+	visible = false
+	get_tree().paused = true  # ensure still paused
+	controls_menu.visible = true
+
+
 func _on_button_main_menu_mouse_entered() -> void:
 	$button_hover.play()
+
 
 func _on_button_main_menu_pressed() -> void:
 	$button_click.play()
