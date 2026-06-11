@@ -9,7 +9,7 @@
 radius = 9.0
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_n61dp"]
-size = Vector2(68, 61.5)
+size = Vector2(85, 84.75)
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_n61dp"]
 bg_color = Color(0.4745098, 0, 0, 1)
@@ -19,10 +19,10 @@ border_width_right = 1
 border_width_bottom = 1
 border_color = Color(0.8627451, 0.69803923, 0.68235296, 1)
 border_blend = true
-corner_radius_top_left = 3
-corner_radius_top_right = 3
-corner_radius_bottom_right = 3
-corner_radius_bottom_left = 3
+corner_radius_top_left = 1
+corner_radius_top_right = 1
+corner_radius_bottom_right = 1
+corner_radius_bottom_left = 1
 shadow_color = Color(0.4745098, 0, 0, 1)
 shadow_size = 1
 
@@ -39,7 +39,7 @@ shape = SubResource("CircleShape2D_4kvco")
 [node name="InteractionArea" type="Area2D" parent="." unique_id=886098454]
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="InteractionArea" unique_id=1299023387]
-position = Vector2(0, 1.25)
+position = Vector2(0, 3.625)
 shape = SubResource("RectangleShape2D_n61dp")
 
 [node name="InteractionPrompt" type="Label" parent="." unique_id=1961178334]

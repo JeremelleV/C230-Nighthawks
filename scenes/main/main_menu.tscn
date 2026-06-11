@@ -6,54 +6,55 @@
 [ext_resource type="FontFile" uid="uid://bcvfhp67mv8pw" path="res://assets/ui/fonts/PixelOperator.ttf" id="4_w6ykx"]
 [ext_resource type="AudioStream" uid="uid://4fkj0rmbkb0e" path="res://assets/audio/button_click.mp3" id="5_swlpu"]
 [ext_resource type="AudioStream" uid="uid://c2phppay8mpwy" path="res://assets/audio/button_hover.mp3" id="6_nm0l4"]
+[ext_resource type="PackedScene" uid="uid://rq8pot0x5p7u" path="res://scenes/main/controls_menu.tscn" id="7_nm0l4"]
 
 [sub_resource type="StyleBoxTexture" id="StyleBoxTexture_hiibk"]
 texture = ExtResource("2_swlpu")
 modulate_color = Color(0.8089983, 0.8089983, 0.8089982, 1)
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_sd5it"]
-bg_color = Color(0.06309579, 0.037863392, 0.16373473, 1)
+bg_color = Color(0.4745098, 0, 0, 1)
 border_width_left = 1
 border_width_top = 1
 border_width_right = 1
 border_width_bottom = 1
 border_color = Color(0.8627451, 0.69803923, 0.68235296, 1)
-corner_radius_top_left = 9
-corner_radius_top_right = 9
-corner_radius_bottom_right = 9
-corner_radius_bottom_left = 9
-shadow_color = Color(0.0627451, 0.039215688, 0.16470589, 1)
-shadow_size = 4
+corner_radius_top_left = 3
+corner_radius_top_right = 3
+corner_radius_bottom_right = 3
+corner_radius_bottom_left = 3
+shadow_color = Color(0.4745098, 0, 0, 1)
+shadow_size = 2
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_swlpu"]
-bg_color = Color(0.10529519, 0.07112902, 0.24176136, 1)
+bg_color = Color(0.28235295, 0, 0, 1)
 border_width_left = 1
 border_width_top = 1
 border_width_right = 1
 border_width_bottom = 1
 border_color = Color(0.8627451, 0.69803923, 0.68235296, 1)
-corner_radius_top_left = 9
-corner_radius_top_right = 9
-corner_radius_bottom_right = 9
-corner_radius_bottom_left = 9
-shadow_color = Color(0.0627451, 0.039215688, 0.16470589, 1)
-shadow_size = 4
+corner_radius_top_left = 3
+corner_radius_top_right = 3
+corner_radius_bottom_right = 3
+corner_radius_bottom_left = 3
+shadow_color = Color(0.28235295, 0, 0, 1)
+shadow_size = 2
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_nm0l4"]
-bg_color = Color(0.10529519, 0.07112902, 0.24176136, 1)
+bg_color = Color(0.28235295, 0, 0, 1)
 border_width_left = 1
 border_width_top = 1
 border_width_right = 1
 border_width_bottom = 1
 border_color = Color(0.8627451, 0.69803923, 0.68235296, 1)
-corner_radius_top_left = 9
-corner_radius_top_right = 9
-corner_radius_bottom_right = 9
-corner_radius_bottom_left = 9
-shadow_color = Color(0.0627451, 0.039215688, 0.16470589, 1)
-shadow_size = 4
+corner_radius_top_left = 3
+corner_radius_top_right = 3
+corner_radius_bottom_right = 3
+corner_radius_bottom_left = 3
+shadow_color = Color(0.28235295, 0, 0, 1)
+shadow_size = 2
 
-[node name="main_menu" type="Control" unique_id=857176783]
+[node name="main_menu" type="Control" unique_id=857176783 node_paths=PackedStringArray("controls_menu")]
 layout_mode = 3
 anchors_preset = 15
 anchor_right = 1.0
@@ -61,6 +62,7 @@ anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
 script = ExtResource("1_sd5it")
+controls_menu = NodePath("controls_menu")
 
 [node name="Panel" type="Panel" parent="." unique_id=2108922160]
 layout_mode = 1
@@ -111,6 +113,7 @@ offset_bottom = 46.0
 grow_horizontal = 2
 grow_vertical = 2
 size_flags_vertical = 3
+theme_override_colors/font_color = Color(0.8627451, 0.69803923, 0.68235296, 1)
 theme_override_fonts/font = ExtResource("4_w6ykx")
 theme_override_font_sizes/font_size = 31
 theme_override_styles/normal = SubResource("StyleBoxFlat_sd5it")
@@ -132,12 +135,13 @@ offset_bottom = 102.0
 grow_horizontal = 2
 grow_vertical = 2
 size_flags_vertical = 3
+theme_override_colors/font_color = Color(0.8627451, 0.69803923, 0.68235296, 1)
 theme_override_fonts/font = ExtResource("4_w6ykx")
 theme_override_font_sizes/font_size = 31
 theme_override_styles/normal = SubResource("StyleBoxFlat_sd5it")
 theme_override_styles/pressed = SubResource("StyleBoxFlat_swlpu")
 theme_override_styles/hover = SubResource("StyleBoxFlat_nm0l4")
-text = "Settings"
+text = "Controls"
 
 [node name="button_quit" type="Button" parent="." unique_id=1196093645]
 layout_mode = 1
@@ -153,6 +157,7 @@ offset_bottom = 154.0
 grow_horizontal = 2
 grow_vertical = 2
 size_flags_vertical = 3
+theme_override_colors/font_color = Color(0.8627451, 0.69803923, 0.68235296, 1)
 theme_override_fonts/font = ExtResource("4_w6ykx")
 theme_override_font_sizes/font_size = 31
 theme_override_styles/normal = SubResource("StyleBoxFlat_sd5it")
@@ -166,6 +171,9 @@ stream = ExtResource("5_swlpu")
 [node name="button_hover" type="AudioStreamPlayer" parent="." unique_id=397131998]
 stream = ExtResource("6_nm0l4")
 volume_db = -15.0
+
+[node name="controls_menu" parent="." unique_id=159529700 node_paths=PackedStringArray("main_menu") instance=ExtResource("7_nm0l4")]
+main_menu = NodePath("..")
 
 [connection signal="mouse_entered" from="button_start" to="." method="_on_button_start_mouse_entered"]
 [connection signal="pressed" from="button_start" to="." method="_on_button_start_pressed"]
