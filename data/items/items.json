@@ -1,37 +1,37 @@
 [
-    {
-        "id": "med_stim_basic",
-        "name": "Med-Stim",
-        "description": "Restores 30 HP. Standard field medkit.",
-        "price": 50,
-        "sell_price": 20,
-        "category": "consumable",
-        "effect": { "type": "heal", "amount": 30 }
-    },
-    {
-        "id": "med_stim_advanced",
-        "name": "Advanced Med-Stim",
-        "description": "Restores 80 HP. Military-grade formula.",
-        "price": 120,
-        "sell_price": 50,
-        "category": "consumable",
-        "effect": { "type": "heal", "amount": 80 }
-    },
-    {
-        "id": "energy_cell",
-        "name": "Energy Cell",
-        "description": "Restores 1 ability charge. Compact Martian power source.",
-        "price": 75,
-        "sell_price": 30,
-        "category": "consumable",
-        "effect": { "type": "restore_energy", "amount": 1 }
-    },
-    {
-        "id": "crystal_shard",
-        "name": "Crystal Shard",
-        "description": "A fragment of Martian crystal. Coveted by the Crystal Faction.",
-        "price": 0,
-        "sell_price": 100,
-        "category": "key_item"
-    }
+	{
+		"id": "med_stim_basic",
+		"name": "Med-Stim",
+		"description": "Restores 30 HP. Standard field medkit.",
+		"price": 50,
+		"sell_price": 20,
+		"category": "consumable",
+		"effect": { "type": "heal", "amount": 30 }
+	},
+	{
+		"id": "med_stim_advanced",
+		"name": "Advanced Med-Stim",
+		"description": "Restores 80 HP. Military-grade formula.",
+		"price": 120,
+		"sell_price": 50,
+		"category": "consumable",
+		"effect": { "type": "heal", "amount": 80 }
+	},
+	{
+		"id": "energy_cell",
+		"name": "Energy Cell",
+		"description": "Restores 1 ability charge. Compact Martian power source.",
+		"price": 75,
+		"sell_price": 30,
+		"category": "consumable",
+		"effect": { "type": "restore_energy", "amount": 1 }
+	},
+	{
+		"id": "crystal_shard",
+		"name": "Crystal Shard",
+		"description": "A fragment of Martian crystal. Coveted by the Crystal Faction.",
+		"price": 0,
+		"sell_price": 100,
+		"category": "key_item"
+	}
 ]
