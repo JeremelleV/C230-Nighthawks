@@ -79,10 +79,12 @@ func make_choice(choice_index: int) -> void:
 		return
 	var choice: Dictionary = line["choices"][choice_index]
 
-	# Hook for FactionManager — wired up once that system is built.
 	if choice.has("rep_delta"):
 		for faction: String in choice["rep_delta"]:
-			print("TODO FactionManager.modify('%s', %d)" % [faction, choice["rep_delta"][faction]])
+			FactionManager.modify(faction, choice["rep_delta"][faction])
+
+	if choice.has("quest_start"):
+		QuestManager.start_quest(choice["quest_start"])
 
 	# Jump to a follow-up dialogue id, or end if no "next" key.
 	if choice.has("next") and choice["next"] != null:

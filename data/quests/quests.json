@@ -1,0 +1,44 @@
+[
+	{
+		"id": "scouts_request",
+		"title": "Scout's Request",
+		"description": "A scout has asked you to retrieve a crystal shard from the grove — proof that the Crystal Faction's presence is growing.",
+		"objectives": [
+			{
+				"id": "get_crystal",
+				"type": "collect_item",
+				"description": "Obtain a crystal shard",
+				"item_id": "crystal_shard",
+				"required": 1
+			}
+		],
+		"rewards": {
+			"money": 100,
+			"items": [],
+			"reputation": {
+				"crystal_faction": 10
+			}
+		}
+	},
+	{
+		"id": "thin_the_herd",
+		"title": "Thin the Herd",
+		"description": "The Traders' Guild wants the hostiles blocking the northern trade route cleared out.",
+		"objectives": [
+			{
+				"id": "defeat_enemies",
+				"type": "defeat_enemy",
+				"description": "Defeat enemies in battle",
+				"required": 3
+			}
+		],
+		"rewards": {
+			"money": 150,
+			"items": ["med_stim_basic"],
+			"reputation": {
+				"traders_guild": 15,
+				"nomad_tribes": -5
+			}
+		}
+	}
+]

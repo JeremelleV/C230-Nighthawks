@@ -28,6 +28,10 @@
 						"rep_delta": { "crystal_faction": 2 }
 					},
 					{
+						"label": "Can you use my help?",
+						"next": "scout_quest_offer"
+					},
+					{
 						"label": "Say nothing and leave"
 					}
 				]
@@ -61,6 +65,62 @@
 			{
 				"speaker": "Scout",
 				"text": "If you're serious about doing something about him — you'll need every faction you can get. Every single one."
+			}
+		]
+	},
+	{
+		"id": "scout_quest_offer",
+		"lines": [
+			{
+				"speaker": "Scout",
+				"text": "Actually, yes. Something was taken from our cache in the eastern grove — a crystal shard. Its energy signature was being tracked. I need someone to retrieve it."
+			},
+			{
+				"speaker": "You",
+				"text": "...",
+				"choices": [
+					{
+						"label": "I'll find it.",
+						"quest_start": "scouts_request",
+						"next": "scout_also_herd"
+					},
+					{
+						"label": "That's not my problem."
+					}
+				]
+			}
+		]
+	},
+	{
+		"id": "scout_also_herd",
+		"lines": [
+			{
+				"speaker": "Scout",
+				"text": "Good. One more thing — the Traders' Guild has been asking for help. Hostiles are blocking the northern crossing. Clearing them out would make you some powerful friends."
+			},
+			{
+				"speaker": "You",
+				"text": "...",
+				"choices": [
+					{
+						"label": "I'll handle them too.",
+						"quest_start": "thin_the_herd",
+						"next": "scout_quest_done"
+					},
+					{
+						"label": "One thing at a time.",
+						"next": "scout_quest_done"
+					}
+				]
+			}
+		]
+	},
+	{
+		"id": "scout_quest_done",
+		"lines": [
+			{
+				"speaker": "Scout",
+				"text": "Good luck out there. I'll be here when you're done."
 			}
 		]
 	},

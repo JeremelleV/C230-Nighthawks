@@ -3,7 +3,7 @@
 		"id": "dustplains_trader",
 		"name": "Dustplains Trader",
 		"greeting": "Got credits? Got goods.",
-		"items": ["med_stim_basic", "energy_cell"]
+		"items": ["med_stim_basic", "energy_cell", "crystal_shard"]
 	},
 	{
 		"id": "crystal_grove_vendor",

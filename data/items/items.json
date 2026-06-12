@@ -30,7 +30,7 @@
         "id": "crystal_shard",
         "name": "Crystal Shard",
         "description": "A fragment of Martian crystal. Coveted by the Crystal Faction.",
-        "price": 0,
+        "price": 80,
         "sell_price": 100,
         "category": "key_item"
     }
