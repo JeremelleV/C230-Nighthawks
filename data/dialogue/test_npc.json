@@ -32,6 +32,19 @@
 						"next": "scout_quest_offer"
 					},
 					{
+						"label": "Any word from the Crystal Faction?",
+						"condition": { "type": "rep_above", "faction": "crystal_faction", "threshold": 10 },
+						"next": "scout_crystal_friendly"
+					},
+					{
+						"label": "I found your crystal shard.",
+						"condition": [
+							{ "type": "quest_active", "id": "scouts_request" },
+							{ "type": "has_item", "id": "crystal_shard" }
+						],
+						"next": "scout_turnin"
+					},
+					{
 						"label": "Say nothing and leave"
 					}
 				]
@@ -80,8 +93,20 @@
 				"text": "...",
 				"choices": [
 					{
+						"label": "I actually already have one.",
+						"condition": { "type": "has_item", "id": "crystal_shard" },
+						"quest_start": "scouts_request",
+						"complete_quest": "scouts_request",
+						"remove_item": { "id": "crystal_shard", "quantity": 1 },
+						"earn_money": 25,
+						"give_item": { "id": "med_stim_basic", "quantity": 1 },
+						"next": "scout_turnin_instant"
+					},
+					{
 						"label": "I'll find it.",
 						"quest_start": "scouts_request",
+						"earn_money": 25,
+						"give_item": { "id": "med_stim_basic", "quantity": 1 },
 						"next": "scout_also_herd"
 					},
 					{
@@ -121,6 +146,40 @@
 			{
 				"speaker": "Scout",
 				"text": "Good luck out there. I'll be here when you're done."
+			}
+		]
+	},
+	{
+		"id": "scout_crystal_friendly",
+		"lines": [
+			{
+				"speaker": "Scout",
+				"text": "They've noticed you. That doesn't happen often with outsiders. Whatever you did, it opened a door. The Crystal Grove vendor will cut you a deal now — they look after those the faction respects."
+			}
+		]
+	},
+	{
+		"id": "scout_turnin_instant",
+		"lines": [
+			{
+				"speaker": "Scout",
+				"text": "You already had it? Ha. Then we skip the waiting. Here — a Med-Stim and your advance. You've already earned it."
+			}
+		]
+	},
+	{
+		"id": "scout_turnin",
+		"lines": [
+			{
+				"speaker": "Scout",
+				"text": "You actually found it. I wasn't sure you would. This is exactly what we needed.",
+				"choices": [
+					{
+						"label": "[Hand over the crystal shard]",
+						"complete_quest": "scouts_request",
+						"remove_item": { "id": "crystal_shard", "quantity": 1 }
+					}
+				]
 			}
 		]
 	},

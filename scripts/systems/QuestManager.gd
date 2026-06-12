@@ -86,7 +86,7 @@ func _on_inventory_changed() -> void:
 			if _progress[qid][obj["id"]] != current:
 				_progress[qid][obj["id"]] = current
 				objective_updated.emit(qid, obj["id"], current, required)
-				_check_completion(qid)
+				# collect_item quests require explicit turn-in via dialogue — no auto-complete here.
 
 
 func _check_completion(quest_id: String) -> void:
@@ -107,6 +107,14 @@ func _grant_rewards(quest_id: String) -> void:
 		InventoryManager.add_item(item_id, 1)
 	for faction_id: String in rewards.get("reputation", {}):
 		FactionManager.modify(faction_id, rewards["reputation"][faction_id])
+
+
+func complete_quest(quest_id: String) -> void:
+	if _quest_states.get(quest_id) != QuestState.ACTIVE:
+		return
+	_grant_rewards(quest_id)
+	_quest_states[quest_id] = QuestState.COMPLETED
+	quest_completed.emit(quest_id)
 
 
 func get_active_quests() -> Array:

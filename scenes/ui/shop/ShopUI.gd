@@ -129,20 +129,35 @@ func _make_buy_row(item: Dictionary) -> Control:
 	info.add_child(name_label)
 	info.add_child(desc_label)
 
+	var item_id: String = item["id"]
+	var base_price: int = item.get("price", 0)
+	var actual_price: int = ShopManager.get_buy_price(item_id)
+
+	var price_col := VBoxContainer.new()
+	price_col.alignment = BoxContainer.ALIGNMENT_CENTER
+
 	var price_label := Label.new()
-	price_label.text = "$MRS %d" % item.get("price", 0)
+	price_label.text = "$MRS %d" % actual_price
 	price_label.vertical_alignment = VERTICAL_ALIGNMENT_CENTER
 	price_label.add_theme_color_override("font_color", UIStyle.TEXT_CURRENCY)
+	price_col.add_child(price_label)
+
+	if actual_price < base_price:
+		var pct: int = roundi((1.0 - float(actual_price) / float(base_price)) * 100)
+		var disc_label := Label.new()
+		disc_label.text = "-%d%%" % pct
+		disc_label.add_theme_color_override("font_color", Color(0.40, 0.90, 0.45))
+		disc_label.add_theme_font_size_override("font_size", 11)
+		price_col.add_child(disc_label)
 
 	var buy_btn := Button.new()
 	buy_btn.text = "Buy"
-	buy_btn.disabled = not EconomyManager.can_afford(item.get("price", 0))
+	buy_btn.disabled = not EconomyManager.can_afford(actual_price)
 	UIStyle.style_button(buy_btn)
-	var item_id: String = item["id"]
 	buy_btn.pressed.connect(func(): ShopManager.buy_item(item_id))
 
 	row.add_child(info)
-	row.add_child(price_label)
+	row.add_child(price_col)
 	row.add_child(buy_btn)
 
 	wrapper.add_child(row)

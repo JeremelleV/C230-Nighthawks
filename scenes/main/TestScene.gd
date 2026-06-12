@@ -6,13 +6,14 @@ extends Node2D
 ##   T           → start the test NPC dialogue
 ##   Space/Enter → advance dialogue or skip typewriter
 ##   B           → open the test shop
+##   I           → open/close inventory
 ##   Q           → open/close the quest log
 ##   Esc         → close active UI
 
 
 func _ready() -> void:
 	print("=== Red Dominion — System Test ===")
-	print("T = dialogue | B = shop | Q = quest log")
+	print("T = dialogue | B = shop | I = inventory | Q = quest log")
 
 
 func _input(event: InputEvent) -> void:
@@ -23,5 +24,7 @@ func _input(event: InputEvent) -> void:
 		elif event.keycode == KEY_B:
 			if not ShopManager.is_active():
 				ShopManager.open_shop("dustplains_trader")
+		elif event.keycode == KEY_I:
+			$InventoryScreen.toggle()
 		elif event.keycode == KEY_Q:
 			$QuestLog.toggle()
