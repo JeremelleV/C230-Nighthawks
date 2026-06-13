@@ -164,6 +164,8 @@ func end_battle(player_won: bool):
 	
 	if player_won == true:
 		print("Transitioning back to the main world map with loot...")
+		QuestManager.notify_enemies_defeated(enemy_team.size())
+		EconomyManager.earn(50)
 		# Example for your bigger game later:
 		# get_tree().change_scene_to_file("res://world_map.tscn")
 	else:

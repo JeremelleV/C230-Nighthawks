@@ -1,0 +1,26 @@
+[
+    {
+        "id": "crystal_faction",
+        "name": "Crystal Faction",
+        "description": "Powerful mages of the northern Crystal Grove. Territorial but valuable allies.",
+        "starting_rep": 0
+    },
+    {
+        "id": "nomad_tribes",
+        "name": "Nomad Tribes",
+        "description": "Wandering survivors of the Dustplains. Hard to find, harder to earn trust from.",
+        "starting_rep": 0
+    },
+    {
+        "id": "lich_faction",
+        "name": "Lich Faction",
+        "description": "Servants of the ancient being atop Olympus Mons. They do not welcome outsiders.",
+        "starting_rep": -50
+    },
+    {
+        "id": "traders_guild",
+        "name": "Traders' Guild",
+        "description": "Independent merchants who deal with anyone who has credits. Strictly neutral.",
+        "starting_rep": 0
+    }
+]
