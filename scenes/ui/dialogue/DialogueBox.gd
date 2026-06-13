@@ -21,6 +21,8 @@ extends CanvasLayer
 @onready var _dialogue_text: RichTextLabel    = $Panel/HBoxContainer/VBoxContainer/DialogueText
 @onready var _choices_container: VBoxContainer = $Panel/HBoxContainer/VBoxContainer/ChoicesContainer
 @onready var _continue_hint: Label            = $Panel/HBoxContainer/VBoxContainer/ContinueHint
+@onready var dialogue: AudioStreamPlayer = $dailogue
+var _has_played_type_sfx := false
 
 const PORTRAIT_DIR = "res://assets/portraits/"
 const CHARS_PER_SECOND: float = 40.0
@@ -44,6 +46,9 @@ func _ready() -> void:
 
 	_apply_theme()
 	hide()
+	
+	if dialogue.playing:
+		dialogue.stop()
 
 
 func _apply_theme() -> void:
@@ -99,12 +104,20 @@ func _start_typewriter(text: String) -> void:
 	_full_text = text
 	_char_index = 0
 	_dialogue_text.text = ""
+	_has_played_type_sfx = false
 	_typewriter_timer.start()
 
 
 func _tick_typewriter() -> void:
 	_char_index += 1
-	_dialogue_text.text = _full_text.left(_char_index)
+	
+	if _char_index == 1 and not _has_played_type_sfx:
+		_has_played_type_sfx = true
+		if dialogue:
+			dialogue.play()
+			
+	_dialogue_text.text = _full_text.left(_char_index)	
+	
 	if _char_index >= _full_text.length():
 		_typewriter_timer.stop()
 		_on_typewriter_done()
@@ -118,6 +131,7 @@ func _finish_typewriter() -> void:
 
 
 func _on_typewriter_done() -> void:
+
 	if not _pending_choices.is_empty():
 		_build_choice_buttons()
 	else:
