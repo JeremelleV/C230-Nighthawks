@@ -230,3 +230,4 @@ anim_player = NodePath("../AnimationPlayer")
 [node name="WalkAudio" type="AudioStreamPlayer2D" parent="." unique_id=276919386]
 stream = ExtResource("3_58kc7")
 volume_db = -20.0
+bus = &"Music"
