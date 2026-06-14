@@ -1,12 +1,13 @@
-[gd_scene load_steps=2 format=3]
+[gd_scene format=3 uid="uid://cdgr5nt0iy003"]
 
-[ext_resource type="Script" path="res://scenes/ui/dialogue/DialogueBox.gd" id="1"]
+[ext_resource type="Script" uid="uid://diwqy8nn8t2m7" path="res://scenes/ui/dialogue/DialogueBox.gd" id="1"]
+[ext_resource type="AudioStream" uid="uid://ch1modwhjv8p0" path="res://assets/audio/tap.mp3" id="2_hvtfi"]
 
-[node name="DialogueBox" type="CanvasLayer"]
+[node name="DialogueBox" type="CanvasLayer" unique_id=1897692953]
 layer = 10
 script = ExtResource("1")
 
-[node name="Panel" type="Panel" parent="."]
+[node name="Panel" type="Panel" parent="." unique_id=957393982]
 anchors_preset = 12
 anchor_top = 1.0
 anchor_right = 1.0
@@ -14,8 +15,8 @@ anchor_bottom = 1.0
 offset_top = -180.0
 grow_vertical = 0
 
-[node name="HBoxContainer" type="HBoxContainer" parent="Panel"]
-anchors_preset = 15
+[node name="HBoxContainer" type="HBoxContainer" parent="Panel" unique_id=773565337]
+layout_mode = 0
 anchor_right = 1.0
 anchor_bottom = 1.0
 offset_left = 10.0
@@ -25,32 +26,40 @@ offset_bottom = -10.0
 grow_horizontal = 2
 grow_vertical = 2
 
-[node name="Portrait" type="TextureRect" parent="Panel/HBoxContainer"]
+[node name="Portrait" type="TextureRect" parent="Panel/HBoxContainer" unique_id=82838915]
 custom_minimum_size = Vector2(120, 0)
+layout_mode = 2
 size_flags_vertical = 3
 expand_mode = 1
 stretch_mode = 6
 
-[node name="VBoxContainer" type="VBoxContainer" parent="Panel/HBoxContainer"]
+[node name="VBoxContainer" type="VBoxContainer" parent="Panel/HBoxContainer" unique_id=47280029]
+layout_mode = 2
 size_flags_horizontal = 3
 size_flags_vertical = 3
 
-[node name="SpeakerLabel" type="Label" parent="Panel/HBoxContainer/VBoxContainer"]
-text = "..."
+[node name="SpeakerLabel" type="Label" parent="Panel/HBoxContainer/VBoxContainer" unique_id=1278622486]
+layout_mode = 2
 theme_override_font_sizes/font_size = 16
+text = "..."
 
-[node name="DialogueText" type="RichTextLabel" parent="Panel/HBoxContainer/VBoxContainer"]
+[node name="DialogueText" type="RichTextLabel" parent="Panel/HBoxContainer/VBoxContainer" unique_id=1091369646]
 custom_minimum_size = Vector2(0, 70)
+layout_mode = 2
 size_flags_vertical = 3
 scroll_active = false
-fit_content = false
-text = ""
 
-[node name="ChoicesContainer" type="VBoxContainer" parent="Panel/HBoxContainer/VBoxContainer"]
+[node name="ChoicesContainer" type="VBoxContainer" parent="Panel/HBoxContainer/VBoxContainer" unique_id=1838776875]
 visible = false
+layout_mode = 2
 
-[node name="ContinueHint" type="Label" parent="Panel/HBoxContainer/VBoxContainer"]
+[node name="ContinueHint" type="Label" parent="Panel/HBoxContainer/VBoxContainer" unique_id=1003296102]
 visible = false
-text = "Press Space / Enter to continue"
+layout_mode = 2
 theme_override_font_sizes/font_size = 11
+text = "Press Space / Enter to continue"
 horizontal_alignment = 2
+
+[node name="dailogue" type="AudioStreamPlayer" parent="." unique_id=1878095510]
+stream = ExtResource("2_hvtfi")
+volume_db = -10.0

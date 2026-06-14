@@ -167,10 +167,11 @@ func _make_buy_row(item: Dictionary) -> Control:
 	var buy_btn := Button.new()
 	buy_btn.text = "Buy"
 
-buy_btn.mouse_entered.connect(func(): _hover_sound.play())
+	#test
+	buy_btn.mouse_entered.connect(func(): _hover_sound.play())
 	buy_btn.disabled = not EconomyManager.can_afford(actual_price)
 	UIStyle.style_button(buy_btn)
-	var item_id: String = item["id"]
+	#var item_id: String = item["id"] #test
 	buy_btn.pressed.connect(func(): 
 		$buy_things.play()
 		ShopManager.buy_item(item_id))
