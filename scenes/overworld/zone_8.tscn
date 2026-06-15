@@ -1,0 +1,8 @@
+[gd_scene format=3 uid="uid://dx15v5227eoox"]
+
+[ext_resource type="PackedScene" uid="uid://dy1h13pblohyb" path="res://scenes/ui/hud/minimap.tscn" id="1_cxraa"]
+
+[node name="zone_8" type="Node2D" unique_id=1004876661]
+y_sort_enabled = true
+
+[node name="minimap" parent="." unique_id=1925678804 instance=ExtResource("1_cxraa")]
