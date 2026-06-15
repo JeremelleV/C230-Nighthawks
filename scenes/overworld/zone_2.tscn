@@ -16,6 +16,7 @@
 [ext_resource type="PackedScene" uid="uid://cdgr5nt0iy003" path="res://scenes/ui/dialogue/DialogueBox.tscn" id="11_3kaoc"]
 [ext_resource type="PackedScene" uid="uid://x61xvjvbheb6" path="res://scenes/ui/shop/ShopUI.tscn" id="12_0ytv7"]
 [ext_resource type="Script" uid="uid://bjnvmighbllae" path="res://scripts/overworld/combat_zone.gd" id="16_y0d21"]
+[ext_resource type="PackedScene" uid="uid://dy1h13pblohyb" path="res://scenes/ui/hud/minimap.tscn" id="17_xvwr2"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_5tue0"]
 texture = ExtResource("2_flbpo")
@@ -947,6 +948,8 @@ return_level_tag = "zone_2"
 [node name="CollisionShape2D" type="CollisionShape2D" parent="combat_zones/combat_zone3" unique_id=1887724614]
 position = Vector2(306.75, 1783)
 shape = SubResource("RectangleShape2D_odhgm")
+
+[node name="minimap" parent="." unique_id=1925678804 instance=ExtResource("17_xvwr2")]
 
 [connection signal="body_entered" from="doors/door_zone_2" to="doors/door_zone_2" method="_on_body_entered"]
 [connection signal="body_entered" from="doors/door_zone_2_S" to="doors/door_zone_2_S" method="_on_body_entered"]

@@ -22,6 +22,7 @@
 [ext_resource type="Texture2D" uid="uid://xu0oxfsmwqd2" path="res://assets/props/som_rock_8.png" id="15_ved81"]
 [ext_resource type="Texture2D" uid="uid://bn8uryldllt65" path="res://assets/props/som_rock_9.png" id="16_bnuw3"]
 [ext_resource type="Texture2D" uid="uid://dop6bwt3qt172" path="res://assets/props/som_rock_10.png" id="17_jx2i4"]
+[ext_resource type="PackedScene" uid="uid://dy1h13pblohyb" path="res://scenes/ui/hud/minimap.tscn" id="23_2oj2p"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_85y62"]
 texture = ExtResource("1_pa6l2")
@@ -914,6 +915,8 @@ position = Vector2(31, 0)
 
 [node name="spawn" parent="doors/door_zone_3_W" index="1" unique_id=1319578235]
 position = Vector2(246, -2)
+
+[node name="minimap" parent="." unique_id=1925678804 instance=ExtResource("23_2oj2p")]
 
 [connection signal="body_entered" from="doors/door_zone_3_W" to="doors/door_zone_3_W" method="_on_body_entered"]
 
