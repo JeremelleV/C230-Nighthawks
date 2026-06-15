@@ -3,12 +3,14 @@
 		"id": "dustplains_trader",
 		"name": "Dustplains Trader",
 		"greeting": "Got credits? Got goods.",
-		"items": ["med_stim_basic", "energy_cell"]
+		"faction": "traders_guild",
+		"items": ["med_stim_basic", "energy_cell", "crystal_shard"]
 	},
 	{
 		"id": "crystal_grove_vendor",
 		"name": "Crystal Grove Vendor",
 		"greeting": "The Crystal Faction welcomes all traders.",
+		"faction": "crystal_faction",
 		"items": ["med_stim_basic", "med_stim_advanced", "energy_cell"]
 	}
 ]

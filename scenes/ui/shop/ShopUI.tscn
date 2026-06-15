@@ -1,12 +1,18 @@
-[gd_scene load_steps=2 format=3]
+[gd_scene format=3 uid="uid://x61xvjvbheb6"]
 
-[ext_resource type="Script" path="res://scenes/ui/shop/ShopUI.gd" id="1"]
+[ext_resource type="Script" uid="uid://t8t3bkn8apic" path="res://scenes/ui/shop/ShopUI.gd" id="1"]
+[ext_resource type="AudioStream" uid="uid://ct6qol5mto3eo" path="res://assets/audio/open_store.mp3" id="2_w0hxn"]
+[ext_resource type="AudioStream" uid="uid://cijeoi1qwjaax" path="res://assets/audio/sell_things.wav" id="3_o0rp7"]
+[ext_resource type="AudioStream" uid="uid://x0oc2axlyqaw" path="res://assets/audio/buy_things.mp3" id="4_6681x"]
+[ext_resource type="AudioStream" uid="uid://bhe28fm4iqcap" path="res://assets/audio/store_hover.mp3" id="5_o0rp7"]
+[ext_resource type="AudioStream" uid="uid://4fkj0rmbkb0e" path="res://assets/audio/button_click.mp3" id="6_8copv"]
 
-[node name="ShopUI" type="CanvasLayer"]
+[node name="ShopUI" type="CanvasLayer" unique_id=4253722]
 layer = 10
 script = ExtResource("1")
 
-[node name="Panel" type="Panel" parent="."]
+[node name="Panel" type="Panel" parent="." unique_id=566072848]
+anchors_preset = 8
 anchor_left = 0.5
 anchor_top = 0.5
 anchor_right = 0.5
@@ -16,7 +22,8 @@ offset_top = -240.0
 offset_right = 340.0
 offset_bottom = 240.0
 
-[node name="MarginContainer" type="MarginContainer" parent="Panel"]
+[node name="MarginContainer" type="MarginContainer" parent="Panel" unique_id=1696294751]
+layout_mode = 0
 anchor_right = 1.0
 anchor_bottom = 1.0
 theme_override_constants/margin_left = 16
@@ -24,51 +31,82 @@ theme_override_constants/margin_top = 16
 theme_override_constants/margin_right = 16
 theme_override_constants/margin_bottom = 16
 
-[node name="VBoxContainer" type="VBoxContainer" parent="Panel/MarginContainer"]
-anchor_right = 1.0
-anchor_bottom = 1.0
+[node name="VBoxContainer" type="VBoxContainer" parent="Panel/MarginContainer" unique_id=801407811]
+layout_mode = 2
 theme_override_constants/separation = 8
 
-[node name="HeaderRow" type="HBoxContainer" parent="Panel/MarginContainer/VBoxContainer"]
+[node name="HeaderRow" type="HBoxContainer" parent="Panel/MarginContainer/VBoxContainer" unique_id=1352525092]
+layout_mode = 2
 
-[node name="ShopNameLabel" type="Label" parent="Panel/MarginContainer/VBoxContainer/HeaderRow"]
+[node name="ShopNameLabel" type="Label" parent="Panel/MarginContainer/VBoxContainer/HeaderRow" unique_id=138549648]
+layout_mode = 2
 size_flags_horizontal = 3
-text = "Shop"
 theme_override_font_sizes/font_size = 18
+text = "Shop"
 
-[node name="Spacer" type="Control" parent="Panel/MarginContainer/VBoxContainer/HeaderRow"]
+[node name="Spacer" type="Control" parent="Panel/MarginContainer/VBoxContainer/HeaderRow" unique_id=1501101208]
+layout_mode = 2
 size_flags_horizontal = 3
 
-[node name="BalanceLabel" type="Label" parent="Panel/MarginContainer/VBoxContainer/HeaderRow"]
-text = "$MRS 0"
+[node name="BalanceLabel" type="Label" parent="Panel/MarginContainer/VBoxContainer/HeaderRow" unique_id=1023851622]
+layout_mode = 2
 theme_override_font_sizes/font_size = 16
+text = "$MRS 0"
 vertical_alignment = 1
 
-[node name="HSeparator" type="HSeparator" parent="Panel/MarginContainer/VBoxContainer"]
+[node name="HSeparator" type="HSeparator" parent="Panel/MarginContainer/VBoxContainer" unique_id=1960020713]
+layout_mode = 2
 
-[node name="TabRow" type="HBoxContainer" parent="Panel/MarginContainer/VBoxContainer"]
+[node name="TabRow" type="HBoxContainer" parent="Panel/MarginContainer/VBoxContainer" unique_id=546387655]
+layout_mode = 2
 
-[node name="BuyTabButton" type="Button" parent="Panel/MarginContainer/VBoxContainer/TabRow"]
+[node name="BuyTabButton" type="Button" parent="Panel/MarginContainer/VBoxContainer/TabRow" unique_id=1457808192]
 custom_minimum_size = Vector2(80, 0)
+layout_mode = 2
 text = "Buy"
 
-[node name="SellTabButton" type="Button" parent="Panel/MarginContainer/VBoxContainer/TabRow"]
+[node name="SellTabButton" type="Button" parent="Panel/MarginContainer/VBoxContainer/TabRow" unique_id=485129982]
 custom_minimum_size = Vector2(80, 0)
+layout_mode = 2
 text = "Sell"
 
-[node name="ScrollContainer" type="ScrollContainer" parent="Panel/MarginContainer/VBoxContainer"]
+[node name="ScrollContainer" type="ScrollContainer" parent="Panel/MarginContainer/VBoxContainer" unique_id=1842500082]
+layout_mode = 2
 size_flags_vertical = 3
 
-[node name="ItemListContainer" type="VBoxContainer" parent="Panel/MarginContainer/VBoxContainer/ScrollContainer"]
+[node name="ItemListContainer" type="VBoxContainer" parent="Panel/MarginContainer/VBoxContainer/ScrollContainer" unique_id=759876786]
+layout_mode = 2
 size_flags_horizontal = 3
 theme_override_constants/separation = 4
 
-[node name="StatusLabel" type="Label" parent="Panel/MarginContainer/VBoxContainer"]
-text = ""
+[node name="StatusLabel" type="Label" parent="Panel/MarginContainer/VBoxContainer" unique_id=777924894]
+layout_mode = 2
 theme_override_colors/font_color = Color(0.9, 0.4, 0.4, 1)
 horizontal_alignment = 1
 
-[node name="HSeparator2" type="HSeparator" parent="Panel/MarginContainer/VBoxContainer"]
+[node name="HSeparator2" type="HSeparator" parent="Panel/MarginContainer/VBoxContainer" unique_id=1825174722]
+layout_mode = 2
 
-[node name="CloseButton" type="Button" parent="Panel/MarginContainer/VBoxContainer"]
+[node name="CloseButton" type="Button" parent="Panel/MarginContainer/VBoxContainer" unique_id=455366744]
+layout_mode = 2
 text = "Close  [Esc]"
+
+[node name="open_store" type="AudioStreamPlayer" parent="." unique_id=81548560]
+stream = ExtResource("2_w0hxn")
+volume_db = -25.0
+
+[node name="buy_things" type="AudioStreamPlayer" parent="." unique_id=930526458]
+stream = ExtResource("4_6681x")
+volume_db = -20.0
+
+[node name="store_hover" type="AudioStreamPlayer" parent="." unique_id=1110491999]
+stream = ExtResource("5_o0rp7")
+volume_db = -9.0
+
+[node name="store_click" type="AudioStreamPlayer" parent="." unique_id=1788341684]
+stream = ExtResource("6_8copv")
+volume_db = -3.0
+
+[node name="sell_things" type="AudioStreamPlayer" parent="." unique_id=381799123]
+stream = ExtResource("3_o0rp7")
+volume_db = 15.0
