@@ -29,11 +29,17 @@
 [ext_resource type="PackedScene" uid="uid://845hmsyjb8iu" path="res://scenes/entities/npc.tscn" id="26_c0jbb"]
 [ext_resource type="Texture2D" uid="uid://ck5rqr62hkaxr" path="res://assets/sprites/characters/som_soldier_npc.png" id="27_erh1j"]
 [ext_resource type="Texture2D" uid="uid://b250ej3o5acgt" path="res://assets/sprites/characters/sprite_sheet_alien_civ.png" id="28_k4xbi"]
+[ext_resource type="PackedScene" path="res://scenes/ui/hud/EconomyHUD.tscn" id="30_bmuv3"]
+[ext_resource type="PackedScene" path="res://scenes/ui/inventory/InventoryScreen.tscn" id="31_aicaw"]
+[ext_resource type="PackedScene" path="res://scenes/ui/quest_log/QuestLog.tscn" id="32_jykna"]
+[ext_resource type="PackedScene" path="res://scenes/ui/quest_log/QuestTracker.tscn" id="33_3jtda"]
+[ext_resource type="PackedScene" path="res://scenes/ui/reputation/ReputationToast.tscn" id="34_ayjua"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_weslf"]
 texture = ExtResource("1_liex4")
 texture_region_size = Vector2i(32, 32)
 0:0/0 = 0
+0:0/0/custom_data_0 = "stone"
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_rrxmo"]
 texture = ExtResource("2_dc4tq")
@@ -1314,6 +1320,16 @@ idle_flip_interval = 9.0
 
 [node name="CollisionShape2D" parent="npc_trader/InteractionArea" parent_id_path=PackedInt32Array(1906299204, 886098454) index="0" unique_id=1299023387]
 position = Vector2(1, 9.5)
+
+[node name="EconomyHUD" parent="." unique_id=1972158042 instance=ExtResource("30_bmuv3")]
+
+[node name="InventoryScreen" parent="." unique_id=311590257 instance=ExtResource("31_aicaw")]
+
+[node name="QuestLog" parent="." unique_id=1834324985 instance=ExtResource("32_jykna")]
+
+[node name="QuestTracker" parent="." unique_id=1554117321 instance=ExtResource("33_3jtda")]
+
+[node name="ReputationToast" parent="." unique_id=816652624 instance=ExtResource("34_ayjua")]
 
 [connection signal="body_entered" from="doors/door_zone_5_W" to="doors/door_zone_5_W" method="_on_body_entered"]
 [connection signal="body_entered" from="doors/door_zone_5_E" to="doors/door_zone_5_E" method="_on_body_entered"]

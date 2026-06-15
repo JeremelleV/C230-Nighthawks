@@ -30,6 +30,11 @@
 [ext_resource type="PackedScene" uid="uid://845hmsyjb8iu" path="res://scenes/entities/npc.tscn" id="27_ehjcp"]
 [ext_resource type="Texture2D" uid="uid://b250ej3o5acgt" path="res://assets/sprites/characters/sprite_sheet_alien_civ.png" id="28_lajyb"]
 [ext_resource type="Texture2D" uid="uid://ck5rqr62hkaxr" path="res://assets/sprites/characters/som_soldier_npc.png" id="29_u6te2"]
+[ext_resource type="PackedScene" path="res://scenes/ui/hud/EconomyHUD.tscn" id="31_8mypi"]
+[ext_resource type="PackedScene" path="res://scenes/ui/inventory/InventoryScreen.tscn" id="32_5xcpy"]
+[ext_resource type="PackedScene" path="res://scenes/ui/quest_log/QuestLog.tscn" id="33_sqcrl"]
+[ext_resource type="PackedScene" path="res://scenes/ui/quest_log/QuestTracker.tscn" id="34_7c64e"]
+[ext_resource type="PackedScene" path="res://scenes/ui/reputation/ReputationToast.tscn" id="35_k1sy5"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_bjwpm"]
 texture = ExtResource("1_sywax")
@@ -1213,7 +1218,7 @@ position = Vector2(1, 9.5)
 
 [node name="npc_dialogue2" parent="." unique_id=586913813 instance=ExtResource("27_ehjcp")]
 position = Vector2(2368, 5347)
-dialogue_id = "scout_area"
+dialogue_id = "end"
 sprite_frames = SubResource("SpriteFrames_o4xt1")
 idle_sequence = Array[String](["right", "down", "left", "down", "right", "up"])
 idle_flip_interval = 5.0
@@ -1230,6 +1235,16 @@ idle_flip_interval = 5.0
 
 [node name="CollisionShape2D" parent="npc_dialogue_som/InteractionArea" parent_id_path=PackedInt32Array(1159536862, 886098454) index="0" unique_id=1299023387]
 position = Vector2(1, 9.5)
+
+[node name="EconomyHUD" parent="." unique_id=1379213376 instance=ExtResource("31_8mypi")]
+
+[node name="InventoryScreen" parent="." unique_id=1037367533 instance=ExtResource("32_5xcpy")]
+
+[node name="QuestLog" parent="." unique_id=1723916345 instance=ExtResource("33_sqcrl")]
+
+[node name="QuestTracker" parent="." unique_id=1545488135 instance=ExtResource("34_7c64e")]
+
+[node name="ReputationToast" parent="." unique_id=1676883162 instance=ExtResource("35_k1sy5")]
 
 [connection signal="body_entered" from="doors/door_zone_8_WN" to="doors/door_zone_8_WN" method="_on_body_entered"]
 [connection signal="body_entered" from="doors/door_zone_8_WS" to="doors/door_zone_8_WS" method="_on_body_entered"]

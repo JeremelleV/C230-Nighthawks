@@ -32,6 +32,11 @@
 [ext_resource type="Texture2D" uid="uid://l1bfk53fwqxn" path="res://assets/sprites/tilesets/placeholder_props.png" id="28_ved81"]
 [ext_resource type="PackedScene" uid="uid://845hmsyjb8iu" path="res://scenes/entities/npc.tscn" id="29_3u52d"]
 [ext_resource type="Texture2D" uid="uid://ck5rqr62hkaxr" path="res://assets/sprites/characters/som_soldier_npc.png" id="30_ved81"]
+[ext_resource type="PackedScene" path="res://scenes/ui/hud/EconomyHUD.tscn" id="33_2jpty"]
+[ext_resource type="PackedScene" path="res://scenes/ui/inventory/InventoryScreen.tscn" id="34_06wuc"]
+[ext_resource type="PackedScene" path="res://scenes/ui/quest_log/QuestLog.tscn" id="35_rahx3"]
+[ext_resource type="PackedScene" path="res://scenes/ui/quest_log/QuestTracker.tscn" id="36_bmqw6"]
+[ext_resource type="PackedScene" path="res://scenes/ui/reputation/ReputationToast.tscn" id="37_8kas7"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_85y62"]
 texture = ExtResource("1_pa6l2")
@@ -1295,6 +1300,16 @@ idle_flip_interval = 5.0
 
 [node name="CollisionShape2D" parent="npc_dialogue_som5/InteractionArea" parent_id_path=PackedInt32Array(1270263865, 886098454) index="0" unique_id=1299023387]
 position = Vector2(1, 9.5)
+
+[node name="EconomyHUD" parent="." unique_id=116447867 instance=ExtResource("33_2jpty")]
+
+[node name="InventoryScreen" parent="." unique_id=512062719 instance=ExtResource("34_06wuc")]
+
+[node name="QuestLog" parent="." unique_id=1337504016 instance=ExtResource("35_rahx3")]
+
+[node name="QuestTracker" parent="." unique_id=795251669 instance=ExtResource("36_bmqw6")]
+
+[node name="ReputationToast" parent="." unique_id=1682484574 instance=ExtResource("37_8kas7")]
 
 [connection signal="body_entered" from="doors/door_zone_3_W" to="doors/door_zone_3_W" method="_on_body_entered"]
 [connection signal="body_entered" from="doors/door_zone_3_S" to="doors/door_zone_3_S" method="_on_body_entered"]

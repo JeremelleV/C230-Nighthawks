@@ -20,6 +20,11 @@
 [ext_resource type="Texture2D" uid="uid://l1bfk53fwqxn" path="res://assets/sprites/tilesets/placeholder_props.png" id="15_fc7jh"]
 [ext_resource type="PackedScene" uid="uid://845hmsyjb8iu" path="res://scenes/entities/npc.tscn" id="16_jyiii"]
 [ext_resource type="Texture2D" uid="uid://b250ej3o5acgt" path="res://assets/sprites/characters/sprite_sheet_alien_civ.png" id="17_fc7jh"]
+[ext_resource type="PackedScene" path="res://scenes/ui/hud/EconomyHUD.tscn" id="21_wawkh"]
+[ext_resource type="PackedScene" path="res://scenes/ui/inventory/InventoryScreen.tscn" id="22_krsvg"]
+[ext_resource type="PackedScene" path="res://scenes/ui/quest_log/QuestLog.tscn" id="23_vjkyb"]
+[ext_resource type="PackedScene" path="res://scenes/ui/quest_log/QuestTracker.tscn" id="24_scr1o"]
+[ext_resource type="PackedScene" path="res://scenes/ui/reputation/ReputationToast.tscn" id="25_0mhai"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_6m481"]
 texture = ExtResource("1_ucclq")
@@ -910,6 +915,16 @@ idle_flip_interval = 7.0
 
 [node name="CollisionShape2D" parent="npc_dialogue/InteractionArea" parent_id_path=PackedInt32Array(1327451291, 886098454) index="0" unique_id=1299023387]
 position = Vector2(1, 9.5)
+
+[node name="EconomyHUD" parent="." unique_id=1435403438 instance=ExtResource("21_wawkh")]
+
+[node name="InventoryScreen" parent="." unique_id=1197194180 instance=ExtResource("22_krsvg")]
+
+[node name="QuestLog" parent="." unique_id=970302899 instance=ExtResource("23_vjkyb")]
+
+[node name="QuestTracker" parent="." unique_id=491031371 instance=ExtResource("24_scr1o")]
+
+[node name="ReputationToast" parent="." unique_id=766419521 instance=ExtResource("25_0mhai")]
 
 [connection signal="body_entered" from="doors/door_zone_6_W" to="doors/door_zone_6_W" method="_on_body_entered"]
 [connection signal="body_entered" from="doors/door_zone_6_E" to="doors/door_zone_6_E" method="_on_body_entered"]
