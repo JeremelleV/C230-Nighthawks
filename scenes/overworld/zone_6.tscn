@@ -905,8 +905,8 @@ tile_set = SubResource("TileSet_byv3k")
 position = Vector2(565, 2206)
 dialogue_id = "civ_exit_2"
 sprite_frames = SubResource("SpriteFrames_6m481")
-idle_sequence = Array[String](["right", "down", "left", "down", "right", "up"])
-idle_flip_interval = 5.0
+idle_sequence = Array[String](["right", "down", "left"])
+idle_flip_interval = 7.0
 
 [node name="CollisionShape2D" parent="npc_dialogue/InteractionArea" parent_id_path=PackedInt32Array(1327451291, 886098454) index="0" unique_id=1299023387]
 position = Vector2(1, 9.5)

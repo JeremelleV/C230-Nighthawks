@@ -921,27 +921,11 @@ animations = [{
 "speed": 5.0
 }]
 
-[sub_resource type="AtlasTexture" id="AtlasTexture_v6a16"]
-atlas = ExtResource("10_2nvop")
-region = Rect2(105, 0, 27, 33)
-
-[sub_resource type="AtlasTexture" id="AtlasTexture_56mtj"]
-atlas = ExtResource("10_2nvop")
-region = Rect2(105, 35, 27, 33)
-
-[sub_resource type="AtlasTexture" id="AtlasTexture_nrpw2"]
-atlas = ExtResource("10_2nvop")
-region = Rect2(105, 35, 27, 33)
-
-[sub_resource type="AtlasTexture" id="AtlasTexture_inksd"]
-atlas = ExtResource("10_2nvop")
-region = Rect2(105, 67, 27, 33)
-
-[sub_resource type="SpriteFrames" id="SpriteFrames_ve7vu"]
+[sub_resource type="SpriteFrames" id="SpriteFrames_by876"]
 animations = [{
 "frames": [{
-"duration": 1.0,
-"texture": SubResource("AtlasTexture_v6a16")
+"duration": 15.0,
+"texture": SubResource("AtlasTexture_sjfqg")
 }],
 "loop": true,
 "name": &"down",
@@ -949,7 +933,7 @@ animations = [{
 }, {
 "frames": [{
 "duration": 1.0,
-"texture": SubResource("AtlasTexture_56mtj")
+"texture": SubResource("AtlasTexture_8yey6")
 }],
 "loop": true,
 "name": &"left",
@@ -957,7 +941,7 @@ animations = [{
 }, {
 "frames": [{
 "duration": 1.0,
-"texture": SubResource("AtlasTexture_nrpw2")
+"texture": SubResource("AtlasTexture_8yey6")
 }],
 "loop": true,
 "name": &"right",
@@ -965,7 +949,217 @@ animations = [{
 }, {
 "frames": [{
 "duration": 1.0,
-"texture": SubResource("AtlasTexture_inksd")
+"texture": SubResource("AtlasTexture_xx7c4")
+}],
+"loop": true,
+"name": &"up",
+"speed": 5.0
+}]
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_q0fac"]
+animations = [{
+"frames": [{
+"duration": 15.0,
+"texture": SubResource("AtlasTexture_sjfqg")
+}],
+"loop": true,
+"name": &"down",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_8yey6")
+}],
+"loop": true,
+"name": &"left",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_8yey6")
+}],
+"loop": true,
+"name": &"right",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_xx7c4")
+}],
+"loop": true,
+"name": &"up",
+"speed": 5.0
+}]
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_ty7hw"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_3w5u0")
+}],
+"loop": true,
+"name": &"down",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_by876")
+}],
+"loop": true,
+"name": &"left",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_by876")
+}],
+"loop": true,
+"name": &"right",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_q0fac")
+}],
+"loop": true,
+"name": &"up",
+"speed": 5.0
+}]
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_rhsuh"]
+animations = [{
+"frames": [{
+"duration": 15.0,
+"texture": SubResource("AtlasTexture_sjfqg")
+}],
+"loop": true,
+"name": &"down",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_8yey6")
+}],
+"loop": true,
+"name": &"left",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_8yey6")
+}],
+"loop": true,
+"name": &"right",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_xx7c4")
+}],
+"loop": true,
+"name": &"up",
+"speed": 5.0
+}]
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_pqu38"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_ty7hw")
+}],
+"loop": true,
+"name": &"down",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_rhsuh")
+}],
+"loop": true,
+"name": &"left",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_rhsuh")
+}],
+"loop": true,
+"name": &"right",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_v6tdx")
+}],
+"loop": true,
+"name": &"up",
+"speed": 5.0
+}]
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_v6tdx"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_3w5u0")
+}],
+"loop": true,
+"name": &"down",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_by876")
+}],
+"loop": true,
+"name": &"left",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_by876")
+}],
+"loop": true,
+"name": &"right",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_q0fac")
+}],
+"loop": true,
+"name": &"up",
+"speed": 5.0
+}]
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_ve7vu"]
+animations = [{
+"frames": [{
+"duration": 15.0,
+"texture": SubResource("AtlasTexture_sjfqg")
+}],
+"loop": true,
+"name": &"down",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_8yey6")
+}],
+"loop": true,
+"name": &"left",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_8yey6")
+}],
+"loop": true,
+"name": &"right",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_xx7c4")
 }],
 "loop": true,
 "name": &"up",
@@ -1039,7 +1233,7 @@ position = Vector2(2445, 2689)
 dialogue_id = "civ_gossip_1"
 sprite_frames = SubResource("SpriteFrames_2tckd")
 idle_sequence = Array[String](["right", "down", "left", "down"])
-idle_flip_interval = 7.0
+idle_flip_interval = 4.0
 
 [node name="CollisionShape2D" parent="npc_dialogue/InteractionArea" parent_id_path=PackedInt32Array(1327451291, 886098454) index="0" unique_id=1299023387]
 position = Vector2(1, 9.5)
@@ -1048,7 +1242,7 @@ position = Vector2(1, 9.5)
 position = Vector2(2951, 2590)
 dialogue_id = "civ_gossip_2"
 sprite_frames = SubResource("SpriteFrames_40l0h")
-idle_sequence = Array[String](["left", "down", "right", "down"])
+idle_sequence = Array[String](["left", "right"])
 idle_flip_interval = 6.0
 
 [node name="CollisionShape2D" parent="npc_dialogue2/InteractionArea" parent_id_path=PackedInt32Array(425234253, 886098454) index="0" unique_id=1299023387]
@@ -1057,7 +1251,7 @@ position = Vector2(1, 9.5)
 [node name="npc_dialogue3" parent="." unique_id=569977418 instance=ExtResource("9_8yey6")]
 position = Vector2(2839, 3269)
 dialogue_id = "zone_civ_1"
-sprite_frames = SubResource("SpriteFrames_ve7vu")
+sprite_frames = SubResource("SpriteFrames_by876")
 idle_sequence = Array[String](["up", "left"])
 idle_flip_interval = 5.0
 
@@ -1067,8 +1261,8 @@ position = Vector2(1, 9.5)
 [node name="npc_dialogue4" parent="." unique_id=1409186308 instance=ExtResource("9_8yey6")]
 position = Vector2(3344, 3008)
 dialogue_id = "civ_idle_1"
-sprite_frames = SubResource("SpriteFrames_ve7vu")
-idle_sequence = Array[String](["up", "left"])
+sprite_frames = SubResource("SpriteFrames_q0fac")
+idle_sequence = Array[String](["left", "down", "right", "down"])
 idle_flip_interval = 5.0
 
 [node name="CollisionShape2D" parent="npc_dialogue4/InteractionArea" parent_id_path=PackedInt32Array(1409186308, 886098454) index="0" unique_id=1299023387]
@@ -1077,9 +1271,9 @@ position = Vector2(1, 9.5)
 [node name="npc_dialogue5" parent="." unique_id=366894035 instance=ExtResource("9_8yey6")]
 position = Vector2(2078, 2525)
 dialogue_id = "zone_civ_3"
-sprite_frames = SubResource("SpriteFrames_ve7vu")
-idle_sequence = Array[String](["up", "left"])
-idle_flip_interval = 5.0
+sprite_frames = SubResource("SpriteFrames_ty7hw")
+idle_sequence = Array[String](["up", "right", "down"])
+idle_flip_interval = 9.0
 
 [node name="CollisionShape2D" parent="npc_dialogue5/InteractionArea" parent_id_path=PackedInt32Array(366894035, 886098454) index="0" unique_id=1299023387]
 position = Vector2(1, 9.5)
@@ -1087,9 +1281,9 @@ position = Vector2(1, 9.5)
 [node name="npc_dialogue6" parent="." unique_id=1238453677 instance=ExtResource("9_8yey6")]
 position = Vector2(1911, 3095)
 dialogue_id = "civ_idle_2"
-sprite_frames = SubResource("SpriteFrames_ve7vu")
-idle_sequence = Array[String](["up", "left"])
-idle_flip_interval = 5.0
+sprite_frames = SubResource("SpriteFrames_rhsuh")
+idle_sequence = Array[String](["down", "right"])
+idle_flip_interval = 12.0
 
 [node name="CollisionShape2D" parent="npc_dialogue6/InteractionArea" parent_id_path=PackedInt32Array(1238453677, 886098454) index="0" unique_id=1299023387]
 position = Vector2(1, 9.5)
@@ -1097,9 +1291,9 @@ position = Vector2(1, 9.5)
 [node name="npc_dialogue7" parent="." unique_id=2129473706 instance=ExtResource("9_8yey6")]
 position = Vector2(2662, 2238)
 dialogue_id = "civ_idle_3"
-sprite_frames = SubResource("SpriteFrames_ve7vu")
-idle_sequence = Array[String](["up", "left"])
-idle_flip_interval = 5.0
+sprite_frames = SubResource("SpriteFrames_pqu38")
+idle_sequence = Array[String](["down", "left", "down", "right"])
+idle_flip_interval = 7.0
 
 [node name="CollisionShape2D" parent="npc_dialogue7/InteractionArea" parent_id_path=PackedInt32Array(2129473706, 886098454) index="0" unique_id=1299023387]
 position = Vector2(1, 9.5)
@@ -1107,9 +1301,9 @@ position = Vector2(1, 9.5)
 [node name="npc_dialogue8" parent="." unique_id=1058861766 instance=ExtResource("9_8yey6")]
 position = Vector2(2566, 2456)
 dialogue_id = "civ_player_1"
-sprite_frames = SubResource("SpriteFrames_ve7vu")
-idle_sequence = Array[String](["up", "left"])
-idle_flip_interval = 5.0
+sprite_frames = SubResource("SpriteFrames_v6tdx")
+idle_sequence = Array[String](["right", "left"])
+idle_flip_interval = 8.0
 
 [node name="CollisionShape2D" parent="npc_dialogue8/InteractionArea" parent_id_path=PackedInt32Array(1058861766, 886098454) index="0" unique_id=1299023387]
 position = Vector2(1, 9.5)
@@ -1118,8 +1312,8 @@ position = Vector2(1, 9.5)
 position = Vector2(2921, 2705)
 dialogue_id = "civ_lore_2"
 sprite_frames = SubResource("SpriteFrames_ve7vu")
-idle_sequence = Array[String](["up", "left"])
-idle_flip_interval = 5.0
+idle_sequence = Array[String](["left", "down"])
+idle_flip_interval = 15.0
 
 [node name="CollisionShape2D" parent="npc_dialogue9/InteractionArea" parent_id_path=PackedInt32Array(699667010, 886098454) index="0" unique_id=1299023387]
 position = Vector2(1, 9.5)
