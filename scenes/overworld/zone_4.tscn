@@ -26,6 +26,10 @@
 [ext_resource type="Texture2D" uid="uid://kly3sawbn6qy" path="res://assets/sprites/tilesets/cliff_tileset.png" id="23_swr7k"]
 [ext_resource type="PackedScene" uid="uid://dy1h13pblohyb" path="res://scenes/ui/hud/minimap.tscn" id="24_f18qm"]
 [ext_resource type="PackedScene" uid="uid://cqyqa0r34yr31" path="res://scenes/elements/door.tscn" id="26_3v8i0"]
+[ext_resource type="PackedScene" uid="uid://x61xvjvbheb6" path="res://scenes/ui/shop/ShopUI.tscn" id="27_xuk73"]
+[ext_resource type="PackedScene" uid="uid://cdgr5nt0iy003" path="res://scenes/ui/dialogue/DialogueBox.tscn" id="28_fdt1j"]
+[ext_resource type="Script" uid="uid://bjnvmighbllae" path="res://scripts/overworld/combat_zone.gd" id="29_q7vjk"]
+[ext_resource type="Texture2D" uid="uid://l1bfk53fwqxn" path="res://assets/sprites/tilesets/placeholder_props.png" id="30_b44m0"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_gmrxn"]
 texture = ExtResource("1_k4d4h")
@@ -1180,6 +1184,28 @@ terrain_set_0/terrain_0/name = "Terrain 0"
 terrain_set_0/terrain_0/color = Color(0.5, 0.34375, 0.25, 1)
 sources/0 = SubResource("TileSetAtlasSource_lbfk8")
 
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_qgf0u"]
+size = Vector2(1736, 644)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_5bevc"]
+size = Vector2(1686.75, 688)
+
+[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_1c05e"]
+texture = ExtResource("30_b44m0")
+texture_region_size = Vector2i(64, 64)
+8:0/0 = 0
+7:0/0 = 0
+6:0/0 = 0
+5:0/0 = 0
+4:0/0 = 0
+3:0/0 = 0
+2:0/0 = 0
+1:0/0 = 0
+0:0/0 = 0
+
+[sub_resource type="TileSet" id="TileSet_wwtfu"]
+sources/0 = SubResource("TileSetAtlasSource_1c05e")
+
 [node name="zone_4" type="Node2D" unique_id=1490973730]
 y_sort_enabled = true
 
@@ -1271,9 +1297,41 @@ position = Vector2(31, 0)
 [node name="spawn" parent="doors/door_zone_4_E" index="1" unique_id=1319578235]
 position = Vector2(-219, -24)
 
+[node name="ShopUI" parent="." unique_id=4253722 instance=ExtResource("27_xuk73")]
+
+[node name="DialogueBox" parent="." unique_id=1897692953 instance=ExtResource("28_fdt1j")]
+
+[node name="combat_zones" type="Node" parent="." unique_id=567751319]
+
+[node name="combat_zone1" type="Area2D" parent="combat_zones" unique_id=1629149595]
+position = Vector2(2172, 819)
+script = ExtResource("29_q7vjk")
+return_level_tag = "zone_2"
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="combat_zones/combat_zone1" unique_id=482080918]
+position = Vector2(806, 921)
+shape = SubResource("RectangleShape2D_qgf0u")
+
+[node name="combat_zone2" type="Area2D" parent="combat_zones" unique_id=1602286288]
+position = Vector2(2180, 84)
+script = ExtResource("29_q7vjk")
+return_level_tag = "zone_2"
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="combat_zones/combat_zone2" unique_id=1004089076]
+position = Vector2(1388.625, 2711)
+shape = SubResource("RectangleShape2D_5bevc")
+
+[node name="combat_indicators" type="TileMapLayer" parent="." unique_id=58677858]
+tile_map_data = PackedByteArray("AAB1ANUAAAAIAAAAAACnALgAAAAIAAAAAACrAKQAAAAIAAAAAAC8AJkAAAAIAAAAAADMAJsAAAAIAAAAAADXAJsAAAAIAAAAAADqAJgAAAAIAAAAAAD+AJkAAAAIAAAAAAAUAbYAAAAIAAAAAADvAHMAAAAIAAAAAADvAHoAAAAIAAAAAADiAIIAAAAIAAAAAACzAIQAAAAIAAAAAACUAIEAAAAIAAAAAACDAHoAAAAIAAAAAACBAHMAAAAIAAAAAACBAHUAAAAHAAAAAACEAHsAAAAHAAAAAACSAIEAAAAHAAAAAACWAIIAAAAHAAAAAACxAIUAAAAHAAAAAAC1AIQAAAAHAAAAAADgAIMAAAAHAAAAAADvAHkAAAAHAAAAAADvAHUAAAAHAAAAAAC+AJoAAAAHAAAAAADGAJsAAAAHAAAAAADLAJwAAAAHAAAAAADZAJwAAAAHAAAAAADnAJgAAAAHAAAAAADsAJkAAAAHAAAAAAD8AJkAAAAHAAAAAAAUAbQAAAAHAAAAAAATAaUAAAAHAAAAAAASAaQAAAAHAAAAAAARAZwAAAAHAAAAAAASAZwAAAAIAAAAAACrAKUAAAAHAAAAAACpALgAAAAHAAAAAACoALEAAAAHAAAAAAA=")
+tile_set = SubResource("TileSet_wwtfu")
+
 [connection signal="body_entered" from="doors/door_zone_4_NW" to="doors/door_zone_4_NW" method="_on_body_entered"]
 [connection signal="body_entered" from="doors/door_zone_4_NE" to="doors/door_zone_4_NE" method="_on_body_entered"]
 [connection signal="body_entered" from="doors/door_zone_4_E" to="doors/door_zone_4_E" method="_on_body_entered"]
+[connection signal="body_entered" from="combat_zones/combat_zone1" to="combat_zones/combat_zone1" method="_on_body_entered"]
+[connection signal="body_exited" from="combat_zones/combat_zone1" to="combat_zones/combat_zone1" method="_on_body_exited"]
+[connection signal="body_entered" from="combat_zones/combat_zone2" to="combat_zones/combat_zone2" method="_on_body_entered"]
+[connection signal="body_exited" from="combat_zones/combat_zone2" to="combat_zones/combat_zone2" method="_on_body_exited"]
 
 [editable path="doors/door_zone_4_NW"]
 [editable path="doors/door_zone_4_NE"]

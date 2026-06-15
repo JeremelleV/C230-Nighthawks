@@ -17,6 +17,7 @@
 [ext_resource type="PackedScene" uid="uid://x61xvjvbheb6" path="res://scenes/ui/shop/ShopUI.tscn" id="12_0ytv7"]
 [ext_resource type="Script" uid="uid://bjnvmighbllae" path="res://scripts/overworld/combat_zone.gd" id="16_y0d21"]
 [ext_resource type="PackedScene" uid="uid://dy1h13pblohyb" path="res://scenes/ui/hud/minimap.tscn" id="17_xvwr2"]
+[ext_resource type="Texture2D" uid="uid://l1bfk53fwqxn" path="res://assets/sprites/tilesets/placeholder_props.png" id="18_odhgm"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_5tue0"]
 texture = ExtResource("2_flbpo")
@@ -813,13 +814,29 @@ animations = [{
 }]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_xvwr2"]
-size = Vector2(956, 849)
+size = Vector2(956, 778)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_y0d21"]
-size = Vector2(1443, 534.5)
+size = Vector2(1559.5, 400)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_odhgm"]
 size = Vector2(662.5, 501)
+
+[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_mv0sq"]
+texture = ExtResource("18_odhgm")
+texture_region_size = Vector2i(64, 64)
+8:0/0 = 0
+7:0/0 = 0
+6:0/0 = 0
+5:0/0 = 0
+4:0/0 = 0
+3:0/0 = 0
+2:0/0 = 0
+1:0/0 = 0
+0:0/0 = 0
+
+[sub_resource type="TileSet" id="TileSet_j1fku"]
+sources/0 = SubResource("TileSetAtlasSource_mv0sq")
 
 [node name="zone_2" type="Node2D" unique_id=1056565446]
 y_sort_enabled = true
@@ -925,21 +942,21 @@ position = Vector2(1, 9.5)
 [node name="combat_zones" type="Node" parent="." unique_id=1988438329]
 
 [node name="combat_zone1" type="Area2D" parent="combat_zones" unique_id=340453713]
-position = Vector2(1382, 1220)
+position = Vector2(2172, 819)
 script = ExtResource("16_y0d21")
 return_level_tag = "zone_2"
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="combat_zones/combat_zone1" unique_id=2139299648]
-position = Vector2(468, 556.5)
+position = Vector2(468, 521)
 shape = SubResource("RectangleShape2D_xvwr2")
 
 [node name="combat_zone2" type="Area2D" parent="combat_zones" unique_id=1629679349]
-position = Vector2(1382, 1220)
+position = Vector2(2180, 84)
 script = ExtResource("16_y0d21")
 return_level_tag = "zone_2"
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="combat_zones/combat_zone2" unique_id=1390174234]
-position = Vector2(694, 1786.75)
+position = Vector2(635.75, 1854)
 shape = SubResource("RectangleShape2D_y0d21")
 
 [node name="combat_zone3" type="Area2D" parent="combat_zones" unique_id=121589659]
@@ -948,10 +965,14 @@ script = ExtResource("16_y0d21")
 return_level_tag = "zone_2"
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="combat_zones/combat_zone3" unique_id=1887724614]
-position = Vector2(306.75, 1783)
+position = Vector2(-621, 2447)
 shape = SubResource("RectangleShape2D_odhgm")
 
 [node name="minimap" parent="." unique_id=1925678804 instance=ExtResource("17_xvwr2")]
+
+[node name="combat_indicators" type="TileMapLayer" parent="." unique_id=1404203779]
+tile_map_data = PackedByteArray("AACDAIMAAAAHAAAAAACAAIEAAAAHAAAAAAB8AHkAAAAHAAAAAACMAIcAAAAHAAAAAACFAFYAAAAHAAAAAACFAE0AAAAHAAAAAACkAIcAAAAHAAAAAACzAIcAAAAHAAAAAAC0AIcAAAAIAAAAAACOAIcAAAAIAAAAAACBAIIAAAAIAAAAAAB7AHgAAAAIAAAAAACFAFcAAAAIAAAAAACEAEwAAAAIAAAAAABaALAAAAAIAAAAAABnALQAAAAIAAAAAABuALoAAAAIAAAAAAB2AMMAAAAIAAAAAAB4AMwAAAAIAAAAAAB1ANUAAAAIAAAAAAB2ANQAAAAHAAAAAAB4AM0AAAAHAAAAAAB1AMIAAAAHAAAAAABvALsAAAAHAAAAAABmALQAAAAHAAAAAABbALEAAAAHAAAAAAA=")
+tile_set = SubResource("TileSet_j1fku")
 
 [connection signal="body_entered" from="doors/door_zone_2" to="doors/door_zone_2" method="_on_body_entered"]
 [connection signal="body_entered" from="doors/door_zone_2_S" to="doors/door_zone_2_S" method="_on_body_entered"]

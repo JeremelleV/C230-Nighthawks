@@ -11,6 +11,10 @@
 [ext_resource type="Texture2D" uid="uid://dpin3234oeqh3" path="res://assets/props/house_1.png" id="8_jyiii"]
 [ext_resource type="Texture2D" uid="uid://b4clgk5hwt0d5" path="res://assets/props/house_2.png" id="9_fc7jh"]
 [ext_resource type="PackedScene" uid="uid://cqyqa0r34yr31" path="res://scenes/elements/door.tscn" id="11_xumk0"]
+[ext_resource type="PackedScene" uid="uid://x61xvjvbheb6" path="res://scenes/ui/shop/ShopUI.tscn" id="12_bbs6x"]
+[ext_resource type="PackedScene" uid="uid://cdgr5nt0iy003" path="res://scenes/ui/dialogue/DialogueBox.tscn" id="13_urmf4"]
+[ext_resource type="Script" uid="uid://bjnvmighbllae" path="res://scripts/overworld/combat_zone.gd" id="14_jyiii"]
+[ext_resource type="Texture2D" uid="uid://l1bfk53fwqxn" path="res://assets/sprites/tilesets/placeholder_props.png" id="15_fc7jh"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_6m481"]
 texture = ExtResource("1_ucclq")
@@ -704,6 +708,28 @@ physics_layer_0/collision_mask = 0
 sources/0 = SubResource("TileSetAtlasSource_6x460")
 sources/1 = SubResource("TileSetAtlasSource_ph7nl")
 
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_6m481"]
+size = Vector2(1278, 183)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_56qyb"]
+size = Vector2(1699.75, 612)
+
+[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_6ouve"]
+texture = ExtResource("15_fc7jh")
+texture_region_size = Vector2i(64, 64)
+8:0/0 = 0
+7:0/0 = 0
+6:0/0 = 0
+5:0/0 = 0
+4:0/0 = 0
+3:0/0 = 0
+2:0/0 = 0
+1:0/0 = 0
+0:0/0 = 0
+
+[sub_resource type="TileSet" id="TileSet_byv3k"]
+sources/0 = SubResource("TileSetAtlasSource_6ouve")
+
 [node name="zone_6" type="Node2D" unique_id=190764708]
 y_sort_enabled = true
 
@@ -769,8 +795,40 @@ position = Vector2(31, 0)
 [node name="spawn" parent="doors/door_zone_6_E" index="1" unique_id=1319578235]
 position = Vector2(-196, -2)
 
+[node name="ShopUI" parent="." unique_id=4253722 instance=ExtResource("12_bbs6x")]
+
+[node name="DialogueBox" parent="." unique_id=1897692953 instance=ExtResource("13_urmf4")]
+
+[node name="combat_zones" type="Node" parent="." unique_id=1385591143]
+
+[node name="combat_zone1" type="Area2D" parent="combat_zones" unique_id=1169978969]
+position = Vector2(994, 2377)
+script = ExtResource("14_jyiii")
+return_level_tag = "zone_2"
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="combat_zones/combat_zone1" unique_id=61778094]
+position = Vector2(590, 223.5)
+shape = SubResource("RectangleShape2D_6m481")
+
+[node name="combat_zone2" type="Area2D" parent="combat_zones" unique_id=1939907501]
+position = Vector2(2180, 84)
+script = ExtResource("14_jyiii")
+return_level_tag = "zone_2"
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="combat_zones/combat_zone2" unique_id=1706037860]
+position = Vector2(-609.875, 2933)
+shape = SubResource("RectangleShape2D_56qyb")
+
+[node name="combat_indicators" type="TileMapLayer" parent="." unique_id=621743052]
+tile_map_data = PackedByteArray("AAB1ANUAAAAIAAAAAABWAJsAAAAIAAAAAABeAJ0AAAAIAAAAAABsAJ4AAAAIAAAAAAB6AJwAAAAIAAAAAABuAJ4AAAAHAAAAAAB4AJwAAAAHAAAAAABxAJ4AAAAHAAAAAABcAJ0AAAAHAAAAAABYAJwAAAAHAAAAAAA=")
+tile_set = SubResource("TileSet_byv3k")
+
 [connection signal="body_entered" from="doors/door_zone_6_W" to="doors/door_zone_6_W" method="_on_body_entered"]
 [connection signal="body_entered" from="doors/door_zone_6_E" to="doors/door_zone_6_E" method="_on_body_entered"]
+[connection signal="body_entered" from="combat_zones/combat_zone1" to="combat_zones/combat_zone1" method="_on_body_entered"]
+[connection signal="body_exited" from="combat_zones/combat_zone1" to="combat_zones/combat_zone1" method="_on_body_exited"]
+[connection signal="body_entered" from="combat_zones/combat_zone2" to="combat_zones/combat_zone2" method="_on_body_entered"]
+[connection signal="body_exited" from="combat_zones/combat_zone2" to="combat_zones/combat_zone2" method="_on_body_exited"]
 
 [editable path="doors/door_zone_6_W"]
 [editable path="doors/door_zone_6_E"]

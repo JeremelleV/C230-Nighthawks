@@ -23,6 +23,8 @@
 [ext_resource type="Texture2D" uid="uid://dpin3234oeqh3" path="res://assets/props/house_1.png" id="20_n5bvk"]
 [ext_resource type="Texture2D" uid="uid://b4clgk5hwt0d5" path="res://assets/props/house_2.png" id="21_kfw7t"]
 [ext_resource type="PackedScene" uid="uid://cqyqa0r34yr31" path="res://scenes/elements/door.tscn" id="23_dc4tq"]
+[ext_resource type="PackedScene" uid="uid://x61xvjvbheb6" path="res://scenes/ui/shop/ShopUI.tscn" id="24_53qfq"]
+[ext_resource type="PackedScene" uid="uid://cdgr5nt0iy003" path="res://scenes/ui/dialogue/DialogueBox.tscn" id="25_o05lp"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_weslf"]
 texture = ExtResource("1_liex4")
@@ -1046,6 +1048,10 @@ position = Vector2(31, 0)
 
 [node name="spawn" parent="doors/door_zone_5_E" index="1" unique_id=1319578235]
 position = Vector2(-218, 1)
+
+[node name="ShopUI" parent="." unique_id=4253722 instance=ExtResource("24_53qfq")]
+
+[node name="DialogueBox" parent="." unique_id=1897692953 instance=ExtResource("25_o05lp")]
 
 [connection signal="body_entered" from="doors/door_zone_5_W" to="doors/door_zone_5_W" method="_on_body_entered"]
 [connection signal="body_entered" from="doors/door_zone_5_E" to="doors/door_zone_5_E" method="_on_body_entered"]

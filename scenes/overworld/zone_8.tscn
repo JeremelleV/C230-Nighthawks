@@ -24,6 +24,8 @@
 [ext_resource type="Texture2D" uid="uid://6g0664mncp26" path="res://assets/sprites/tilesets/jungle_tree_corner.png" id="21_qie28"]
 [ext_resource type="Texture2D" uid="uid://kly3sawbn6qy" path="res://assets/sprites/tilesets/cliff_tileset.png" id="22_h1l8c"]
 [ext_resource type="PackedScene" uid="uid://cqyqa0r34yr31" path="res://scenes/elements/door.tscn" id="24_xcj6o"]
+[ext_resource type="PackedScene" uid="uid://x61xvjvbheb6" path="res://scenes/ui/shop/ShopUI.tscn" id="25_4o17t"]
+[ext_resource type="PackedScene" uid="uid://cdgr5nt0iy003" path="res://scenes/ui/dialogue/DialogueBox.tscn" id="26_idhkx"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_bjwpm"]
 texture = ExtResource("1_sywax")
@@ -1054,6 +1056,7 @@ script = ExtResource("2_xcj6o")
 
 [node name="rocks" type="TileMapLayer" parent="." unique_id=1611482802]
 y_sort_enabled = true
+tile_map_data = PackedByteArray("AAB8ABoBDAAAAAAAAACyACsBCwAAAAAAAAB6AB4BCgAAAAAAAACuABwBCQAAAAAAAACJABUBCAAAAAAAAACkADIBCAAAAAAAAABrACUBBwAAAAAAAACPABIBBwAAAAAAAAC1AC4BBwAAAAAAAABuAC4BBgAAAAAAAAB+AB4BBgAAAAAAAACUABMBBgAAAAAAAACqABwBBgAAAAAAAACoADEBBgAAAAAAAAC5ADEBBQAAAAAAAACkADwBBQAAAAAAAACWADEBBQAAAAAAAACNABoBBQAAAAAAAAB0ACEBBQAAAAAAAABwACwBBAAAAAAAAACKABIBBAAAAAAAAACFABYBBAAAAAAAAAC2ACcBBAAAAAAAAACxAB4BBAAAAAAAAACAACABAwAAAAAAAACWABYBAwAAAAAAAAC3ACkBAwAAAAAAAACvACgBAwAAAAAAAAClADABAgAAAAAAAAB2AB0BAgAAAAAAAACSACYBAgAAAAAAAAA=")
 tile_set = SubResource("TileSet_hj8df")
 
 [node name="jungle_trunks" type="TileMapLayer" parent="." unique_id=1568052124]
@@ -1102,6 +1105,10 @@ position = Vector2(31, 0)
 
 [node name="spawn" parent="doors/door_zone_8_WS" index="1" unique_id=1319578235]
 position = Vector2(226, -6)
+
+[node name="ShopUI" parent="." unique_id=4253722 instance=ExtResource("25_4o17t")]
+
+[node name="DialogueBox" parent="." unique_id=1897692953 instance=ExtResource("26_idhkx")]
 
 [connection signal="body_entered" from="doors/door_zone_8_WN" to="doors/door_zone_8_WN" method="_on_body_entered"]
 [connection signal="body_entered" from="doors/door_zone_8_WS" to="doors/door_zone_8_WS" method="_on_body_entered"]
