@@ -813,7 +813,7 @@ animations = [{
 }]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_xvwr2"]
-size = Vector2(1443, 991)
+size = Vector2(956, 849)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_y0d21"]
 size = Vector2(1443, 534.5)
@@ -928,7 +928,7 @@ script = ExtResource("16_y0d21")
 return_level_tag = "zone_2"
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="combat_zones/combat_zone1" unique_id=2139299648]
-position = Vector2(711.5, 485.5)
+position = Vector2(468, 556.5)
 shape = SubResource("RectangleShape2D_xvwr2")
 
 [node name="combat_zone2" type="Area2D" parent="combat_zones" unique_id=1629679349]
