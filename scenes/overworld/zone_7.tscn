@@ -580,7 +580,7 @@ position = Vector2(-179, 1)
 [node name="combat_zone1" type="Area2D" parent="combat_zones" unique_id=188844762]
 position = Vector2(2241, 4039)
 script = ExtResource("21_aamy3")
-return_level_tag = "zone_2"
+return_level_tag = "zone_7"
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="combat_zones/combat_zone1" unique_id=692378620]
 position = Vector2(468, 521)
@@ -589,7 +589,7 @@ shape = SubResource("RectangleShape2D_p3k3u")
 [node name="combat_zone2" type="Area2D" parent="combat_zones" unique_id=1362340994]
 position = Vector2(1625, 3584)
 script = ExtResource("21_aamy3")
-return_level_tag = "zone_2"
+return_level_tag = "zone_7"
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="combat_zones/combat_zone2" unique_id=1794199321]
 position = Vector2(421.5, 1854)

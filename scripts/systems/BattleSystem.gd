@@ -156,23 +156,20 @@ func check_battle_status():
 		end_battle(true)
 		
 		
-		
+
 func end_battle(player_won: bool):
 	# Freeze the timeline completely
 	is_waiting_for_input = true 
 	set_process(false) 
-	
+
 	if player_won == true:
-		print("Transitioning back to the main world map with loot...")
 		QuestManager.notify_enemies_defeated(enemy_team.size())
 		EconomyManager.earn(50)
-		# Example for your bigger game later:
-		# get_tree().change_scene_to_file("res://world_map.tscn")
-		NavigationManager.go_to_level(NavigationManager.previous_level_tag, null)
-	else:
-		print("Game Over! Quitting application.")
-		#get_tree().quit() # This completely shuts down the running program		
-		NavigationManager.go_to_level(NavigationManager.previous_level_tag, null)
+
+	await get_tree().create_timer(0.1).timeout
+
+	NavigationManager.saved_player_position = NavigationManager.battle_return_position
+	NavigationManager.go_to_level(NavigationManager.battle_return_level, null)
 
 
 func set_button_interactable(is_player_turn: bool):

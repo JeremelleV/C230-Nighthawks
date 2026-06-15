@@ -3,6 +3,7 @@ extends Node2D
 
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
+	NavigationManager.previous_level_tag = "zone_1_start"
 	AudioPlayer.play_music_level() #testing
 	if NavigationManager.spawn_door_tag != null:
 		_on_level_spawn.call_deferred(NavigationManager.spawn_door_tag)

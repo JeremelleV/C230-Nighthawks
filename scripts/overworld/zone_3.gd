@@ -3,6 +3,9 @@ extends Node2D
 
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
+	print("=== ZONE 3 READY ===")
+	NavigationManager.previous_level_tag = "zone_3"
+	print("previous_level_tag set to: ", NavigationManager.previous_level_tag)
 	if NavigationManager.saved_player_position != Vector2.ZERO:
 		# Returning from battle, restore exact position
 		NavigationManager.trigger_player_spawn(NavigationManager.saved_player_position, "down")

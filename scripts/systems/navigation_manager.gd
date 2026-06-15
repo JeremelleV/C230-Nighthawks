@@ -32,6 +32,10 @@ var saved_player_position: Vector2 = Vector2.ZERO
 var in_game: bool = false
 
 
+var battle_return_level: String = ""
+var battle_return_position: Vector2 = Vector2.ZERO
+
+
 func _ready() -> void:
 	_player_instance = player_scene.instantiate()
 
@@ -45,10 +49,10 @@ func _ready() -> void:
 
 
 func go_to_level(level_tag, destination_tag):
-	if level_tag == "battle":
-		pass
-	else:
-		previous_level_tag = level_tag
+	#if level_tag == "battle":
+		#pass
+	#else:
+		#previous_level_tag = level_tag
 	spawn_door_tag = destination_tag
 	await _do_transition(level_tag)
 
@@ -68,7 +72,7 @@ func _do_transition(level_tag: String) -> void:
 
 	await get_tree().process_frame
 	await get_tree().process_frame
-
+	await get_tree().process_frame
 
 	# fade back in
 	await _transition.fade_in()
