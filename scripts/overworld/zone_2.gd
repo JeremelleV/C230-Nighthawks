@@ -3,8 +3,15 @@ extends Node2D
 
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
-	if NavigationManager.spawn_door_tag != null:
+	if NavigationManager.saved_player_position != Vector2.ZERO:
+		# Returning from battle, restore exact position
+		NavigationManager.trigger_player_spawn(NavigationManager.saved_player_position, "down")
+		NavigationManager.saved_player_position = Vector2.ZERO  # clear it
+	elif NavigationManager.spawn_door_tag != null:
 		_on_level_spawn.call_deferred(NavigationManager.spawn_door_tag)
+	else:
+		var default_spawn = get_node("default_spawn")
+		NavigationManager.trigger_player_spawn(default_spawn.global_position, "down")
 
 
 func _on_level_spawn(destination_tag: String):

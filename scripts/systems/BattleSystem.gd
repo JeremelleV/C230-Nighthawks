@@ -168,10 +168,13 @@ func end_battle(player_won: bool):
 		EconomyManager.earn(50)
 		# Example for your bigger game later:
 		# get_tree().change_scene_to_file("res://world_map.tscn")
+		NavigationManager.go_to_level(NavigationManager.previous_level_tag, null)
 	else:
 		print("Game Over! Quitting application.")
-		get_tree().quit() # This completely shuts down the running program		
-	
+		#get_tree().quit() # This completely shuts down the running program		
+		NavigationManager.go_to_level(NavigationManager.previous_level_tag, null)
+
+
 func set_button_interactable(is_player_turn: bool):
 	# 🛡️ Safety check: If the button isn't linked yet, skip to prevent a crash
 	if menu_button == null: 
