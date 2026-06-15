@@ -916,7 +916,7 @@ position = Vector2(-139, -6)
 
 [node name="npc_dialogue" parent="." unique_id=1327451291 instance=ExtResource("9_fusml")]
 position = Vector2(1645, 2524)
-dialogue_id = "scout_area"
+dialogue_id = "alien_near_town_exit"
 sprite_frames = SubResource("SpriteFrames_y0d21")
 idle_sequence = Array[String](["right", "down", "left", "down", "right", "up"])
 idle_flip_interval = 5.0

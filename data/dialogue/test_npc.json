@@ -184,6 +184,64 @@
 		]
 	},
 	{
+		"id": "alien_near_town_exit",
+		"lines": [
+			{
+				"speaker": "Civilian",
+				"text": "Heading out? I’d be careful if I were you. In fact, if I were you, I probably wouldn’t even head out at all. You haven’t lived here nearly as long to get a proper grasp of how to deal with the things out there."
+			},
+			{
+				"speaker": "You",
+				"text": "Considering some of the things we’ve seen, I’d normally listen to you, but we don’t have much of a choice."
+			},
+			{
+				"speaker": "Civilian",
+				"text": "Yeah, word has spread quickly around town about you guys and your mission. Rather insane, if you ask me."
+			},
+			{
+				"speaker": "Civilian",
+				"text": "If you want some advice, you might want to take your chances with the Sons of Mars. They’re crazy, but you just might be able to reason with them."
+			},
+			{
+				"speaker": "Civilian",
+				"text": "Jungle creatures on the other hand, ehhhhh… Can’t exactly reason with a feral animal that only speaks in *RRARrRrrAaAAr GRagGhhh RArargh*, ya know?"
+			},
+			{
+				"speaker": "Civilian",
+				"text": "That translates to “I’m gonna eat your guts” by the way."
+			}
+		]
+	},
+	{
+		"id": "alien_near_town_exit_som",
+		"lines": [
+			{
+				"speaker": "You",
+				"text": "Why are you all so itching for a fight? You don't have any apparent goals other than fighting, and you don't seem to have any other worldly desires that I can make out."
+			},
+			{
+				"speaker": "Son of Mars",
+				"text": "..."
+			},
+			{
+				"speaker": "You",
+				"text": "Oh, don't give me that. I know you guys are smarter than you let on."
+			},
+			{
+				"speaker": "Son of Mars",
+				"text": "The “Life-Giving Planet” commands it so. Were we not meant to be this way, Mars would not have instilled us with the “Battle-Crave” that compels us so."
+			},
+			{
+				"speaker": "You",
+				"text": "So that really is just it? Because you feel like it?!?"
+			},
+			{
+				"speaker": "Son of Mars",
+				"text": "We would not expect the alien to know how deeply our “Life-Being” binds us to the “Life-Giver”. Within ourselves, we know their will is true. We know their will is deliberate."
+			}
+		]
+	},
+	{
 		"id": "scout_factions",
 		"lines": [
 			{
