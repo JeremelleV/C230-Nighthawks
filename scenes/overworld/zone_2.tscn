@@ -20,6 +20,11 @@
 [ext_resource type="Script" uid="uid://bjnvmighbllae" path="res://scripts/overworld/combat_zone.gd" id="16_y0d21"]
 [ext_resource type="PackedScene" uid="uid://dy1h13pblohyb" path="res://scenes/ui/hud/minimap.tscn" id="17_xvwr2"]
 [ext_resource type="Texture2D" uid="uid://l1bfk53fwqxn" path="res://assets/sprites/tilesets/placeholder_props.png" id="18_odhgm"]
+[ext_resource type="PackedScene" path="res://scenes/ui/hud/EconomyHUD.tscn" id="21_kfsm3"]
+[ext_resource type="PackedScene" path="res://scenes/ui/inventory/InventoryScreen.tscn" id="22_sj2tw"]
+[ext_resource type="PackedScene" path="res://scenes/ui/quest_log/QuestLog.tscn" id="23_sap62"]
+[ext_resource type="PackedScene" path="res://scenes/ui/quest_log/QuestTracker.tscn" id="24_5x7lq"]
+[ext_resource type="PackedScene" path="res://scenes/ui/reputation/ReputationToast.tscn" id="25_164ei"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_5tue0"]
 texture = ExtResource("2_flbpo")
@@ -509,6 +514,7 @@ sources/0 = SubResource("TileSetAtlasSource_odhgm")
 texture = ExtResource("6_mv0sq")
 texture_region_size = Vector2i(32, 32)
 0:0/0 = 0
+0:0/0/y_sort_origin = 30
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_kfsm3"]
 texture = ExtResource("7_7j07s")
@@ -1154,6 +1160,16 @@ shape = SubResource("RectangleShape2D_odhgm")
 [node name="combat_indicators" type="TileMapLayer" parent="." unique_id=1404203779]
 tile_map_data = PackedByteArray("AACDAIMAAAAHAAAAAACAAIEAAAAHAAAAAAB8AHkAAAAHAAAAAACMAIcAAAAHAAAAAACFAFYAAAAHAAAAAACFAE0AAAAHAAAAAACkAIcAAAAHAAAAAACzAIcAAAAHAAAAAAC0AIcAAAAIAAAAAACOAIcAAAAIAAAAAACBAIIAAAAIAAAAAAB7AHgAAAAIAAAAAACFAFcAAAAIAAAAAACEAEwAAAAIAAAAAABaALAAAAAIAAAAAABnALQAAAAIAAAAAABuALoAAAAIAAAAAAB2AMMAAAAIAAAAAAB4AMwAAAAIAAAAAAB1ANUAAAAIAAAAAAB2ANQAAAAHAAAAAAB4AM0AAAAHAAAAAAB1AMIAAAAHAAAAAABvALsAAAAHAAAAAABmALQAAAAHAAAAAABbALEAAAAHAAAAAACnAHkAAAAIAAAAAACNAGQAAAAIAAAAAACJAG0AAAAIAAAAAACTAFcAAAAIAAAAAACYAH8AAAAIAAAAAACrAH0AAAAHAAAAAACLAIAAAAAHAAAAAACGAHAAAAAHAAAAAACOAGgAAAAHAAAAAACNAFIAAAAHAAAAAACUAG0AAAAHAAAAAACmAH8AAAAHAAAAAABuANEAAAAHAAAAAABdALcAAAAHAAAAAABqAMEAAAAHAAAAAAB0AM0AAAAHAAAAAABgALMAAAAHAAAAAABkAMkAAAAHAAAAAABfAL8AAAAHAAAAAAA=")
 tile_set = SubResource("TileSet_j1fku")
+
+[node name="EconomyHUD" parent="." unique_id=1657785817 instance=ExtResource("21_kfsm3")]
+
+[node name="InventoryScreen" parent="." unique_id=1756962949 instance=ExtResource("22_sj2tw")]
+
+[node name="QuestLog" parent="." unique_id=1472314561 instance=ExtResource("23_sap62")]
+
+[node name="QuestTracker" parent="." unique_id=1288784236 instance=ExtResource("24_5x7lq")]
+
+[node name="ReputationToast" parent="." unique_id=344043274 instance=ExtResource("25_164ei")]
 
 [connection signal="body_entered" from="doors/door_zone_2" to="doors/door_zone_2" method="_on_body_entered"]
 [connection signal="body_entered" from="doors/door_zone_2_S" to="doors/door_zone_2_S" method="_on_body_entered"]
