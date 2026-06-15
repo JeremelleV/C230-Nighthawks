@@ -1085,8 +1085,35 @@ position = Vector2(31, 0)
 [node name="spawn" parent="doors/door_zone_3_W" index="1" unique_id=1319578235]
 position = Vector2(246, -2)
 
+[node name="door_zone_3_S" parent="doors" unique_id=1709533964 instance=ExtResource("8_wcgud")]
+position = Vector2(2833, 7213)
+destination_level_tag = "zone_4"
+destination_door_tag = "zone_4_NE"
+
+[node name="CollisionShape2D" parent="doors/door_zone_3_S" index="0" unique_id=909259009]
+position = Vector2(31, 0)
+
+[node name="spawn" parent="doors/door_zone_3_S" index="1" unique_id=1319578235]
+position = Vector2(34, -265)
+
+[node name="door_zone_3_E" parent="doors" unique_id=180150233 instance=ExtResource("8_wcgud")]
+position = Vector2(3960, 5075)
+destination_level_tag = "zone_5"
+destination_door_tag = "zone_5_W"
+spawn_direction = "left"
+
+[node name="CollisionShape2D" parent="doors/door_zone_3_E" index="0" unique_id=909259009]
+position = Vector2(31, 0)
+
+[node name="spawn" parent="doors/door_zone_3_E" index="1" unique_id=1319578235]
+position = Vector2(-280, -7)
+
 [node name="minimap" parent="." unique_id=1925678804 instance=ExtResource("23_2oj2p")]
 
 [connection signal="body_entered" from="doors/door_zone_3_W" to="doors/door_zone_3_W" method="_on_body_entered"]
+[connection signal="body_entered" from="doors/door_zone_3_S" to="doors/door_zone_3_S" method="_on_body_entered"]
+[connection signal="body_entered" from="doors/door_zone_3_E" to="doors/door_zone_3_E" method="_on_body_entered"]
 
 [editable path="doors/door_zone_3_W"]
+[editable path="doors/door_zone_3_S"]
+[editable path="doors/door_zone_3_E"]

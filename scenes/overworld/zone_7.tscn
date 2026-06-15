@@ -17,6 +17,7 @@
 [ext_resource type="Texture2D" uid="uid://bn8uryldllt65" path="res://assets/props/som_rock_9.png" id="14_k3lu0"]
 [ext_resource type="Texture2D" uid="uid://dop6bwt3qt172" path="res://assets/props/som_rock_10.png" id="15_15b5t"]
 [ext_resource type="Texture2D" uid="uid://kly3sawbn6qy" path="res://assets/sprites/tilesets/cliff_tileset.png" id="16_bog5s"]
+[ext_resource type="PackedScene" uid="uid://cqyqa0r34yr31" path="res://scenes/elements/door.tscn" id="18_urrab"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_5sf3l"]
 texture = ExtResource("1_3jdmn")
@@ -497,3 +498,35 @@ tile_map_data = PackedByteArray("AAAbAJsAAAACAAEAAAAbAJwAAAACAAEAAAAbAJ0AAAACAAE
 tile_set = SubResource("TileSet_dcdv0")
 
 [node name="minimap" parent="." unique_id=1925678804 instance=ExtResource("1_xtf7q")]
+
+[node name="doors" type="Node" parent="." unique_id=85012085]
+
+[node name="door_zone_7_W" parent="doors" unique_id=1568456997 instance=ExtResource("18_urrab")]
+position = Vector2(837, 5365)
+destination_level_tag = "zone_5"
+destination_door_tag = "zone_5_E"
+spawn_direction = "right"
+
+[node name="CollisionShape2D" parent="doors/door_zone_7_W" index="0" unique_id=909259009]
+position = Vector2(31, 0)
+
+[node name="spawn" parent="doors/door_zone_7_W" index="1" unique_id=1319578235]
+position = Vector2(246, -2)
+
+[node name="door_zone_7_E" parent="doors" unique_id=901378444 instance=ExtResource("18_urrab")]
+position = Vector2(3870, 5068)
+destination_level_tag = "zone_8"
+destination_door_tag = "zone_8_WN"
+spawn_direction = "left"
+
+[node name="CollisionShape2D" parent="doors/door_zone_7_E" index="0" unique_id=909259009]
+position = Vector2(31, 0)
+
+[node name="spawn" parent="doors/door_zone_7_E" index="1" unique_id=1319578235]
+position = Vector2(-179, 1)
+
+[connection signal="body_entered" from="doors/door_zone_7_W" to="doors/door_zone_7_W" method="_on_body_entered"]
+[connection signal="body_entered" from="doors/door_zone_7_E" to="doors/door_zone_7_E" method="_on_body_entered"]
+
+[editable path="doors/door_zone_7_W"]
+[editable path="doors/door_zone_7_E"]

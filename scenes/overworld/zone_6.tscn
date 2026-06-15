@@ -10,6 +10,7 @@
 [ext_resource type="Texture2D" uid="uid://6g0664mncp26" path="res://assets/sprites/tilesets/jungle_tree_corner.png" id="7_urmf4"]
 [ext_resource type="Texture2D" uid="uid://dpin3234oeqh3" path="res://assets/props/house_1.png" id="8_jyiii"]
 [ext_resource type="Texture2D" uid="uid://b4clgk5hwt0d5" path="res://assets/props/house_2.png" id="9_fc7jh"]
+[ext_resource type="PackedScene" uid="uid://cqyqa0r34yr31" path="res://scenes/elements/door.tscn" id="11_xumk0"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_6m481"]
 texture = ExtResource("1_ucclq")
@@ -741,3 +742,35 @@ tile_map_data = PackedByteArray("AAASAEQAAQAAAAAAAAA=")
 tile_set = SubResource("TileSet_coonh")
 
 [node name="minimap" parent="." unique_id=1925678804 instance=ExtResource("1_vtn1r")]
+
+[node name="doors" type="Node" parent="." unique_id=441422260]
+
+[node name="door_zone_6_W" parent="doors" unique_id=1568456997 instance=ExtResource("11_xumk0")]
+position = Vector2(-6, 2490)
+destination_level_tag = "zone_4"
+destination_door_tag = "zone_4_E"
+spawn_direction = "right"
+
+[node name="CollisionShape2D" parent="doors/door_zone_6_W" index="0" unique_id=909259009]
+position = Vector2(31, 0)
+
+[node name="spawn" parent="doors/door_zone_6_W" index="1" unique_id=1319578235]
+position = Vector2(246, -2)
+
+[node name="door_zone_6_E" parent="doors" unique_id=1956025003 instance=ExtResource("11_xumk0")]
+position = Vector2(3150, 2196)
+destination_level_tag = "zone_8"
+destination_door_tag = "zone_8_WS"
+spawn_direction = "left"
+
+[node name="CollisionShape2D" parent="doors/door_zone_6_E" index="0" unique_id=909259009]
+position = Vector2(31, 0)
+
+[node name="spawn" parent="doors/door_zone_6_E" index="1" unique_id=1319578235]
+position = Vector2(-196, -2)
+
+[connection signal="body_entered" from="doors/door_zone_6_W" to="doors/door_zone_6_W" method="_on_body_entered"]
+[connection signal="body_entered" from="doors/door_zone_6_E" to="doors/door_zone_6_E" method="_on_body_entered"]
+
+[editable path="doors/door_zone_6_W"]
+[editable path="doors/door_zone_6_E"]

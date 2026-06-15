@@ -23,6 +23,7 @@
 [ext_resource type="Texture2D" uid="uid://v3o5fuycv7hd" path="res://assets/sprites/tilesets/jungle_tree_tileset.png" id="20_gw82y"]
 [ext_resource type="Texture2D" uid="uid://6g0664mncp26" path="res://assets/sprites/tilesets/jungle_tree_corner.png" id="21_qie28"]
 [ext_resource type="Texture2D" uid="uid://kly3sawbn6qy" path="res://assets/sprites/tilesets/cliff_tileset.png" id="22_h1l8c"]
+[ext_resource type="PackedScene" uid="uid://cqyqa0r34yr31" path="res://scenes/elements/door.tscn" id="24_xcj6o"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_bjwpm"]
 texture = ExtResource("1_sywax")
@@ -1075,3 +1076,35 @@ tile_map_data = PackedByteArray("AAAbAJsAAAACAAEAAAAbAJwAAAACAAEAAAAbAJ0AAAACAAE
 tile_set = SubResource("TileSet_h07uo")
 
 [node name="minimap" parent="." unique_id=1925678804 instance=ExtResource("1_cxraa")]
+
+[node name="doors" type="Node" parent="." unique_id=1651005319]
+
+[node name="door_zone_8_WN" parent="doors" unique_id=1568456997 instance=ExtResource("24_xcj6o")]
+position = Vector2(1261, 4628)
+destination_level_tag = "zone_7"
+destination_door_tag = "zone_7_E"
+spawn_direction = "right"
+
+[node name="CollisionShape2D" parent="doors/door_zone_8_WN" index="0" unique_id=909259009]
+position = Vector2(31, 0)
+
+[node name="spawn" parent="doors/door_zone_8_WN" index="1" unique_id=1319578235]
+position = Vector2(259, 52)
+
+[node name="door_zone_8_WS" parent="doors" unique_id=633997941 instance=ExtResource("24_xcj6o")]
+position = Vector2(1296, 6102)
+destination_level_tag = "zone_6"
+destination_door_tag = "zone_6_E"
+spawn_direction = "right"
+
+[node name="CollisionShape2D" parent="doors/door_zone_8_WS" index="0" unique_id=909259009]
+position = Vector2(31, 0)
+
+[node name="spawn" parent="doors/door_zone_8_WS" index="1" unique_id=1319578235]
+position = Vector2(226, -6)
+
+[connection signal="body_entered" from="doors/door_zone_8_WN" to="doors/door_zone_8_WN" method="_on_body_entered"]
+[connection signal="body_entered" from="doors/door_zone_8_WS" to="doors/door_zone_8_WS" method="_on_body_entered"]
+
+[editable path="doors/door_zone_8_WN"]
+[editable path="doors/door_zone_8_WS"]

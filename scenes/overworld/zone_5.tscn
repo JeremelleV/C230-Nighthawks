@@ -22,6 +22,7 @@
 [ext_resource type="Texture2D" uid="uid://dop6bwt3qt172" path="res://assets/props/som_rock_10.png" id="19_wj7at"]
 [ext_resource type="Texture2D" uid="uid://dpin3234oeqh3" path="res://assets/props/house_1.png" id="20_n5bvk"]
 [ext_resource type="Texture2D" uid="uid://b4clgk5hwt0d5" path="res://assets/props/house_2.png" id="21_kfw7t"]
+[ext_resource type="PackedScene" uid="uid://cqyqa0r34yr31" path="res://scenes/elements/door.tscn" id="23_dc4tq"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_weslf"]
 texture = ExtResource("1_liex4")
@@ -1019,3 +1020,35 @@ tile_map_data = PackedByteArray("AAAwAE4AAQAAAAAAAABLAKEAAAAAAAAAAABPAKEAAQAAAAA
 tile_set = SubResource("TileSet_35iay")
 
 [node name="minimap" parent="." unique_id=1925678804 instance=ExtResource("1_0iho4")]
+
+[node name="doors" type="Node" parent="." unique_id=992807528]
+
+[node name="door_zone_5_W" parent="doors" unique_id=1568456997 instance=ExtResource("23_dc4tq")]
+position = Vector2(1121, 5135)
+destination_level_tag = "zone_3"
+destination_door_tag = "zone_3_E"
+spawn_direction = "right"
+
+[node name="CollisionShape2D" parent="doors/door_zone_5_W" index="0" unique_id=909259009]
+position = Vector2(31, 0)
+
+[node name="spawn" parent="doors/door_zone_5_W" index="1" unique_id=1319578235]
+position = Vector2(246, -2)
+
+[node name="door_zone_5_E" parent="doors" unique_id=473961791 instance=ExtResource("23_dc4tq")]
+position = Vector2(3845, 5070)
+destination_level_tag = "zone_7"
+destination_door_tag = "zone_7_W"
+spawn_direction = "left"
+
+[node name="CollisionShape2D" parent="doors/door_zone_5_E" index="0" unique_id=909259009]
+position = Vector2(31, 0)
+
+[node name="spawn" parent="doors/door_zone_5_E" index="1" unique_id=1319578235]
+position = Vector2(-218, 1)
+
+[connection signal="body_entered" from="doors/door_zone_5_W" to="doors/door_zone_5_W" method="_on_body_entered"]
+[connection signal="body_entered" from="doors/door_zone_5_E" to="doors/door_zone_5_E" method="_on_body_entered"]
+
+[editable path="doors/door_zone_5_W"]
+[editable path="doors/door_zone_5_E"]
