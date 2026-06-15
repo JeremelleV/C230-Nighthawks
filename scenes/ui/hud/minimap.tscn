@@ -1,0 +1,39 @@
+[gd_scene format=3 uid="uid://dy1h13pblohyb"]
+
+[ext_resource type="Script" uid="uid://do6kpah21yfu5" path="res://scripts/elements/minimap_camera.gd" id="1_1lug7"]
+[ext_resource type="Script" uid="uid://bqslq3vy6agpn" path="res://scripts/elements/minimap.gd" id="1_radbx"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_radbx"]
+bg_color = Color(0.4745098, 0, 0, 1)
+border_color = Color(0.4745098, 0, 0, 1)
+
+[node name="minimap" type="Node2D" unique_id=1925678804]
+script = ExtResource("1_radbx")
+
+[node name="minimap_viewport" type="SubViewport" parent="." unique_id=1259648831]
+disable_3d = true
+size = Vector2i(200, 200)
+render_target_update_mode = 4
+
+[node name="minimap_camera" type="Camera2D" parent="minimap_viewport" unique_id=1091602536]
+script = ExtResource("1_1lug7")
+
+[node name="CanvasLayer" type="CanvasLayer" parent="." unique_id=1610461227]
+
+[node name="Panel" type="Panel" parent="CanvasLayer" unique_id=399951310]
+offset_left = 17.0
+offset_top = 69.0
+offset_right = 227.0
+offset_bottom = 279.0
+theme_override_styles/panel = SubResource("StyleBoxFlat_radbx")
+metadata/_edit_use_anchors_ = true
+
+[node name="minimap_display" type="TextureRect" parent="CanvasLayer/Panel" unique_id=1095734897]
+layout_mode = 0
+offset_left = 5.0
+offset_top = 5.0
+offset_right = 205.0
+offset_bottom = 205.0
+expand_mode = 2
+stretch_mode = 4
+metadata/_edit_use_anchors_ = true
