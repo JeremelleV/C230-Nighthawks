@@ -25,6 +25,9 @@
 [ext_resource type="PackedScene" uid="uid://cqyqa0r34yr31" path="res://scenes/elements/door.tscn" id="23_dc4tq"]
 [ext_resource type="PackedScene" uid="uid://x61xvjvbheb6" path="res://scenes/ui/shop/ShopUI.tscn" id="24_53qfq"]
 [ext_resource type="PackedScene" uid="uid://cdgr5nt0iy003" path="res://scenes/ui/dialogue/DialogueBox.tscn" id="25_o05lp"]
+[ext_resource type="PackedScene" uid="uid://845hmsyjb8iu" path="res://scenes/entities/npc.tscn" id="26_c0jbb"]
+[ext_resource type="Texture2D" uid="uid://ck5rqr62hkaxr" path="res://assets/sprites/characters/som_soldier_npc.png" id="27_erh1j"]
+[ext_resource type="Texture2D" uid="uid://b250ej3o5acgt" path="res://assets/sprites/characters/sprite_sheet_alien_civ.png" id="28_k4xbi"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_weslf"]
 texture = ExtResource("1_liex4")
@@ -988,6 +991,92 @@ physics_layer_0/collision_mask = 0
 sources/0 = SubResource("TileSetAtlasSource_8nb8i")
 sources/1 = SubResource("TileSetAtlasSource_v6ndy")
 
+[sub_resource type="SpriteFrames" id="SpriteFrames_cjh5m"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("27_erh1j")
+}],
+"loop": true,
+"name": &"down",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("27_erh1j")
+}],
+"loop": true,
+"name": &"left",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("27_erh1j")
+}],
+"loop": true,
+"name": &"right",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("27_erh1j")
+}],
+"loop": true,
+"name": &"up",
+"speed": 5.0
+}]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_3kaoc"]
+atlas = ExtResource("28_k4xbi")
+region = Rect2(35, 0, 27, 33)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_y0d21"]
+atlas = ExtResource("28_k4xbi")
+region = Rect2(35, 35, 27, 33)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_xvwr2"]
+atlas = ExtResource("28_k4xbi")
+region = Rect2(35, 35, 27, 33)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_odhgm"]
+atlas = ExtResource("28_k4xbi")
+region = Rect2(35, 67, 27, 33)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_wlys6"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_3kaoc")
+}],
+"loop": true,
+"name": &"down",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_y0d21")
+}],
+"loop": true,
+"name": &"left",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_xvwr2")
+}],
+"loop": true,
+"name": &"right",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_odhgm")
+}],
+"loop": true,
+"name": &"up",
+"speed": 5.0
+}]
+
 [node name="zone_5" type="Node2D" unique_id=1557624657]
 y_sort_enabled = true
 
@@ -1053,8 +1142,163 @@ position = Vector2(-218, 1)
 
 [node name="DialogueBox" parent="." unique_id=1897692953 instance=ExtResource("25_o05lp")]
 
+[node name="npc_dialogue_som" parent="." unique_id=1327451291 instance=ExtResource("26_c0jbb")]
+position = Vector2(1684, 5017)
+dialogue_id = "scout_area"
+sprite_frames = SubResource("SpriteFrames_cjh5m")
+idle_sequence = Array[String](["right", "down", "left", "down", "right", "up"])
+idle_flip_interval = 5.0
+
+[node name="CollisionShape2D" parent="npc_dialogue_som/InteractionArea" parent_id_path=PackedInt32Array(1327451291, 886098454) index="0" unique_id=1299023387]
+position = Vector2(1, 9.5)
+
+[node name="npc_dialogue_som2" parent="." unique_id=911958274 instance=ExtResource("26_c0jbb")]
+position = Vector2(2482, 5199)
+dialogue_id = "scout_area"
+sprite_frames = SubResource("SpriteFrames_cjh5m")
+idle_sequence = Array[String](["right", "down", "left", "down", "right", "up"])
+idle_flip_interval = 5.0
+
+[node name="CollisionShape2D" parent="npc_dialogue_som2/InteractionArea" parent_id_path=PackedInt32Array(911958274, 886098454) index="0" unique_id=1299023387]
+position = Vector2(1, 9.5)
+
+[node name="npc_dialogue_som3" parent="." unique_id=1168812380 instance=ExtResource("26_c0jbb")]
+position = Vector2(3469, 5005)
+dialogue_id = "scout_area"
+sprite_frames = SubResource("SpriteFrames_cjh5m")
+idle_sequence = Array[String](["right", "down", "left", "down", "right", "up"])
+idle_flip_interval = 5.0
+
+[node name="CollisionShape2D" parent="npc_dialogue_som3/InteractionArea" parent_id_path=PackedInt32Array(1168812380, 886098454) index="0" unique_id=1299023387]
+position = Vector2(1, 9.5)
+
+[node name="npc_dialogue_som4" parent="." unique_id=1296952600 instance=ExtResource("26_c0jbb")]
+position = Vector2(2221, 5685)
+dialogue_id = "scout_area"
+sprite_frames = SubResource("SpriteFrames_cjh5m")
+idle_sequence = Array[String](["right", "down", "left", "down", "right", "up"])
+idle_flip_interval = 5.0
+
+[node name="CollisionShape2D" parent="npc_dialogue_som4/InteractionArea" parent_id_path=PackedInt32Array(1296952600, 886098454) index="0" unique_id=1299023387]
+position = Vector2(1, 9.5)
+
+[node name="npc_dialogue_som5" parent="." unique_id=1445834927 instance=ExtResource("26_c0jbb")]
+position = Vector2(2381, 5782)
+dialogue_id = "scout_area"
+sprite_frames = SubResource("SpriteFrames_cjh5m")
+idle_sequence = Array[String](["right", "down", "left", "down", "right", "up"])
+idle_flip_interval = 5.0
+
+[node name="CollisionShape2D" parent="npc_dialogue_som5/InteractionArea" parent_id_path=PackedInt32Array(1445834927, 886098454) index="0" unique_id=1299023387]
+position = Vector2(1, 9.5)
+
+[node name="npc_dialogue_som6" parent="." unique_id=1443558358 instance=ExtResource("26_c0jbb")]
+position = Vector2(2214, 5122)
+dialogue_id = "scout_area"
+sprite_frames = SubResource("SpriteFrames_cjh5m")
+idle_sequence = Array[String](["right", "down", "left", "down", "right", "up"])
+idle_flip_interval = 5.0
+
+[node name="CollisionShape2D" parent="npc_dialogue_som6/InteractionArea" parent_id_path=PackedInt32Array(1443558358, 886098454) index="0" unique_id=1299023387]
+position = Vector2(1, 9.5)
+
+[node name="npc_dialogue_som7" parent="." unique_id=2116447585 instance=ExtResource("26_c0jbb")]
+position = Vector2(2954, 4863)
+dialogue_id = "scout_area"
+sprite_frames = SubResource("SpriteFrames_cjh5m")
+idle_sequence = Array[String](["right", "down", "left", "down", "right", "up"])
+idle_flip_interval = 5.0
+
+[node name="CollisionShape2D" parent="npc_dialogue_som7/InteractionArea" parent_id_path=PackedInt32Array(2116447585, 886098454) index="0" unique_id=1299023387]
+position = Vector2(1, 9.5)
+
+[node name="npc_dialogue_som8" parent="." unique_id=1045583553 instance=ExtResource("26_c0jbb")]
+position = Vector2(1742, 5120)
+dialogue_id = "scout_area"
+sprite_frames = SubResource("SpriteFrames_cjh5m")
+idle_sequence = Array[String](["right", "down", "left", "down", "right", "up"])
+idle_flip_interval = 5.0
+
+[node name="CollisionShape2D" parent="npc_dialogue_som8/InteractionArea" parent_id_path=PackedInt32Array(1045583553, 886098454) index="0" unique_id=1299023387]
+position = Vector2(1, 9.5)
+
+[node name="npc_dialogue_som9" parent="." unique_id=1872504445 instance=ExtResource("26_c0jbb")]
+position = Vector2(1839, 5120)
+dialogue_id = "scout_area"
+sprite_frames = SubResource("SpriteFrames_cjh5m")
+idle_sequence = Array[String](["right", "down", "left", "down", "right", "up"])
+idle_flip_interval = 5.0
+
+[node name="CollisionShape2D" parent="npc_dialogue_som9/InteractionArea" parent_id_path=PackedInt32Array(1872504445, 886098454) index="0" unique_id=1299023387]
+position = Vector2(1, 9.5)
+
+[node name="npc_dialogue_som10" parent="." unique_id=1102216286 instance=ExtResource("26_c0jbb")]
+position = Vector2(2898, 5516)
+dialogue_id = "scout_area"
+sprite_frames = SubResource("SpriteFrames_cjh5m")
+idle_sequence = Array[String](["right", "down", "left", "down", "right", "up"])
+idle_flip_interval = 5.0
+
+[node name="CollisionShape2D" parent="npc_dialogue_som10/InteractionArea" parent_id_path=PackedInt32Array(1102216286, 886098454) index="0" unique_id=1299023387]
+position = Vector2(1, 9.5)
+
+[node name="npc_dialogue_som11" parent="." unique_id=860090299 instance=ExtResource("26_c0jbb")]
+position = Vector2(2669, 4865)
+dialogue_id = "scout_area"
+sprite_frames = SubResource("SpriteFrames_cjh5m")
+idle_sequence = Array[String](["right", "down", "left", "down", "right", "up"])
+idle_flip_interval = 5.0
+
+[node name="CollisionShape2D" parent="npc_dialogue_som11/InteractionArea" parent_id_path=PackedInt32Array(860090299, 886098454) index="0" unique_id=1299023387]
+position = Vector2(1, 9.5)
+
+[node name="npc_dialogue_som12" parent="." unique_id=193108238 instance=ExtResource("26_c0jbb")]
+position = Vector2(2577, 4865)
+dialogue_id = "scout_area"
+sprite_frames = SubResource("SpriteFrames_cjh5m")
+idle_sequence = Array[String](["right", "down", "left", "down", "right", "up"])
+idle_flip_interval = 5.0
+
+[node name="CollisionShape2D" parent="npc_dialogue_som12/InteractionArea" parent_id_path=PackedInt32Array(193108238, 886098454) index="0" unique_id=1299023387]
+position = Vector2(1, 9.5)
+
+[node name="npc_dialogue_som13" parent="." unique_id=1687423531 instance=ExtResource("26_c0jbb")]
+position = Vector2(2358, 4488)
+dialogue_id = "scout_area"
+sprite_frames = SubResource("SpriteFrames_cjh5m")
+idle_sequence = Array[String](["right", "down", "left", "down", "right", "up"])
+idle_flip_interval = 5.0
+
+[node name="CollisionShape2D" parent="npc_dialogue_som13/InteractionArea" parent_id_path=PackedInt32Array(1687423531, 886098454) index="0" unique_id=1299023387]
+position = Vector2(1, 9.5)
+
+[node name="npc_trader" parent="." unique_id=1906299204 instance=ExtResource("26_c0jbb")]
+position = Vector2(3079, 5187)
+has_shop = true
+shop_id = "crystal_grove_vendor"
+sprite_frames = SubResource("SpriteFrames_wlys6")
+idle_sequence = Array[String](["right", "down", "left", "down", "right", "up"])
+idle_flip_interval = 9.0
+
+[node name="CollisionShape2D" parent="npc_trader/InteractionArea" parent_id_path=PackedInt32Array(1906299204, 886098454) index="0" unique_id=1299023387]
+position = Vector2(1, 9.5)
+
 [connection signal="body_entered" from="doors/door_zone_5_W" to="doors/door_zone_5_W" method="_on_body_entered"]
 [connection signal="body_entered" from="doors/door_zone_5_E" to="doors/door_zone_5_E" method="_on_body_entered"]
 
 [editable path="doors/door_zone_5_W"]
 [editable path="doors/door_zone_5_E"]
+[editable path="npc_dialogue_som"]
+[editable path="npc_dialogue_som2"]
+[editable path="npc_dialogue_som3"]
+[editable path="npc_dialogue_som4"]
+[editable path="npc_dialogue_som5"]
+[editable path="npc_dialogue_som6"]
+[editable path="npc_dialogue_som7"]
+[editable path="npc_dialogue_som8"]
+[editable path="npc_dialogue_som9"]
+[editable path="npc_dialogue_som10"]
+[editable path="npc_dialogue_som11"]
+[editable path="npc_dialogue_som12"]
+[editable path="npc_dialogue_som13"]
+[editable path="npc_trader"]

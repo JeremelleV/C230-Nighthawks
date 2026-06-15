@@ -914,17 +914,37 @@ position = Vector2(31, 0)
 [node name="spawn" parent="doors/door_zone_2_E" index="1" unique_id=1319578235]
 position = Vector2(-139, -6)
 
-[node name="npc_scout_area" parent="." unique_id=1327451291 instance=ExtResource("9_fusml")]
+[node name="npc_dialogue" parent="." unique_id=1327451291 instance=ExtResource("9_fusml")]
 position = Vector2(1645, 2524)
 dialogue_id = "scout_area"
 sprite_frames = SubResource("SpriteFrames_y0d21")
 idle_sequence = Array[String](["right", "down", "left", "down", "right", "up"])
 idle_flip_interval = 5.0
 
-[node name="CollisionShape2D" parent="npc_scout_area/InteractionArea" parent_id_path=PackedInt32Array(1327451291, 886098454) index="0" unique_id=1299023387]
+[node name="CollisionShape2D" parent="npc_dialogue/InteractionArea" parent_id_path=PackedInt32Array(1327451291, 886098454) index="0" unique_id=1299023387]
 position = Vector2(1, 9.5)
 
-[node name="npc_crystal_grove_vendor" parent="." unique_id=1899501683 instance=ExtResource("9_fusml")]
+[node name="npc_dialogue2" parent="." unique_id=760583772 instance=ExtResource("9_fusml")]
+position = Vector2(2902, 2294)
+dialogue_id = "scout_area"
+sprite_frames = SubResource("SpriteFrames_y0d21")
+idle_sequence = Array[String](["right", "down", "left", "down", "right", "up"])
+idle_flip_interval = 5.0
+
+[node name="CollisionShape2D" parent="npc_dialogue2/InteractionArea" parent_id_path=PackedInt32Array(760583772, 886098454) index="0" unique_id=1299023387]
+position = Vector2(1, 9.5)
+
+[node name="npc_dialogue3" parent="." unique_id=2114375384 instance=ExtResource("9_fusml")]
+position = Vector2(1586, 2620)
+dialogue_id = "scout_area"
+sprite_frames = SubResource("SpriteFrames_y0d21")
+idle_sequence = Array[String](["right", "down", "left", "down", "right", "up"])
+idle_flip_interval = 5.0
+
+[node name="CollisionShape2D" parent="npc_dialogue3/InteractionArea" parent_id_path=PackedInt32Array(2114375384, 886098454) index="0" unique_id=1299023387]
+position = Vector2(1, 9.5)
+
+[node name="npc_trader" parent="." unique_id=1899501683 instance=ExtResource("9_fusml")]
 position = Vector2(1940, 2414)
 has_shop = true
 shop_id = "crystal_grove_vendor"
@@ -932,7 +952,7 @@ sprite_frames = SubResource("SpriteFrames_a818g")
 idle_sequence = Array[String](["right", "down", "left", "down", "right", "up"])
 idle_flip_interval = 9.0
 
-[node name="CollisionShape2D" parent="npc_crystal_grove_vendor/InteractionArea" parent_id_path=PackedInt32Array(1899501683, 886098454) index="0" unique_id=1299023387]
+[node name="CollisionShape2D" parent="npc_trader/InteractionArea" parent_id_path=PackedInt32Array(1899501683, 886098454) index="0" unique_id=1299023387]
 position = Vector2(1, 9.5)
 
 [node name="DialogueBox" parent="." unique_id=538777602 instance=ExtResource("11_3kaoc")]
@@ -987,5 +1007,7 @@ tile_set = SubResource("TileSet_j1fku")
 [editable path="doors/door_zone_2"]
 [editable path="doors/door_zone_2_S"]
 [editable path="doors/door_zone_2_E"]
-[editable path="npc_scout_area"]
-[editable path="npc_crystal_grove_vendor"]
+[editable path="npc_dialogue"]
+[editable path="npc_dialogue2"]
+[editable path="npc_dialogue3"]
+[editable path="npc_trader"]

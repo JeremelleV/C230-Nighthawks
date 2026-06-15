@@ -15,6 +15,8 @@
 [ext_resource type="PackedScene" uid="uid://cdgr5nt0iy003" path="res://scenes/ui/dialogue/DialogueBox.tscn" id="13_urmf4"]
 [ext_resource type="Script" uid="uid://bjnvmighbllae" path="res://scripts/overworld/combat_zone.gd" id="14_jyiii"]
 [ext_resource type="Texture2D" uid="uid://l1bfk53fwqxn" path="res://assets/sprites/tilesets/placeholder_props.png" id="15_fc7jh"]
+[ext_resource type="PackedScene" uid="uid://845hmsyjb8iu" path="res://scenes/entities/npc.tscn" id="16_jyiii"]
+[ext_resource type="Texture2D" uid="uid://b250ej3o5acgt" path="res://assets/sprites/characters/sprite_sheet_alien_civ.png" id="17_fc7jh"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_6m481"]
 texture = ExtResource("1_ucclq")
@@ -730,6 +732,57 @@ texture_region_size = Vector2i(64, 64)
 [sub_resource type="TileSet" id="TileSet_byv3k"]
 sources/0 = SubResource("TileSetAtlasSource_6ouve")
 
+[sub_resource type="AtlasTexture" id="AtlasTexture_0ytv7"]
+atlas = ExtResource("17_fc7jh")
+region = Rect2(0, 0, 27, 33)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_ao12m"]
+atlas = ExtResource("17_fc7jh")
+region = Rect2(0, 35, 27, 33)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_5tue0"]
+atlas = ExtResource("17_fc7jh")
+region = Rect2(0, 35, 27, 33)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_hv0g8"]
+atlas = ExtResource("17_fc7jh")
+region = Rect2(0, 67, 27, 33)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_6m481"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_0ytv7")
+}],
+"loop": true,
+"name": &"down",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_ao12m")
+}],
+"loop": true,
+"name": &"left",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_5tue0")
+}],
+"loop": true,
+"name": &"right",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_hv0g8")
+}],
+"loop": true,
+"name": &"up",
+"speed": 5.0
+}]
+
 [node name="zone_6" type="Node2D" unique_id=190764708]
 y_sort_enabled = true
 
@@ -823,6 +876,16 @@ shape = SubResource("RectangleShape2D_56qyb")
 tile_map_data = PackedByteArray("AAB1ANUAAAAIAAAAAABWAJsAAAAIAAAAAABeAJ0AAAAIAAAAAABsAJ4AAAAIAAAAAAB6AJwAAAAIAAAAAABuAJ4AAAAHAAAAAAB4AJwAAAAHAAAAAABxAJ4AAAAHAAAAAABcAJ0AAAAHAAAAAABYAJwAAAAHAAAAAAA=")
 tile_set = SubResource("TileSet_byv3k")
 
+[node name="npc_dialogue" parent="." unique_id=1327451291 instance=ExtResource("16_jyiii")]
+position = Vector2(565, 2206)
+dialogue_id = "scout_area"
+sprite_frames = SubResource("SpriteFrames_6m481")
+idle_sequence = Array[String](["right", "down", "left", "down", "right", "up"])
+idle_flip_interval = 5.0
+
+[node name="CollisionShape2D" parent="npc_dialogue/InteractionArea" parent_id_path=PackedInt32Array(1327451291, 886098454) index="0" unique_id=1299023387]
+position = Vector2(1, 9.5)
+
 [connection signal="body_entered" from="doors/door_zone_6_W" to="doors/door_zone_6_W" method="_on_body_entered"]
 [connection signal="body_entered" from="doors/door_zone_6_E" to="doors/door_zone_6_E" method="_on_body_entered"]
 [connection signal="body_entered" from="combat_zones/combat_zone1" to="combat_zones/combat_zone1" method="_on_body_entered"]
@@ -832,3 +895,4 @@ tile_set = SubResource("TileSet_byv3k")
 
 [editable path="doors/door_zone_6_W"]
 [editable path="doors/door_zone_6_E"]
+[editable path="npc_dialogue"]

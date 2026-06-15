@@ -1024,44 +1024,84 @@ destination_door_tag = "zone_2"
 [node name="spawn" parent="doors/door_zone_1_start" index="1" unique_id=1319578235]
 position = Vector2(6, -264)
 
-[node name="npc_dustplains_trader" parent="." unique_id=93047514 instance=ExtResource("9_8yey6")]
+[node name="npc_trader" parent="." unique_id=93047514 instance=ExtResource("9_8yey6")]
 position = Vector2(2480, 3007)
 has_shop = true
 shop_id = "dustplains_trader"
 sprite_frames = SubResource("SpriteFrames_3w5u0")
 idle_sequence = Array[String](["down", "right", "down", "left"])
 
-[node name="CollisionShape2D" parent="npc_dustplains_trader/InteractionArea" parent_id_path=PackedInt32Array(93047514, 886098454) index="0" unique_id=1299023387]
+[node name="CollisionShape2D" parent="npc_trader/InteractionArea" parent_id_path=PackedInt32Array(93047514, 886098454) index="0" unique_id=1299023387]
 position = Vector2(0.5, 14)
 
-[node name="npc_test_npc_intro" parent="." unique_id=1327451291 instance=ExtResource("9_8yey6")]
+[node name="npc_dialogue" parent="." unique_id=1327451291 instance=ExtResource("9_8yey6")]
 position = Vector2(2445, 2689)
 dialogue_id = "test_npc_intro"
 sprite_frames = SubResource("SpriteFrames_2tckd")
 idle_sequence = Array[String](["right", "down", "left", "down"])
 idle_flip_interval = 7.0
 
-[node name="CollisionShape2D" parent="npc_test_npc_intro/InteractionArea" parent_id_path=PackedInt32Array(1327451291, 886098454) index="0" unique_id=1299023387]
+[node name="CollisionShape2D" parent="npc_dialogue/InteractionArea" parent_id_path=PackedInt32Array(1327451291, 886098454) index="0" unique_id=1299023387]
 position = Vector2(1, 9.5)
 
-[node name="npc_scout_lich" parent="." unique_id=425234253 instance=ExtResource("9_8yey6")]
+[node name="npc_dialogue2" parent="." unique_id=425234253 instance=ExtResource("9_8yey6")]
 position = Vector2(2951, 2590)
 dialogue_id = "scout_lich"
 sprite_frames = SubResource("SpriteFrames_40l0h")
 idle_sequence = Array[String](["left", "down", "right", "down"])
 idle_flip_interval = 6.0
 
-[node name="CollisionShape2D" parent="npc_scout_lich/InteractionArea" parent_id_path=PackedInt32Array(425234253, 886098454) index="0" unique_id=1299023387]
+[node name="CollisionShape2D" parent="npc_dialogue2/InteractionArea" parent_id_path=PackedInt32Array(425234253, 886098454) index="0" unique_id=1299023387]
 position = Vector2(1, 9.5)
 
-[node name="npc_scout_factions" parent="." unique_id=569977418 instance=ExtResource("9_8yey6")]
+[node name="npc_dialogue3" parent="." unique_id=569977418 instance=ExtResource("9_8yey6")]
 position = Vector2(2839, 3269)
 dialogue_id = "scout_factions"
 sprite_frames = SubResource("SpriteFrames_ve7vu")
 idle_sequence = Array[String](["up", "left"])
 idle_flip_interval = 5.0
 
-[node name="CollisionShape2D" parent="npc_scout_factions/InteractionArea" parent_id_path=PackedInt32Array(569977418, 886098454) index="0" unique_id=1299023387]
+[node name="CollisionShape2D" parent="npc_dialogue3/InteractionArea" parent_id_path=PackedInt32Array(569977418, 886098454) index="0" unique_id=1299023387]
+position = Vector2(1, 9.5)
+
+[node name="npc_dialogue4" parent="." unique_id=1409186308 instance=ExtResource("9_8yey6")]
+position = Vector2(3344, 3008)
+dialogue_id = "scout_factions"
+sprite_frames = SubResource("SpriteFrames_ve7vu")
+idle_sequence = Array[String](["up", "left"])
+idle_flip_interval = 5.0
+
+[node name="CollisionShape2D" parent="npc_dialogue4/InteractionArea" parent_id_path=PackedInt32Array(1409186308, 886098454) index="0" unique_id=1299023387]
+position = Vector2(1, 9.5)
+
+[node name="npc_dialogue5" parent="." unique_id=366894035 instance=ExtResource("9_8yey6")]
+position = Vector2(2078, 2525)
+dialogue_id = "scout_factions"
+sprite_frames = SubResource("SpriteFrames_ve7vu")
+idle_sequence = Array[String](["up", "left"])
+idle_flip_interval = 5.0
+
+[node name="CollisionShape2D" parent="npc_dialogue5/InteractionArea" parent_id_path=PackedInt32Array(366894035, 886098454) index="0" unique_id=1299023387]
+position = Vector2(1, 9.5)
+
+[node name="npc_dialogue6" parent="." unique_id=1238453677 instance=ExtResource("9_8yey6")]
+position = Vector2(1911, 3095)
+dialogue_id = "scout_factions"
+sprite_frames = SubResource("SpriteFrames_ve7vu")
+idle_sequence = Array[String](["up", "left"])
+idle_flip_interval = 5.0
+
+[node name="CollisionShape2D" parent="npc_dialogue6/InteractionArea" parent_id_path=PackedInt32Array(1238453677, 886098454) index="0" unique_id=1299023387]
+position = Vector2(1, 9.5)
+
+[node name="npc_dialogue7" parent="." unique_id=2129473706 instance=ExtResource("9_8yey6")]
+position = Vector2(2662, 2238)
+dialogue_id = "scout_factions"
+sprite_frames = SubResource("SpriteFrames_ve7vu")
+idle_sequence = Array[String](["up", "left"])
+idle_flip_interval = 5.0
+
+[node name="CollisionShape2D" parent="npc_dialogue7/InteractionArea" parent_id_path=PackedInt32Array(2129473706, 886098454) index="0" unique_id=1299023387]
 position = Vector2(1, 9.5)
 
 [node name="ShopUI" parent="." unique_id=2073960939 instance=ExtResource("11_2nvop")]
@@ -1073,7 +1113,11 @@ position = Vector2(1, 9.5)
 [connection signal="body_entered" from="doors/door_zone_1_start" to="doors/door_zone_1_start" method="_on_body_entered"]
 
 [editable path="doors/door_zone_1_start"]
-[editable path="npc_dustplains_trader"]
-[editable path="npc_test_npc_intro"]
-[editable path="npc_scout_lich"]
-[editable path="npc_scout_factions"]
+[editable path="npc_trader"]
+[editable path="npc_dialogue"]
+[editable path="npc_dialogue2"]
+[editable path="npc_dialogue3"]
+[editable path="npc_dialogue4"]
+[editable path="npc_dialogue5"]
+[editable path="npc_dialogue6"]
+[editable path="npc_dialogue7"]

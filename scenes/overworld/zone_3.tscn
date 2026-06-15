@@ -28,6 +28,8 @@
 [ext_resource type="PackedScene" uid="uid://cdgr5nt0iy003" path="res://scenes/ui/dialogue/DialogueBox.tscn" id="26_qvo5g"]
 [ext_resource type="Script" uid="uid://bjnvmighbllae" path="res://scripts/overworld/combat_zone.gd" id="27_3u52d"]
 [ext_resource type="Texture2D" uid="uid://l1bfk53fwqxn" path="res://assets/sprites/tilesets/placeholder_props.png" id="28_ved81"]
+[ext_resource type="PackedScene" uid="uid://845hmsyjb8iu" path="res://scenes/entities/npc.tscn" id="29_3u52d"]
+[ext_resource type="Texture2D" uid="uid://ck5rqr62hkaxr" path="res://assets/sprites/characters/som_soldier_npc.png" id="30_ved81"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_85y62"]
 texture = ExtResource("1_pa6l2")
@@ -1060,6 +1062,41 @@ texture_region_size = Vector2i(64, 64)
 [sub_resource type="TileSet" id="TileSet_sdxig"]
 sources/0 = SubResource("TileSetAtlasSource_v1a1s")
 
+[sub_resource type="SpriteFrames" id="SpriteFrames_bnuw3"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("30_ved81")
+}],
+"loop": true,
+"name": &"down",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("30_ved81")
+}],
+"loop": true,
+"name": &"left",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("30_ved81")
+}],
+"loop": true,
+"name": &"right",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("30_ved81")
+}],
+"loop": true,
+"name": &"up",
+"speed": 5.0
+}]
+
 [node name="zone_3" type="Node2D" unique_id=1178405983]
 y_sort_enabled = true
 script = ExtResource("1_wjvtn")
@@ -1188,6 +1225,46 @@ shape = SubResource("RectangleShape2D_po1ub")
 tile_map_data = PackedByteArray("AAB1ANUAAAAIAAAAAABnAEEBAAAGAAAAAAB3AEABAAAFAAAAAACAAD8BAAAFAAAAAACaADcBAAAFAAAAAACOADwBAAAFAAAAAACpADYBAAAFAAAAAADLAC8BAAAFAAAAAAC+ADQBAAAGAAAAAACrADYBAAAEAAAAAAC9ADQBAAAEAAAAAADAADUBAAAEAAAAAADKADABAAAEAAAAAAC7ADUBAAAEAAAAAACCAD8BAAAEAAAAAACMAD0BAAAEAAAAAACPADwBAAAEAAAAAACZADcBAAAEAAAAAABpAEEBAAAEAAAAAAB2AEEBAAAEAAAAAACIAGkBAAAFAAAAAACPAFYBAAAFAAAAAACMAGABAAAFAAAAAACsAE0BAAAGAAAAAADLAE8BAAAGAAAAAADeAFEBAAAGAAAAAADcAFEBAAAFAAAAAADJAFABAAAFAAAAAAC7AE8BAAAFAAAAAACqAE4BAAAFAAAAAACZAE8BAAAFAAAAAACaAE8BAAAEAAAAAACpAE8BAAAEAAAAAACuAE4BAAAEAAAAAACsAE8BAAAEAAAAAACxAE8BAAAEAAAAAAC5AE8BAAAEAAAAAAC9AFABAAAEAAAAAADGAE4BAAAEAAAAAADIAE8BAAAEAAAAAADNAFABAAAEAAAAAADbAFABAAAEAAAAAACQAFcBAAAEAAAAAACNAF8BAAAEAAAAAACMAGIBAAAEAAAAAACIAGgBAAAEAAAAAAB7AHkBAAAGAAAAAABpAIgBAAAGAAAAAACYAJ8BAAAGAAAAAACdAIsBAAAGAAAAAACwAHkBAAAGAAAAAADAAHoBAAAGAAAAAACfAIcBAAAFAAAAAABqAIcBAAAEAAAAAAB6AHsBAAAEAAAAAABxAIIBAAAEAAAAAACaAJ0BAAAEAAAAAACdAI0BAAAEAAAAAACeAIkBAAAEAAAAAACcAIkBAAAEAAAAAAChAIYBAAAEAAAAAACuAHkBAAAEAAAAAACyAHkBAAAEAAAAAAC9AHoBAAAEAAAAAACtAHoBAAAEAAAAAAA=")
 tile_set = SubResource("TileSet_sdxig")
 
+[node name="npc_dialogue_som" parent="." unique_id=1327451291 instance=ExtResource("29_3u52d")]
+position = Vector2(1499, 5685)
+dialogue_id = "scout_area"
+sprite_frames = SubResource("SpriteFrames_bnuw3")
+idle_sequence = Array[String](["right", "down", "left", "down", "right", "up"])
+idle_flip_interval = 5.0
+
+[node name="CollisionShape2D" parent="npc_dialogue_som/InteractionArea" parent_id_path=PackedInt32Array(1327451291, 886098454) index="0" unique_id=1299023387]
+position = Vector2(1, 9.5)
+
+[node name="npc_dialogue_som2" parent="." unique_id=1886839741 instance=ExtResource("29_3u52d")]
+position = Vector2(1598, 5685)
+dialogue_id = "scout_area"
+sprite_frames = SubResource("SpriteFrames_bnuw3")
+idle_sequence = Array[String](["right", "down", "left", "down", "right", "up"])
+idle_flip_interval = 5.0
+
+[node name="CollisionShape2D" parent="npc_dialogue_som2/InteractionArea" parent_id_path=PackedInt32Array(1886839741, 886098454) index="0" unique_id=1299023387]
+position = Vector2(1, 9.5)
+
+[node name="npc_dialogue_som3" parent="." unique_id=638546360 instance=ExtResource("29_3u52d")]
+position = Vector2(3523, 5073)
+dialogue_id = "scout_area"
+sprite_frames = SubResource("SpriteFrames_bnuw3")
+idle_sequence = Array[String](["right", "down", "left", "down", "right", "up"])
+idle_flip_interval = 5.0
+
+[node name="CollisionShape2D" parent="npc_dialogue_som3/InteractionArea" parent_id_path=PackedInt32Array(638546360, 886098454) index="0" unique_id=1299023387]
+position = Vector2(1, 9.5)
+
+[node name="npc_dialogue_som4" parent="." unique_id=229391737 instance=ExtResource("29_3u52d")]
+position = Vector2(2945, 6546)
+dialogue_id = "scout_area"
+sprite_frames = SubResource("SpriteFrames_bnuw3")
+idle_sequence = Array[String](["right", "down", "left", "down", "right", "up"])
+idle_flip_interval = 5.0
+
+[node name="CollisionShape2D" parent="npc_dialogue_som4/InteractionArea" parent_id_path=PackedInt32Array(229391737, 886098454) index="0" unique_id=1299023387]
+position = Vector2(1, 9.5)
+
 [connection signal="body_entered" from="doors/door_zone_3_W" to="doors/door_zone_3_W" method="_on_body_entered"]
 [connection signal="body_entered" from="doors/door_zone_3_S" to="doors/door_zone_3_S" method="_on_body_entered"]
 [connection signal="body_entered" from="doors/door_zone_3_E" to="doors/door_zone_3_E" method="_on_body_entered"]
@@ -1203,3 +1280,7 @@ tile_set = SubResource("TileSet_sdxig")
 [editable path="doors/door_zone_3_W"]
 [editable path="doors/door_zone_3_S"]
 [editable path="doors/door_zone_3_E"]
+[editable path="npc_dialogue_som"]
+[editable path="npc_dialogue_som2"]
+[editable path="npc_dialogue_som3"]
+[editable path="npc_dialogue_som4"]

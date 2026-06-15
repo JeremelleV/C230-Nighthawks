@@ -26,6 +26,9 @@
 [ext_resource type="PackedScene" uid="uid://cqyqa0r34yr31" path="res://scenes/elements/door.tscn" id="24_xcj6o"]
 [ext_resource type="PackedScene" uid="uid://x61xvjvbheb6" path="res://scenes/ui/shop/ShopUI.tscn" id="25_4o17t"]
 [ext_resource type="PackedScene" uid="uid://cdgr5nt0iy003" path="res://scenes/ui/dialogue/DialogueBox.tscn" id="26_idhkx"]
+[ext_resource type="PackedScene" uid="uid://845hmsyjb8iu" path="res://scenes/entities/npc.tscn" id="27_ehjcp"]
+[ext_resource type="Texture2D" uid="uid://b250ej3o5acgt" path="res://assets/sprites/characters/sprite_sheet_alien_civ.png" id="28_lajyb"]
+[ext_resource type="Texture2D" uid="uid://ck5rqr62hkaxr" path="res://assets/sprites/characters/som_soldier_npc.png" id="29_u6te2"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_bjwpm"]
 texture = ExtResource("1_sywax")
@@ -1036,6 +1039,92 @@ terrain_set_0/terrain_0/name = "Terrain 0"
 terrain_set_0/terrain_0/color = Color(0.5, 0.34375, 0.25, 1)
 sources/0 = SubResource("TileSetAtlasSource_85j37")
 
+[sub_resource type="AtlasTexture" id="AtlasTexture_0ytv7"]
+atlas = ExtResource("28_lajyb")
+region = Rect2(0, 0, 27, 33)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_ao12m"]
+atlas = ExtResource("28_lajyb")
+region = Rect2(0, 35, 27, 33)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_5tue0"]
+atlas = ExtResource("28_lajyb")
+region = Rect2(0, 35, 27, 33)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_hv0g8"]
+atlas = ExtResource("28_lajyb")
+region = Rect2(0, 67, 27, 33)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_o4xt1"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_0ytv7")
+}],
+"loop": true,
+"name": &"down",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_ao12m")
+}],
+"loop": true,
+"name": &"left",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_5tue0")
+}],
+"loop": true,
+"name": &"right",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_hv0g8")
+}],
+"loop": true,
+"name": &"up",
+"speed": 5.0
+}]
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_io0ha"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("29_u6te2")
+}],
+"loop": true,
+"name": &"down",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("29_u6te2")
+}],
+"loop": true,
+"name": &"left",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("29_u6te2")
+}],
+"loop": true,
+"name": &"right",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("29_u6te2")
+}],
+"loop": true,
+"name": &"up",
+"speed": 5.0
+}]
+
 [node name="zone_8" type="Node2D" unique_id=1004876661]
 y_sort_enabled = true
 
@@ -1110,8 +1199,41 @@ position = Vector2(226, -6)
 
 [node name="DialogueBox" parent="." unique_id=1897692953 instance=ExtResource("26_idhkx")]
 
+[node name="npc_dialogue" parent="." unique_id=1327451291 instance=ExtResource("27_ehjcp")]
+position = Vector2(1768, 5407)
+dialogue_id = "scout_area"
+sprite_frames = SubResource("SpriteFrames_o4xt1")
+idle_sequence = Array[String](["right", "down", "left", "down", "right", "up"])
+idle_flip_interval = 5.0
+
+[node name="CollisionShape2D" parent="npc_dialogue/InteractionArea" parent_id_path=PackedInt32Array(1327451291, 886098454) index="0" unique_id=1299023387]
+position = Vector2(1, 9.5)
+
+[node name="npc_dialogue2" parent="." unique_id=586913813 instance=ExtResource("27_ehjcp")]
+position = Vector2(2368, 5347)
+dialogue_id = "scout_area"
+sprite_frames = SubResource("SpriteFrames_o4xt1")
+idle_sequence = Array[String](["right", "down", "left", "down", "right", "up"])
+idle_flip_interval = 5.0
+
+[node name="CollisionShape2D" parent="npc_dialogue2/InteractionArea" parent_id_path=PackedInt32Array(586913813, 886098454) index="0" unique_id=1299023387]
+position = Vector2(1, 9.5)
+
+[node name="npc_dialogue_som" parent="." unique_id=1159536862 instance=ExtResource("27_ehjcp")]
+position = Vector2(1767, 5319)
+dialogue_id = "scout_area"
+sprite_frames = SubResource("SpriteFrames_io0ha")
+idle_sequence = Array[String](["right", "down", "left", "down", "right", "up"])
+idle_flip_interval = 5.0
+
+[node name="CollisionShape2D" parent="npc_dialogue_som/InteractionArea" parent_id_path=PackedInt32Array(1159536862, 886098454) index="0" unique_id=1299023387]
+position = Vector2(1, 9.5)
+
 [connection signal="body_entered" from="doors/door_zone_8_WN" to="doors/door_zone_8_WN" method="_on_body_entered"]
 [connection signal="body_entered" from="doors/door_zone_8_WS" to="doors/door_zone_8_WS" method="_on_body_entered"]
 
 [editable path="doors/door_zone_8_WN"]
 [editable path="doors/door_zone_8_WS"]
+[editable path="npc_dialogue"]
+[editable path="npc_dialogue2"]
+[editable path="npc_dialogue_som"]
