@@ -1146,7 +1146,7 @@ position = Vector2(-218, 1)
 
 [node name="npc_dialogue_som" parent="." unique_id=1327451291 instance=ExtResource("26_c0jbb")]
 position = Vector2(1684, 5017)
-dialogue_id = "scout_area"
+dialogue_id = "som_challenge_3"
 sprite_frames = SubResource("SpriteFrames_cjh5m")
 idle_sequence = Array[String](["right", "down", "left", "down", "right", "up"])
 idle_flip_interval = 5.0
@@ -1166,7 +1166,7 @@ position = Vector2(1, 9.5)
 
 [node name="npc_dialogue_som3" parent="." unique_id=1168812380 instance=ExtResource("26_c0jbb")]
 position = Vector2(3469, 5005)
-dialogue_id = "scout_area"
+dialogue_id = "zone_som_3"
 sprite_frames = SubResource("SpriteFrames_cjh5m")
 idle_sequence = Array[String](["right", "down", "left", "down", "right", "up"])
 idle_flip_interval = 5.0
@@ -1176,7 +1176,7 @@ position = Vector2(1, 9.5)
 
 [node name="npc_dialogue_som4" parent="." unique_id=1296952600 instance=ExtResource("26_c0jbb")]
 position = Vector2(2221, 5685)
-dialogue_id = "scout_area"
+dialogue_id = "som_challenge_2"
 sprite_frames = SubResource("SpriteFrames_cjh5m")
 idle_sequence = Array[String](["right", "down", "left", "down", "right", "up"])
 idle_flip_interval = 5.0
@@ -1186,7 +1186,7 @@ position = Vector2(1, 9.5)
 
 [node name="npc_dialogue_som5" parent="." unique_id=1445834927 instance=ExtResource("26_c0jbb")]
 position = Vector2(2381, 5782)
-dialogue_id = "scout_area"
+dialogue_id = "som_challenge_5"
 sprite_frames = SubResource("SpriteFrames_cjh5m")
 idle_sequence = Array[String](["right", "down", "left", "down", "right", "up"])
 idle_flip_interval = 5.0
@@ -1196,7 +1196,7 @@ position = Vector2(1, 9.5)
 
 [node name="npc_dialogue_som6" parent="." unique_id=1443558358 instance=ExtResource("26_c0jbb")]
 position = Vector2(2214, 5122)
-dialogue_id = "scout_area"
+dialogue_id = "som_postgame_1"
 sprite_frames = SubResource("SpriteFrames_cjh5m")
 idle_sequence = Array[String](["right", "down", "left", "down", "right", "up"])
 idle_flip_interval = 5.0
@@ -1206,7 +1206,7 @@ position = Vector2(1, 9.5)
 
 [node name="npc_dialogue_som7" parent="." unique_id=2116447585 instance=ExtResource("26_c0jbb")]
 position = Vector2(2954, 4863)
-dialogue_id = "scout_area"
+dialogue_id = "som_postgame_2"
 sprite_frames = SubResource("SpriteFrames_cjh5m")
 idle_sequence = Array[String](["right", "down", "left", "down", "right", "up"])
 idle_flip_interval = 5.0
@@ -1216,7 +1216,7 @@ position = Vector2(1, 9.5)
 
 [node name="npc_dialogue_som8" parent="." unique_id=1045583553 instance=ExtResource("26_c0jbb")]
 position = Vector2(1742, 5120)
-dialogue_id = "scout_area"
+dialogue_id = "som_lore_1"
 sprite_frames = SubResource("SpriteFrames_cjh5m")
 idle_sequence = Array[String](["right", "down", "left", "down", "right", "up"])
 idle_flip_interval = 5.0
@@ -1226,7 +1226,7 @@ position = Vector2(1, 9.5)
 
 [node name="npc_dialogue_som9" parent="." unique_id=1872504445 instance=ExtResource("26_c0jbb")]
 position = Vector2(1839, 5120)
-dialogue_id = "scout_area"
+dialogue_id = "som_lore_3"
 sprite_frames = SubResource("SpriteFrames_cjh5m")
 idle_sequence = Array[String](["right", "down", "left", "down", "right", "up"])
 idle_flip_interval = 5.0
@@ -1236,7 +1236,7 @@ position = Vector2(1, 9.5)
 
 [node name="npc_dialogue_som10" parent="." unique_id=1102216286 instance=ExtResource("26_c0jbb")]
 position = Vector2(2898, 5516)
-dialogue_id = "scout_area"
+dialogue_id = "som_lore_4"
 sprite_frames = SubResource("SpriteFrames_cjh5m")
 idle_sequence = Array[String](["right", "down", "left", "down", "right", "up"])
 idle_flip_interval = 5.0
@@ -1246,7 +1246,7 @@ position = Vector2(1, 9.5)
 
 [node name="npc_dialogue_som11" parent="." unique_id=860090299 instance=ExtResource("26_c0jbb")]
 position = Vector2(2669, 4865)
-dialogue_id = "scout_area"
+dialogue_id = "som_lore_5"
 sprite_frames = SubResource("SpriteFrames_cjh5m")
 idle_sequence = Array[String](["right", "down", "left", "down", "right", "up"])
 idle_flip_interval = 5.0
@@ -1256,7 +1256,7 @@ position = Vector2(1, 9.5)
 
 [node name="npc_dialogue_som12" parent="." unique_id=193108238 instance=ExtResource("26_c0jbb")]
 position = Vector2(2577, 4865)
-dialogue_id = "scout_area"
+dialogue_id = "som_ambient_1"
 sprite_frames = SubResource("SpriteFrames_cjh5m")
 idle_sequence = Array[String](["right", "down", "left", "down", "right", "up"])
 idle_flip_interval = 5.0
@@ -1266,12 +1266,42 @@ position = Vector2(1, 9.5)
 
 [node name="npc_dialogue_som13" parent="." unique_id=1687423531 instance=ExtResource("26_c0jbb")]
 position = Vector2(2358, 4488)
-dialogue_id = "scout_area"
+dialogue_id = "som_ambient_3"
 sprite_frames = SubResource("SpriteFrames_cjh5m")
 idle_sequence = Array[String](["right", "down", "left", "down", "right", "up"])
 idle_flip_interval = 5.0
 
 [node name="CollisionShape2D" parent="npc_dialogue_som13/InteractionArea" parent_id_path=PackedInt32Array(1687423531, 886098454) index="0" unique_id=1299023387]
+position = Vector2(1, 9.5)
+
+[node name="npc_dialogue_som14" parent="." unique_id=2134909862 instance=ExtResource("26_c0jbb")]
+position = Vector2(2778, 5393)
+dialogue_id = "som_ambient_2"
+sprite_frames = SubResource("SpriteFrames_cjh5m")
+idle_sequence = Array[String](["right", "down", "left", "down", "right", "up"])
+idle_flip_interval = 5.0
+
+[node name="CollisionShape2D" parent="npc_dialogue_som14/InteractionArea" parent_id_path=PackedInt32Array(2134909862, 886098454) index="0" unique_id=1299023387]
+position = Vector2(1, 9.5)
+
+[node name="npc_dialogue_som15" parent="." unique_id=472764266 instance=ExtResource("26_c0jbb")]
+position = Vector2(2189, 5320)
+dialogue_id = "som_ambient_4"
+sprite_frames = SubResource("SpriteFrames_cjh5m")
+idle_sequence = Array[String](["right", "down", "left", "down", "right", "up"])
+idle_flip_interval = 5.0
+
+[node name="CollisionShape2D" parent="npc_dialogue_som15/InteractionArea" parent_id_path=PackedInt32Array(472764266, 886098454) index="0" unique_id=1299023387]
+position = Vector2(1, 9.5)
+
+[node name="npc_dialogue_som16" parent="." unique_id=786858575 instance=ExtResource("26_c0jbb")]
+position = Vector2(2896, 5108)
+dialogue_id = "som_ambient_5"
+sprite_frames = SubResource("SpriteFrames_cjh5m")
+idle_sequence = Array[String](["right", "down", "left", "down", "right", "up"])
+idle_flip_interval = 5.0
+
+[node name="CollisionShape2D" parent="npc_dialogue_som16/InteractionArea" parent_id_path=PackedInt32Array(786858575, 886098454) index="0" unique_id=1299023387]
 position = Vector2(1, 9.5)
 
 [node name="npc_trader" parent="." unique_id=1906299204 instance=ExtResource("26_c0jbb")]
@@ -1303,4 +1333,7 @@ position = Vector2(1, 9.5)
 [editable path="npc_dialogue_som11"]
 [editable path="npc_dialogue_som12"]
 [editable path="npc_dialogue_som13"]
+[editable path="npc_dialogue_som14"]
+[editable path="npc_dialogue_som15"]
+[editable path="npc_dialogue_som16"]
 [editable path="npc_trader"]

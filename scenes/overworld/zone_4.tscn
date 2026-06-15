@@ -1456,7 +1456,7 @@ tile_set = SubResource("TileSet_wwtfu")
 
 [node name="npc_dialogue" parent="." unique_id=1327451291 instance=ExtResource("31_q7vjk")]
 position = Vector2(1355, 1686)
-dialogue_id = "scout_area"
+dialogue_id = "zone_civ_4"
 sprite_frames = SubResource("SpriteFrames_qgf0u")
 idle_sequence = Array[String](["right", "down", "left", "down", "right", "up"])
 idle_flip_interval = 5.0
@@ -1466,7 +1466,7 @@ position = Vector2(1, 9.5)
 
 [node name="npc_dialogue2" parent="." unique_id=1835010669 instance=ExtResource("31_q7vjk")]
 position = Vector2(3176, 1943)
-dialogue_id = "scout_area"
+dialogue_id = "civ_humor_1"
 sprite_frames = SubResource("SpriteFrames_qgf0u")
 idle_sequence = Array[String](["right", "down", "left", "down", "right", "up"])
 idle_flip_interval = 5.0
@@ -1476,7 +1476,7 @@ position = Vector2(1, 9.5)
 
 [node name="npc_dialogue3" parent="." unique_id=593821190 instance=ExtResource("31_q7vjk")]
 position = Vector2(1822, 2513)
-dialogue_id = "scout_area"
+dialogue_id = "zone_civ_seen_2"
 sprite_frames = SubResource("SpriteFrames_qgf0u")
 idle_sequence = Array[String](["right", "down", "left", "down", "right", "up"])
 idle_flip_interval = 5.0
@@ -1486,7 +1486,7 @@ position = Vector2(1, 9.5)
 
 [node name="npc_dialogue4" parent="." unique_id=601592233 instance=ExtResource("31_q7vjk")]
 position = Vector2(1153, 2775)
-dialogue_id = "scout_area"
+dialogue_id = "civ_idle_6"
 sprite_frames = SubResource("SpriteFrames_qgf0u")
 idle_sequence = Array[String](["right", "down", "left", "down", "right", "up"])
 idle_flip_interval = 5.0
@@ -1496,7 +1496,7 @@ position = Vector2(1, 9.5)
 
 [node name="npc_dialogue5" parent="." unique_id=1068540344 instance=ExtResource("31_q7vjk")]
 position = Vector2(1721, 2516)
-dialogue_id = "scout_area"
+dialogue_id = "civ_humor_2"
 sprite_frames = SubResource("SpriteFrames_qgf0u")
 idle_sequence = Array[String](["right", "down", "left", "down", "right", "up"])
 idle_flip_interval = 5.0
@@ -1506,7 +1506,7 @@ position = Vector2(1, 9.5)
 
 [node name="npc_dialogue6" parent="." unique_id=1365214136 instance=ExtResource("31_q7vjk")]
 position = Vector2(4339, 1793)
-dialogue_id = "scout_area"
+dialogue_id = "zone_civ_seen_1"
 sprite_frames = SubResource("SpriteFrames_qgf0u")
 idle_sequence = Array[String](["right", "down", "left", "down", "right", "up"])
 idle_flip_interval = 5.0
@@ -1523,6 +1523,76 @@ idle_sequence = Array[String](["right", "down", "left", "down", "right", "up"])
 idle_flip_interval = 9.0
 
 [node name="CollisionShape2D" parent="npc_trader/InteractionArea" parent_id_path=PackedInt32Array(1442733123, 886098454) index="0" unique_id=1299023387]
+position = Vector2(1, 9.5)
+
+[node name="npc_trader2" parent="." unique_id=90047422 instance=ExtResource("31_q7vjk")]
+position = Vector2(1971, 2702)
+dialogue_id = "civ_humor_3"
+sprite_frames = SubResource("SpriteFrames_5bevc")
+idle_sequence = Array[String](["right", "down", "left", "down", "right", "up"])
+idle_flip_interval = 9.0
+
+[node name="CollisionShape2D" parent="npc_trader2/InteractionArea" parent_id_path=PackedInt32Array(90047422, 886098454) index="0" unique_id=1299023387]
+position = Vector2(1, 9.5)
+
+[node name="npc_trader3" parent="." unique_id=1192869818 instance=ExtResource("31_q7vjk")]
+position = Vector2(1245, 1885)
+dialogue_id = "civ_exit_3"
+sprite_frames = SubResource("SpriteFrames_5bevc")
+idle_sequence = Array[String](["right", "down", "left", "down", "right", "up"])
+idle_flip_interval = 9.0
+
+[node name="CollisionShape2D" parent="npc_trader3/InteractionArea" parent_id_path=PackedInt32Array(1192869818, 886098454) index="0" unique_id=1299023387]
+position = Vector2(1, 9.5)
+
+[node name="npc_trader4" parent="." unique_id=240818402 instance=ExtResource("31_q7vjk")]
+position = Vector2(685, 2297)
+dialogue_id = "civ_exit_5"
+sprite_frames = SubResource("SpriteFrames_5bevc")
+idle_sequence = Array[String](["right", "down", "left", "down", "right", "up"])
+idle_flip_interval = 9.0
+
+[node name="CollisionShape2D" parent="npc_trader4/InteractionArea" parent_id_path=PackedInt32Array(240818402, 886098454) index="0" unique_id=1299023387]
+position = Vector2(1, 9.5)
+
+[node name="npc_trader5" parent="." unique_id=30869644 instance=ExtResource("31_q7vjk")]
+position = Vector2(4705, 2269)
+dialogue_id = "civ_player_2"
+sprite_frames = SubResource("SpriteFrames_5bevc")
+idle_sequence = Array[String](["right", "down", "left", "down", "right", "up"])
+idle_flip_interval = 9.0
+
+[node name="CollisionShape2D" parent="npc_trader5/InteractionArea" parent_id_path=PackedInt32Array(30869644, 886098454) index="0" unique_id=1299023387]
+position = Vector2(1, 9.5)
+
+[node name="npc_trader6" parent="." unique_id=648720857 instance=ExtResource("31_q7vjk")]
+position = Vector2(1313, 2581)
+dialogue_id = "civ_lore_3"
+sprite_frames = SubResource("SpriteFrames_5bevc")
+idle_sequence = Array[String](["right", "down", "left", "down", "right", "up"])
+idle_flip_interval = 9.0
+
+[node name="CollisionShape2D" parent="npc_trader6/InteractionArea" parent_id_path=PackedInt32Array(648720857, 886098454) index="0" unique_id=1299023387]
+position = Vector2(1, 9.5)
+
+[node name="npc_trader7" parent="." unique_id=1868014900 instance=ExtResource("31_q7vjk")]
+position = Vector2(4460, 1847)
+dialogue_id = "civ_lore_4"
+sprite_frames = SubResource("SpriteFrames_5bevc")
+idle_sequence = Array[String](["right", "down", "left", "down", "right", "up"])
+idle_flip_interval = 9.0
+
+[node name="CollisionShape2D" parent="npc_trader7/InteractionArea" parent_id_path=PackedInt32Array(1868014900, 886098454) index="0" unique_id=1299023387]
+position = Vector2(1, 9.5)
+
+[node name="npc_trader8" parent="." unique_id=1995765168 instance=ExtResource("31_q7vjk")]
+position = Vector2(691, 2553)
+dialogue_id = "civ_player_3"
+sprite_frames = SubResource("SpriteFrames_5bevc")
+idle_sequence = Array[String](["right", "down", "left", "down", "right", "up"])
+idle_flip_interval = 9.0
+
+[node name="CollisionShape2D" parent="npc_trader8/InteractionArea" parent_id_path=PackedInt32Array(1995765168, 886098454) index="0" unique_id=1299023387]
 position = Vector2(1, 9.5)
 
 [connection signal="body_entered" from="doors/door_zone_4_NW" to="doors/door_zone_4_NW" method="_on_body_entered"]
@@ -1543,3 +1613,10 @@ position = Vector2(1, 9.5)
 [editable path="npc_dialogue5"]
 [editable path="npc_dialogue6"]
 [editable path="npc_trader"]
+[editable path="npc_trader2"]
+[editable path="npc_trader3"]
+[editable path="npc_trader4"]
+[editable path="npc_trader5"]
+[editable path="npc_trader6"]
+[editable path="npc_trader7"]
+[editable path="npc_trader8"]

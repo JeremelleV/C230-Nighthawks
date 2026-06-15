@@ -1,0 +1,286 @@
+[
+	{
+		"id": "civ_gossip_1",
+		"lines": [
+			{
+				"speaker": "Civ",
+				"text": "You hear about the family out past the third fern cluster?"
+			},
+			{
+				"speaker": "Civ",
+				"text": "Packed up. Gone. In the night. Didn't even tell the neighbors. That's how you know things are bad."
+			},
+		]
+	},
+	{
+		"id": "civ_gossip_2",
+		"lines": [
+			{
+				"speaker": "Civ",
+				"text": "I used to collect the big spotted ferns for decoration. Now I can't even look at them without my stomach doing something unpleasant."
+			},
+		]
+	},
+	{
+		"id": "civ_idle_1",
+		"lines": [
+			{
+				"speaker": "Civ",
+				"text": "I keep my doors locked now. I know it doesn't help against half the things out there, but it helps against the feeling, and sometimes that's enough."
+			},
+		]
+	},
+	{
+		"id": "civ_idle_2",
+		"lines": [
+			{
+				"speaker": "Civ",
+				"text": "My uncle says it was quieter before."
+			},
+			{
+				"speaker": "Civ",
+				"text": "My uncle also says a lot of things. But on this one, I believe him."
+			},
+		]
+	},
+	{
+		"id": "civ_idle_3",
+		"lines": [
+			{
+				"speaker": "Civ",
+				"text": "Some people say we should push back. Into the jungle, I mean. Reclaim the outer paths."
+			},
+			{
+				"speaker": "Civ",
+				"text": "Those people do not have children, I've noticed."
+			},
+		]
+	},
+	{
+		"id": "civ_idle_4",
+		"lines": [
+			{
+				"speaker": "Civ",
+				"text": "We get travelers through here sometimes."
+			},
+			{
+				"speaker": "Civ",
+				"text": "Most of them look worse on the way back than they did on the way in."
+			},
+			{
+				"speaker": "Civ",
+				"text": "You're not the first to ignore that pattern."
+			},
+		]
+	},
+	{
+		"id": "civ_idle_6",
+		"lines": [
+			{
+				"speaker": "Civ",
+				"text": "You look like you've slept outdoors recently."
+			},
+			{
+				"speaker": "Civ",
+				"text": "I mean that as an observation, not a compliment."
+			},
+		]
+	},
+	{
+		"id": "civ_humor_1",
+		"lines": [
+			{
+				"speaker": "Civ",
+				"text": "The jungle creatures don't really have a language."
+			},
+			{
+				"speaker": "Civ",
+				"text": "It's more of a… vibrational intention."
+			},
+			{
+				"speaker": "Civ",
+				"text": "And the intention is almost always the same."
+			},
+		]
+	},
+	{
+		"id": "civ_humor_3",
+		"lines": [
+			{
+				"speaker": "Civ",
+				"text": "I tried talking to one of the jungle things once."
+			},
+			{
+				"speaker": "Civ",
+				"text": "Diplomatically."
+			},
+			{
+				"speaker": "Civ",
+				"text": "It did not receive the gesture diplomatically."
+			},
+		]
+	},
+	{
+		"id": "civ_exit_2",
+		"lines": [
+			{
+				"speaker": "Civ",
+				"text": "The jungle looks beautiful from here."
+			},
+			{
+				"speaker": "Civ",
+				"text": "That's intentional, I think. It wants you to walk into it."
+			}
+		]
+	},
+	{
+		"id": "civ_exit_3",
+		"lines": [
+			{
+				"speaker": "Civ",
+				"text": "My advice? Stick to the paths where you can hear yourself think."
+			},
+			{
+				"speaker": "Civ",
+				"text": "The moment the jungle gets loud, stop moving. When it goes quiet again, run."
+			}
+		]
+	},
+	{
+		"id": "civ_exit_5",
+		"lines": [
+			{
+				"speaker": "Civ",
+				"text": "You're not the first stranger who looked at me like I was being overly cautious. Most of those strangers came back."
+			},
+			{
+				"speaker": "Civ",
+				"text": "A few did not."
+			}
+		]
+	},
+	{
+		"id": "civ_player_1",
+		"lines": [
+			{
+				"speaker": "Civ",
+				"text": "You're the alien, right? The one everyone's been whispering about?"
+			},
+			{
+				"speaker": "Civ",
+				"text": "You look less impressive in person. I mean that affectionately."
+			}
+		]
+	},
+	{
+		"id": "civ_player_2",
+		"lines": [
+			{
+				"speaker": "Civ",
+				"text": "Word is you actually talked to a Son of Mars without it ending in someone being unconscious."
+			},
+			{
+				"speaker": "Civ",
+				"text": "I'd like to hear that story when you have time."
+			}
+		]
+	},
+	{
+		"id": "civ_player_3",
+		"lines": [
+			{
+				"speaker": "Civ",
+				"text": "You're really going after the Lich?"
+			},
+			{
+				"speaker": "Civ",
+				"text": "Just... the Lich?"
+			},
+			{
+				"speaker": "Civ",
+				"text": "The actual Lich?"
+			},
+			{
+				"speaker": "Civ",
+				"text": "...Okay. Sure."
+			},
+			{
+				"speaker": "Civ",
+				"text": "I'll be rooting for you from inside this building with the door locked."
+			}
+		]
+	},
+	{
+		"id": "civ_player_4",
+		"lines": [
+			{
+				"speaker": "Civ",
+				"text": "I heard you fought your way through the dark zones. I've never been in the dark zones."
+			},
+			{
+				"speaker": "Civ",
+				"text": "I've never wanted to be in the dark zones."
+			},
+			{
+				"speaker": "Civ",
+				"text": "I hope it was worth it."
+			},
+		]
+	},
+	{
+		"id": "civ_lore_1",
+		"lines": [
+			{
+				"speaker": "Civ",
+				"text": "The jungle gave us everything once. Food, shade, building material. It still gives us those things."
+			},
+			{
+				"speaker": "Civ",
+				"text": "It also tries to eat us now."
+			},
+			{
+				"speaker": "Civ",
+				"text": "The relationship has become complicated."
+			},
+		]
+	},
+	{
+		"id": "civ_lore_2",
+		"lines": [
+			{
+				"speaker": "Civ",
+				"text": "The elders say the creatures changed after the first signs appeared in the sky."
+			},
+			{
+				"speaker": "Civ",
+				"text": "I don't know what that means. "
+			},
+			{
+				"speaker": "Civ",
+				"text": "I don't think the elders know either. "
+			},
+			{
+				"speaker": "Civ",
+				"text": "They say it very confidently, though."
+			}
+		]
+	},
+	{
+		"id": "civ_lore_3",
+		"lines": [
+			{
+				"speaker": "Civ",
+				"text": "We've tried to relocate twice. Both times we came back. The jungle is home. You don't abandon home just because home is trying to kill you."
+			},
+			{
+				"speaker": "Civ",
+				"text": "...That sounded more reasonable before I said it out loud."
+			}
+		]
+	},
+
+
+
+
+
+]

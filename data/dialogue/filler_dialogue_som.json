@@ -1,0 +1,184 @@
+[
+	{
+		"id": "som_challenge_1",
+		"lines": [
+			{
+				"speaker": "Son of Mars",
+				"text": "You cross into the shadow-ground. Either you do not know what this means, or you do not care. We respect both possibilities equally."
+			},
+		]
+	},
+	{
+		"id": "som_challenge_2",
+		"lines": [
+			{
+				"speaker": "Son of Mars",
+				"text": "We have observed you from a distance, Alien. Your movements are not those of a creature seeking death. And yet here you are. Interesting."
+			},
+		]
+	},
+	{
+		"id": "som_challenge_3",
+		"lines": [
+			{
+				"speaker": "Son of Mars",
+				"text": "You have fought our kin and not fallen. This is noted."
+			},
+			{
+				"speaker": "Son of Mars",
+				"text": "This is... significant."
+			}
+		]
+	},
+	{
+		"id": "som_challenge_4",
+		"lines": [
+			{
+				"speaker": "Son of Mars",
+				"text": "Do not mistake our stillness for hesitation. We are simply appreciating the moment before it begins."
+			},
+		]
+	},
+	{
+		"id": "som_challenge_5",
+		"lines": [
+			{
+				"speaker": "Son of Mars",
+				"text": "Another approaches. Mars provides."
+			},
+		]
+	},
+	{
+		"id": "som_postgame_1",
+		"lines": [
+			{
+				"speaker": "Son of Mars",
+				"text": "You fight without rage. This is strange to us. And yet the result does not lie."
+			},
+		]
+	},
+	{
+		"id": "som_postgame_2",
+		"lines": [
+			{
+				"speaker": "Son of Mars",
+				"text": "We have encountered many who claim capability they do not possess."
+			},
+			{
+				"speaker": "Son of Mars",
+				"text": "You are unusual in the opposite way."
+			}
+		]
+	},
+	{
+		"id": "som_lore_1",
+		"lines": [
+			{
+				"speaker": "Son of Mars",
+				"text": "The 'Life-Giver' does not ask us to hate our opponents. Only to meet them fully."
+			},
+			{
+				"speaker": "Son of Mars",
+				"text": "To hold back is to disrespect both Mars and the one who stands before you."
+			}
+		]
+	},
+	{
+		"id": "som_lore_3",
+		"lines": [
+			{
+				"speaker": "Son of Mars",
+				"text": "We do not fear death."
+			},
+			{
+				"speaker": "Son of Mars",
+				"text": "We fear a death that meant nothing. A death with no witness."
+			},
+			{
+				"speaker": "Son of Mars",
+				"text": "A death that Mars does not record."
+			}
+		]
+	},
+	{
+		"id": "som_lore_4",
+		"lines": [
+			{
+				"speaker": "Son of Mars",
+				"text": "The 'Battle-Crave' is not anger. Anger is a wound. The 'Battle-Crave' is a calling. There is a difference."
+			},
+		]
+	},
+	{
+		"id": "som_lore_5",
+		"lines": [
+			{
+				"speaker": "Son of Mars",
+				"text": "We do not understand the ones who live in the green places. They avoid conflict at great cost to themselves."
+			},
+			{
+				"speaker": "Son of Mars",
+				"text": "To us this looks like a slow defeat they call peace."
+			}
+		]
+	},
+	{
+		"id": "som_ambient_1",
+		"lines": [
+			{
+				"speaker": "Son of Mars",
+				"text": "..."
+			},
+		]
+	},
+	{
+		"id": "som_ambient_2",
+		"lines": [
+			{
+				"speaker": "Son of Mars",
+				"text": "You are still here."
+			},
+		]
+	},
+	{
+		"id": "som_ambient_3",
+		"lines": [
+			{
+				"speaker": "Son of Mars",
+				"text": "Not yet."
+			},
+		]
+	},
+	{
+		"id": "som_ambient_4",
+		"lines": [
+			{
+				"speaker": "Son of Mars",
+				"text": "Mars watches."
+			},
+		]
+	},
+	{
+		"id": "som_ambient_5",
+		"lines": [
+			{
+				"speaker": "Son of Mars",
+				"text": "Come back when the 'Battle-Crave' takes you. We will be here."
+			},
+		]
+	},
+	{
+		"id": "som_ambient_6",
+		"lines": [
+			{
+				"speaker": "Son of Mars",
+				"text": "The shadow-ground is ours. You are a guest. Do not forget the difference."
+			},
+		]
+	},
+
+
+
+
+
+]

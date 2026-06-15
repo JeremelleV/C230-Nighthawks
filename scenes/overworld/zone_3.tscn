@@ -1248,7 +1248,7 @@ tile_set = SubResource("TileSet_sdxig")
 
 [node name="npc_dialogue_som" parent="." unique_id=1327451291 instance=ExtResource("29_3u52d")]
 position = Vector2(1499, 5685)
-dialogue_id = "scout_area"
+dialogue_id = "zone_som_1"
 sprite_frames = SubResource("SpriteFrames_bnuw3")
 idle_sequence = Array[String](["right", "down", "left", "down", "right", "up"])
 idle_flip_interval = 5.0
@@ -1258,7 +1258,7 @@ position = Vector2(1, 9.5)
 
 [node name="npc_dialogue_som2" parent="." unique_id=1886839741 instance=ExtResource("29_3u52d")]
 position = Vector2(1598, 5685)
-dialogue_id = "scout_area"
+dialogue_id = "zone_som_2"
 sprite_frames = SubResource("SpriteFrames_bnuw3")
 idle_sequence = Array[String](["right", "down", "left", "down", "right", "up"])
 idle_flip_interval = 5.0
@@ -1268,7 +1268,7 @@ position = Vector2(1, 9.5)
 
 [node name="npc_dialogue_som3" parent="." unique_id=638546360 instance=ExtResource("29_3u52d")]
 position = Vector2(3523, 5073)
-dialogue_id = "scout_area"
+dialogue_id = "som_challenge_1"
 sprite_frames = SubResource("SpriteFrames_bnuw3")
 idle_sequence = Array[String](["right", "down", "left", "down", "right", "up"])
 idle_flip_interval = 5.0
@@ -1278,12 +1278,22 @@ position = Vector2(1, 9.5)
 
 [node name="npc_dialogue_som4" parent="." unique_id=229391737 instance=ExtResource("29_3u52d")]
 position = Vector2(2945, 6546)
-dialogue_id = "scout_area"
+dialogue_id = "som_challenge_4"
 sprite_frames = SubResource("SpriteFrames_bnuw3")
 idle_sequence = Array[String](["right", "down", "left", "down", "right", "up"])
 idle_flip_interval = 5.0
 
 [node name="CollisionShape2D" parent="npc_dialogue_som4/InteractionArea" parent_id_path=PackedInt32Array(229391737, 886098454) index="0" unique_id=1299023387]
+position = Vector2(1, 9.5)
+
+[node name="npc_dialogue_som5" parent="." unique_id=1270263865 instance=ExtResource("29_3u52d")]
+position = Vector2(2061, 5272)
+dialogue_id = "som_ambient_6"
+sprite_frames = SubResource("SpriteFrames_bnuw3")
+idle_sequence = Array[String](["right", "down", "left", "down", "right", "up"])
+idle_flip_interval = 5.0
+
+[node name="CollisionShape2D" parent="npc_dialogue_som5/InteractionArea" parent_id_path=PackedInt32Array(1270263865, 886098454) index="0" unique_id=1299023387]
 position = Vector2(1, 9.5)
 
 [connection signal="body_entered" from="doors/door_zone_3_W" to="doors/door_zone_3_W" method="_on_body_entered"]
@@ -1305,3 +1315,4 @@ position = Vector2(1, 9.5)
 [editable path="npc_dialogue_som2"]
 [editable path="npc_dialogue_som3"]
 [editable path="npc_dialogue_som4"]
+[editable path="npc_dialogue_som5"]

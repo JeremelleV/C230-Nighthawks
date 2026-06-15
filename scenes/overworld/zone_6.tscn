@@ -903,7 +903,7 @@ tile_set = SubResource("TileSet_byv3k")
 
 [node name="npc_dialogue" parent="." unique_id=1327451291 instance=ExtResource("16_jyiii")]
 position = Vector2(565, 2206)
-dialogue_id = "scout_area"
+dialogue_id = "civ_exit_2"
 sprite_frames = SubResource("SpriteFrames_6m481")
 idle_sequence = Array[String](["right", "down", "left", "down", "right", "up"])
 idle_flip_interval = 5.0
