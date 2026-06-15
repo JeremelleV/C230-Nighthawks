@@ -16,6 +16,10 @@ config/features=PackedStringArray("4.6", "GL Compatibility")
 config/icon="res://icon.svg"
 config/run/main_scene="res://scenes/main/TestScene.tscn"
 
+[audio]
+
+buses/default_bus_layout="uid://cimhw4b4tkuqx"
+
 [autoload]
 
 DialogueManager="*res://scripts/systems/DialogueManager.gd"
@@ -24,7 +28,15 @@ AudioPlayer="*uid://crgtw7kkgfvsa"
 EconomyManager="*res://scripts/systems/EconomyManager.gd"
 InventoryManager="*res://scripts/systems/InventoryManager.gd"
 ShopManager="*res://scripts/systems/ShopManager.gd"
+FactionManager="*res://scripts/systems/FactionManager.gd"
+QuestManager="*res://scripts/systems/QuestManager.gd"
 FootstepSoundManager="*uid://c4d7dxj6r4sv8"
+AudioSettings="*uid://c2pecebpppdps"
+
+[display]
+
+window/size/viewport_width=1920
+window/size/viewport_height=1080
 
 [global_group]
 

@@ -16,15 +16,11 @@ var state: State = State.DOWN
 var move_direction: Vector2 = Vector2.ZERO
 var spawn_walk_timer: float = 0.0
 const SPAWN_WALK_DURATION: float = 0.3
-
-#var footstep_timer: float = 0.0 #testing
-#const FOOTSTEP_INTERVAL: float = 0.35 #testing
+var can_move: bool = true #test
 
 @onready var animation_tree: AnimationTree = $AnimationTree
 @onready var animation_playback: AnimationNodeStateMachinePlayback = $AnimationTree["parameters/playback"]
 @onready var animation_player: AnimationPlayer = $AnimationPlayer
-
-#@onready var walk_audio: AudioStreamPlayer2D = $WalkAudio #testing
 
 # animation always starts off
 func _ready() -> void:
@@ -37,19 +33,31 @@ func _ready() -> void:
 
 
 func _on_shop_opened(_shop: Dictionary) -> void:
-	set_physics_process(false)
+	#test
+	can_move = false
+	velocity = Vector2.ZERO
+	move_direction = Vector2.ZERO
+	#set_physics_process(false)
 
 
 func _on_shop_closed() -> void:
-	set_physics_process(true)
+	#test
+	can_move = true
+	#set_physics_process(true)
 
 
 func _on_dialogue_started(_id: String) -> void:
-	set_physics_process(false) # freeze movement
+	#test
+	can_move = false
+	velocity = Vector2.ZERO
+	move_direction = Vector2.ZERO	
+	#set_physics_process(false) # freeze movement
 
 
 func _on_dialogue_finished() -> void:
-	set_physics_process(true)
+	#test
+	can_move = true
+	#set_physics_process(true)
 
 
 func _on_spawn(given_position: Vector2, direction: String):
@@ -90,6 +98,13 @@ func _on_spawn(given_position: Vector2, direction: String):
 
 # called 60x per second by default
 func _physics_process(delta: float) -> void:
+	#test
+	if not can_move:
+		set_velocity(Vector2.ZERO)
+		move_and_slide()
+		update_animation()
+		return
+		
 	if spawn_walk_timer > 0.0:
 		spawn_walk_timer -= delta
 		var motion: Vector2 = move_direction.normalized() * speed
@@ -102,10 +117,10 @@ func _physics_process(delta: float) -> void:
 			update_animation()
 		return
 
-	movement_loop() #testing: delta added in ()
+	movement_loop()
 
 
-func movement_loop() -> void: #test: delta: float added in()
+func movement_loop() -> void:
 	move_direction.x = int(Input.is_action_pressed("right")) - int(Input.is_action_pressed("left"))
 	move_direction.y = int(Input.is_action_pressed("down")) - int(Input.is_action_pressed("up"))
 	var motion: Vector2 = move_direction.normalized() * speed
@@ -115,17 +130,6 @@ func movement_loop() -> void: #test: delta: float added in()
 	handle_flip()
 	update_animation()
 	
-	#testing
-	#if move_direction != Vector2.ZERO:
-		#footstep_timer -= delta
-		#if footstep_timer <= 0.0:
-			#walk_audio.pitch_scale = randf_range(0.95, 1.05)
-			#walk_audio.play()
-			#footstep_timer = FOOTSTEP_INTERVAL
-	#else:
-		#footstep_timer = 0.0
-
-
 func update_state() -> void:
 	if move_direction == Vector2.ZERO:
 		# keep state direction for idle freeze
@@ -175,6 +179,9 @@ func _get_anim_for_state() -> String:
 		_:
 			return "run"
 
-#test for another way to play footstep sound
 func _play_footstep():
+	#test
+	if not can_move:
+		return
+		
 	FootstepSoundManager.play_footstep(global_position)

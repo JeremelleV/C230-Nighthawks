@@ -4,7 +4,14 @@ const scene_test_map = preload("res://scenes/overworld/test_map.tscn")
 const scene_test_map_2 = preload("res://scenes/overworld/test_map_2.tscn")
 const scene_zone_1_start = preload("res://scenes/overworld/zone_1_start.tscn")
 const scene_zone_2 = preload("res://scenes/overworld/zone_2.tscn")
+const scene_zone_3 = preload("res://scenes/overworld/zone_3.tscn")
+const scene_zone_4 = preload("res://scenes/overworld/zone_4.tscn")
+const scene_zone_5 = preload("res://scenes/overworld/zone_5.tscn")
+const scene_zone_6 = preload("res://scenes/overworld/zone_6.tscn")
+const scene_zone_7 = preload("res://scenes/overworld/zone_7.tscn")
+const scene_zone_8 = preload("res://scenes/overworld/zone_8.tscn")
 const scene_main_menu = preload("res://scenes/main/main_menu.tscn")
+const scene_battle = preload("res://scenes/combat/battle.tscn")
 
 const transition_scene = preload("res://scenes/elements/transition.tscn")
 
@@ -19,7 +26,14 @@ signal on_trigger_player_spawn
 var spawn_door_tag
 var _transition
 
+var previous_level_tag: String = ""
+var saved_player_position: Vector2 = Vector2.ZERO
+
 var in_game: bool = false
+
+
+var battle_return_level: String = ""
+var battle_return_position: Vector2 = Vector2.ZERO
 
 
 func _ready() -> void:
@@ -35,6 +49,10 @@ func _ready() -> void:
 
 
 func go_to_level(level_tag, destination_tag):
+	#if level_tag == "battle":
+		#pass
+	#else:
+		#previous_level_tag = level_tag
 	spawn_door_tag = destination_tag
 	await _do_transition(level_tag)
 
@@ -54,7 +72,7 @@ func _do_transition(level_tag: String) -> void:
 
 	await get_tree().process_frame
 	await get_tree().process_frame
-
+	await get_tree().process_frame
 
 	# fade back in
 	await _transition.fade_in()
@@ -66,6 +84,13 @@ func _get_scene(level_tag: String) -> PackedScene:
 		"test_map_2": return scene_test_map_2
 		"zone_1_start": return scene_zone_1_start
 		"zone_2": return scene_zone_2
+		"zone_3": return scene_zone_3
+		"zone_4": return scene_zone_4
+		"zone_5": return scene_zone_5
+		"zone_6": return scene_zone_6
+		"zone_7": return scene_zone_7
+		"zone_8": return scene_zone_8
+		"battle": return scene_battle
 	return null
 
 

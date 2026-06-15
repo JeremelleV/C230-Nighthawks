@@ -1,0 +1,41 @@
+[
+	{
+		"id": "zone_som_1",
+		"lines": [
+			{
+				"speaker": "Son of Mars",
+				"text": "The shadow-ground is ours. The deep shadow, where light does not reach and the 'Mars-bloom' grows from the rock. "
+			},
+			{
+				"speaker": "Son of Mars",
+				"text": "If you walk there, you walk in our domain. Behave accordingly."
+			}
+		]
+	},
+	{
+		"id": "zone_som_2",
+		"lines": [
+			{
+				"speaker": "Son of Mars",
+				"text": "You will know our territory. Where the ground goes dark and the fungi push upward through the stone, that is where Mars claims the earth. Approach only if you wish to be tested."
+			},
+		]
+	},
+	{
+		"id": "zone_som_3",
+		"lines": [
+			{
+				"speaker": "Son of Mars",
+				"text": "The alien asks why we favor the shadow."
+			},
+			{
+				"speaker": "Son of Mars",
+				"text": "The shadow does not lie. It shows what is actually present, not what is made to appear pleasant by light. We trust it."
+			}
+		]
+	},
+
+
+
+
+]

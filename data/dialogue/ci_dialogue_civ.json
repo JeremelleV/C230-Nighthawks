@@ -1,0 +1,86 @@
+[
+	{
+		"id": "zone_civ_1",
+		"lines": [
+			{
+				"speaker": "Civ",
+				"text": "You'll know you're in dangerous territory when the canopy breaks and the light comes through. The creatures like the sunlit patches."
+			},
+			{
+				"speaker": "Civ",
+				"text": "Something about the warmth draws them out."
+			},
+						{
+				"speaker": "Civ",
+				"text": "Where the ferns grow, that's where they hunt."
+			}
+		]
+	},
+	{
+		"id": "zone_civ_2",
+		"lines": [
+			{
+				"speaker": "Civ",
+				"text": "Avoid the bright spots in the jungle, is my advice."
+			},
+			{
+				"speaker": "Civ",
+				"text": "Beautiful as they are. The ferns practically glow in those clearings which, again, beautiful, but also a sign that something with teeth is probably nearby."
+			},
+		]
+	},
+	{
+		"id": "zone_civ_3",
+		"lines": [
+			{
+				"speaker": "Civ",
+				"text": "The sunlit clearings aren't safe, no matter how inviting they look. "
+			},
+			{
+				"speaker": "Civ",
+				"text": "If you see ferns and open light, assume you've just walked into something's territory."
+			}
+		]
+	},
+	{
+		"id": "zone_civ_4",
+		"lines": [
+			{
+				"speaker": "Civ",
+				"text": "Stay outta the sun and you'll mostly be left alone."
+			},
+			{
+				"speaker": "Civ",
+				"text": "Step into the light? You'll have company very quickly, and it won't be social company."
+			}
+		]
+	},
+
+	{
+		"id": "zone_civ_seen_1",
+		"lines": [
+			{
+				"speaker": "Civ",
+				"text": "Bright patches in the jungle? Stay out. Dark sections further out near the rock formations with the mushrooms? Also stay out."
+			},
+			{
+				"speaker": "Civ",
+				"text": " The safe path is an extremely specific narrow strip. I recommend learning it quickly."
+			}
+		]
+	},
+	{
+		"id": "zone_civ_seen_2",
+		"lines": [
+			{
+				"speaker": "Civ",
+				"text": "The two types of bad territory are very different and also somehow equally bad. "
+			},
+			{
+				"speaker": "Civ",
+				"text": "At least the Sons of Mars will tell you to leave before they do anything about it. The jungle things don't bother with that step."
+			}
+		]
+	},
+
+]

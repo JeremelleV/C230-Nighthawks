@@ -7,10 +7,10 @@ extends CanvasLayer
 @onready var _item_list: VBoxContainer = $Panel/MarginContainer/VBoxContainer/ScrollContainer/ItemListContainer
 @onready var _status_label: Label = $Panel/MarginContainer/VBoxContainer/StatusLabel
 @onready var _close_button: Button = $Panel/MarginContainer/VBoxContainer/CloseButton
+@onready var _hover_sound: AudioStreamPlayer = $store_hover
+@onready var _click_sound: AudioStreamPlayer = $store_click
 
 var _showing_buy: bool = true
-
-
 func _ready() -> void:
 	visible = false
 	ShopManager.shop_opened.connect(_on_shop_opened)
@@ -19,9 +19,19 @@ func _ready() -> void:
 	ShopManager.purchase_failed.connect(func(_item): _show_status("Not enough $MRS"))
 	ShopManager.sale_succeeded.connect(func(_item): _refresh())
 	EconomyManager.balance_changed.connect(_on_balance_changed)
+	
+
 	_buy_tab.pressed.connect(_show_buy)
 	_sell_tab.pressed.connect(_show_sell)
+	
+	_buy_tab.mouse_entered.connect(func(): _hover_sound.play())
+	_sell_tab.mouse_entered.connect(func(): _hover_sound.play())
+	_buy_tab.pressed.connect(func(): _click_sound.play())
+	_sell_tab.pressed.connect(func(): _click_sound.play())
+	
 	_close_button.pressed.connect(ShopManager.close_shop)
+	_close_button.mouse_entered.connect(func(): _hover_sound.play())
+	_close_button.pressed.connect(func(): _click_sound.play())
 	_apply_theme()
 	_update_balance_label(EconomyManager.get_balance())
 
@@ -46,6 +56,8 @@ func _input(event: InputEvent) -> void:
 
 
 func _on_shop_opened(shop: Dictionary) -> void:
+	FootstepSoundManager.enabled = false
+	$open_store.play()
 	_shop_name_label.text = shop.get("name", "Shop")
 	_status_label.text = ""
 	_showing_buy = true
@@ -54,6 +66,7 @@ func _on_shop_opened(shop: Dictionary) -> void:
 
 
 func _on_shop_closed() -> void:
+	FootstepSoundManager.enabled = true
 	visible = false
 	_clear_list()
 
@@ -107,6 +120,7 @@ func _show_status(message: String) -> void:
 
 
 func _make_buy_row(item: Dictionary) -> Control:
+	
 	var wrapper := VBoxContainer.new()
 
 	var row := HBoxContainer.new()
@@ -129,20 +143,41 @@ func _make_buy_row(item: Dictionary) -> Control:
 	info.add_child(name_label)
 	info.add_child(desc_label)
 
+	var item_id: String = item["id"]
+	var base_price: int = item.get("price", 0)
+	var actual_price: int = ShopManager.get_buy_price(item_id)
+
+	var price_col := VBoxContainer.new()
+	price_col.alignment = BoxContainer.ALIGNMENT_CENTER
+
 	var price_label := Label.new()
-	price_label.text = "$MRS %d" % item.get("price", 0)
+	price_label.text = "$MRS %d" % actual_price
 	price_label.vertical_alignment = VERTICAL_ALIGNMENT_CENTER
 	price_label.add_theme_color_override("font_color", UIStyle.TEXT_CURRENCY)
+	price_col.add_child(price_label)
+
+	if actual_price < base_price:
+		var pct: int = roundi((1.0 - float(actual_price) / float(base_price)) * 100)
+		var disc_label := Label.new()
+		disc_label.text = "-%d%%" % pct
+		disc_label.add_theme_color_override("font_color", Color(0.40, 0.90, 0.45))
+		disc_label.add_theme_font_size_override("font_size", 11)
+		price_col.add_child(disc_label)
 
 	var buy_btn := Button.new()
 	buy_btn.text = "Buy"
-	buy_btn.disabled = not EconomyManager.can_afford(item.get("price", 0))
+
+	#test
+	buy_btn.mouse_entered.connect(func(): _hover_sound.play())
+	buy_btn.disabled = not EconomyManager.can_afford(actual_price)
 	UIStyle.style_button(buy_btn)
-	var item_id: String = item["id"]
-	buy_btn.pressed.connect(func(): ShopManager.buy_item(item_id))
+	#var item_id: String = item["id"] #test
+	buy_btn.pressed.connect(func(): 
+		$buy_things.play()
+		ShopManager.buy_item(item_id))
 
 	row.add_child(info)
-	row.add_child(price_label)
+	row.add_child(price_col)
 	row.add_child(buy_btn)
 
 	wrapper.add_child(row)
@@ -186,9 +221,12 @@ func _make_sell_row(item: Dictionary, quantity: int) -> Control:
 
 	var sell_btn := Button.new()
 	sell_btn.text = "Sell"
+	sell_btn.mouse_entered.connect(func(): _hover_sound.play())
 	UIStyle.style_button(sell_btn)
 	var item_id: String = item["id"]
-	sell_btn.pressed.connect(func(): ShopManager.sell_item(item_id))
+	sell_btn.pressed.connect(func(): 
+		$sell_things.play()
+		ShopManager.sell_item(item_id))
 
 	row.add_child(info)
 	row.add_child(qty_label)
@@ -204,3 +242,9 @@ func _make_sell_row(item: Dictionary, quantity: int) -> Control:
 func _clear_list() -> void:
 	for child: Node in _item_list.get_children():
 		child.queue_free()
+		
+func _play_hover() -> void:
+	_hover_sound.play()
+	
+func _play_click() -> void:
+	_click_sound.play()

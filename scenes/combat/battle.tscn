@@ -1,0 +1,505 @@
+[gd_scene format=3 uid="uid://ikjcknxwvr6e"]
+
+[ext_resource type="Script" uid="uid://cj6hufp88wn8y" path="res://scripts/systems/BattleSystem.gd" id="1_42a6d"]
+[ext_resource type="Texture2D" uid="uid://cwms5vs27p5om" path="res://assets/backgrounds/combat_background_jungle.png" id="1_85hy3"]
+[ext_resource type="Texture2D" uid="uid://fdko56hvnmek" path="res://assets/sprites/characters/astronaut_1_player.png" id="2_nbo3i"]
+[ext_resource type="Texture2D" uid="uid://cuvnk88kfkivq" path="res://assets/sprites/characters/alien_partymember_1.png" id="3_1gep8"]
+[ext_resource type="Texture2D" uid="uid://ct88vs028n1ps" path="res://assets/sprites/characters/astronaut_2_partymember.png" id="4_ypw3g"]
+[ext_resource type="Texture2D" uid="uid://clpjgbf3yemgs" path="res://assets/sprites/characters/astronaut_3_partymember.png" id="5_txmw6"]
+[ext_resource type="Texture2D" uid="uid://bd5oofh0aedbd" path="res://assets/props/combat_arrow.png" id="8_834tv"]
+[ext_resource type="AudioStream" uid="uid://bv4otfg382o84" path="res://assets/audio/combat1.mp3" id="8_txmw6"]
+[ext_resource type="AudioStream" uid="uid://d0mdtvur1mmt1" path="res://assets/audio/combat2.mp3" id="9_v3dvn"]
+[ext_resource type="AudioStream" uid="uid://iugnc6uremg5" path="res://assets/audio/combat3.mp3" id="10_hfqqo"]
+[ext_resource type="AudioStream" uid="uid://c05dsgg87dn1m" path="res://assets/audio/rain-and-tears-by-neutrin05.mp3" id="11_834tv"]
+[ext_resource type="AudioStream" uid="uid://c8xswj1mydhjy" path="res://assets/audio/Rainy Morning — Zackross  Free Background Music  Audio Library Release.mp3" id="12_txmw6"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_ip7xm"]
+corner_radius_top_left = 15
+corner_radius_top_right = 15
+corner_radius_bottom_right = 15
+corner_radius_bottom_left = 15
+corner_detail = 15
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_oxp8w"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_7sfm4"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_i431l"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_6t8i5"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_dw4jg"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_0npn6"]
+corner_radius_top_left = 15
+corner_radius_top_right = 15
+corner_radius_bottom_right = 15
+corner_radius_bottom_left = 15
+corner_detail = 11
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_i431l"]
+size = Vector2(108, 250)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_b1i6x"]
+size = Vector2(232, 327.5)
+
+[node name="Node2D" type="Area2D" unique_id=2082699629 node_paths=PackedStringArray("player_labels", "enemy_labels", "menu_button", "player_indicators", "enemy_indicators", "enemy_texture", "player_texture", "button_3")]
+script = ExtResource("1_42a6d")
+player_labels = [NodePath("CanvasLayer/player1/p1label"), NodePath("CanvasLayer/player2/p2label"), NodePath("CanvasLayer/player3/p3label"), NodePath("CanvasLayer/player4/p4label")]
+enemy_labels = [NodePath("CanvasLayer/enemy1/e1label"), NodePath("CanvasLayer/enemy2/e2label"), NodePath("CanvasLayer/enemy3/e3label"), NodePath("CanvasLayer/enemy4/e4label")]
+menu_button = NodePath("CanvasLayer/Menu_button")
+player_indicators = [NodePath("CanvasLayer/p1turn"), NodePath("CanvasLayer/p2turn"), NodePath("CanvasLayer/p3turn"), NodePath("CanvasLayer/p4turn")]
+enemy_indicators = [NodePath("CanvasLayer/e1turn"), NodePath("CanvasLayer/e2turn"), NodePath("CanvasLayer/e3turn"), NodePath("CanvasLayer/e4turn")]
+enemy_texture = [NodePath("CanvasLayer/enemy1/e1texture"), NodePath("CanvasLayer/enemy2/e2texture"), NodePath("CanvasLayer/enemy3/e3texture"), NodePath("CanvasLayer/enemy4/e4texture")]
+player_texture = [NodePath("CanvasLayer/player1/p1texture"), NodePath("CanvasLayer/player2/p2texture"), NodePath("CanvasLayer/player3/p3texture"), NodePath("CanvasLayer/player4/p4texture")]
+button_3 = NodePath("CanvasLayer/Menu_button/HBoxContainer/Button3")
+
+[node name="CanvasLayer" type="CanvasLayer" parent="." unique_id=755948315]
+
+[node name="battle_background" type="TextureRect" parent="CanvasLayer" unique_id=1859781763]
+offset_left = -17.0
+offset_top = -32.0
+offset_right = 2012.0
+offset_bottom = 1070.0
+mouse_filter = 2
+texture = ExtResource("1_85hy3")
+
+[node name="ColorRect2" type="ColorRect" parent="CanvasLayer" unique_id=1172588962]
+offset_left = 2336.0
+offset_top = 308.0
+offset_right = 2533.0
+offset_bottom = 594.0
+color = Color(0.31087586, 6.540969e-05, 0.3110308, 1)
+
+[node name="Label3" type="Label" parent="CanvasLayer/ColorRect2" unique_id=547995665]
+layout_mode = 0
+offset_left = 7.0
+offset_top = 144.0
+offset_right = 388.0
+offset_bottom = 167.0
+text = "Enemy 1"
+
+[node name="Label" type="Label" parent="CanvasLayer/ColorRect2" unique_id=780787405]
+layout_mode = 0
+offset_left = 7.0
+offset_top = 11.0
+offset_right = 388.0
+offset_bottom = 34.0
+text = "Current Turn:"
+
+[node name="Label2" type="Label" parent="CanvasLayer/ColorRect2" unique_id=11533344]
+layout_mode = 0
+offset_left = 9.0
+offset_top = 38.0
+offset_right = 390.0
+offset_bottom = 61.0
+text = "Player 1"
+
+[node name="Label4" type="Label" parent="CanvasLayer/ColorRect2" unique_id=556171760]
+layout_mode = 0
+offset_left = 8.0
+offset_top = 180.0
+offset_right = 133.0
+offset_bottom = 227.0
+text = "Player 2"
+
+[node name="Label5" type="Label" parent="CanvasLayer/ColorRect2" unique_id=1676267483]
+layout_mode = 0
+offset_left = 8.0
+offset_top = 215.0
+offset_right = 389.0
+offset_bottom = 238.0
+text = "Enemy 2"
+
+[node name="Label5" type="Label" parent="CanvasLayer/ColorRect2/Label5" unique_id=2140670542]
+layout_mode = 0
+offset_top = 34.0
+offset_right = 381.0
+offset_bottom = 57.0
+text = "Player 3"
+
+[node name="Label6" type="Label" parent="CanvasLayer/ColorRect2" unique_id=2114085049]
+layout_mode = 0
+offset_left = 7.0
+offset_top = 109.0
+offset_right = 388.0
+offset_bottom = 132.0
+text = "Next Turn:"
+
+[node name="player1" type="ColorRect" parent="CanvasLayer" unique_id=626854497]
+offset_left = 656.0
+offset_top = 1106.0
+offset_right = 759.0
+offset_bottom = 1279.0
+color = Color(0.71829337, 0.71177024, 0.8939573, 1)
+
+[node name="p1label" type="Label" parent="CanvasLayer/player1" unique_id=437321615]
+layout_mode = 0
+offset_left = 19.0
+offset_top = -485.0
+offset_right = 137.0
+offset_bottom = -436.0
+text = "Name:
+Hp 100/100"
+
+[node name="p1texture" type="TextureRect" parent="CanvasLayer/player1" unique_id=1696203277]
+layout_mode = 0
+offset_left = -21.0
+offset_top = -439.0
+offset_right = 141.0
+offset_bottom = -183.0
+texture = ExtResource("2_nbo3i")
+expand_mode = 1
+
+[node name="player4" type="ColorRect" parent="CanvasLayer" unique_id=2015223312]
+offset_left = 162.0
+offset_top = 1109.0
+offset_right = 265.0
+offset_bottom = 1282.0
+color = Color(0.71829337, 0.71177024, 0.8939573, 1)
+
+[node name="p4label" type="Label" parent="CanvasLayer/player4" unique_id=1225908752]
+layout_mode = 0
+offset_left = 16.0
+offset_top = -408.0
+offset_right = 113.0
+offset_bottom = -359.0
+text = "Name:
+Hp 100/100"
+
+[node name="p4texture" type="TextureRect" parent="CanvasLayer/player4" unique_id=1433809352]
+layout_mode = 0
+offset_left = 11.0
+offset_top = -355.0
+offset_right = 114.0
+offset_bottom = -162.0
+texture = ExtResource("3_1gep8")
+expand_mode = 1
+
+[node name="player3" type="ColorRect" parent="CanvasLayer" unique_id=651504658]
+offset_left = 319.0
+offset_top = 1105.0
+offset_right = 422.0
+offset_bottom = 1278.0
+color = Color(0.71829337, 0.71177024, 0.8939573, 1)
+
+[node name="p3label" type="Label" parent="CanvasLayer/player3" unique_id=1800093355]
+layout_mode = 0
+offset_left = 5.0
+offset_top = -374.0
+offset_right = 102.0
+offset_bottom = -325.0
+text = "Name:
+Hp 100/100"
+
+[node name="p3texture" type="TextureRect" parent="CanvasLayer/player3" unique_id=831184902]
+layout_mode = 0
+offset_left = 4.0
+offset_top = -323.0
+offset_right = 114.0
+offset_bottom = -140.0
+texture = ExtResource("4_ypw3g")
+expand_mode = 1
+
+[node name="player2" type="ColorRect" parent="CanvasLayer" unique_id=932323646]
+offset_left = 503.0
+offset_top = 1118.0
+offset_right = 606.0
+offset_bottom = 1291.0
+color = Color(0.71829337, 0.71177024, 0.8939573, 1)
+
+[node name="p2label" type="Label" parent="CanvasLayer/player2" unique_id=23017657]
+layout_mode = 0
+offset_left = -18.0
+offset_top = -447.0
+offset_right = 79.0
+offset_bottom = -398.0
+text = "Name:
+Hp 100/100"
+
+[node name="p2texture" type="TextureRect" parent="CanvasLayer/player2" unique_id=543898817]
+layout_mode = 0
+offset_left = -26.0
+offset_top = -393.0
+offset_right = 91.0
+offset_bottom = -224.0
+texture = ExtResource("5_txmw6")
+expand_mode = 1
+
+[node name="enemy1" type="ColorRect" parent="CanvasLayer" unique_id=320760429]
+offset_left = 1125.0
+offset_top = 1088.0
+offset_right = 1228.0
+offset_bottom = 1261.0
+color = Color(0.9662439, 0.6084216, 0.7558147, 1)
+
+[node name="e1label" type="Label" parent="CanvasLayer/enemy1" unique_id=210612150]
+layout_mode = 0
+offset_left = -14.0
+offset_top = -468.0
+offset_right = 83.0
+offset_bottom = -419.0
+text = "Name:
+Hp 100/100"
+
+[node name="e1texture" type="TextureRect" parent="CanvasLayer/enemy1" unique_id=817961832]
+layout_mode = 0
+offset_left = -55.0
+offset_top = -398.0
+offset_right = 87.0
+offset_bottom = -226.0
+mouse_filter = 2
+expand_mode = 1
+
+[node name="enemy4" type="ColorRect" parent="CanvasLayer" unique_id=1453941526]
+offset_left = 1783.0
+offset_top = 1079.0
+offset_right = 1886.0
+offset_bottom = 1252.0
+color = Color(0.9662439, 0.6084216, 0.7558147, 1)
+
+[node name="e4label" type="Label" parent="CanvasLayer/enemy4" unique_id=242543614]
+layout_mode = 0
+offset_left = -23.0
+offset_top = -441.0
+offset_right = 74.0
+offset_bottom = -392.0
+text = "Name:
+Hp 100/100"
+
+[node name="e4texture" type="TextureRect" parent="CanvasLayer/enemy4" unique_id=624154951]
+layout_mode = 0
+offset_left = -36.0
+offset_top = -377.0
+offset_right = 87.0
+offset_bottom = -256.0
+mouse_filter = 2
+expand_mode = 1
+
+[node name="enemy3" type="ColorRect" parent="CanvasLayer" unique_id=1449767556]
+offset_left = 1618.0
+offset_top = 1088.0
+offset_right = 1721.0
+offset_bottom = 1261.0
+color = Color(0.9662439, 0.6084216, 0.7558147, 1)
+
+[node name="e3label" type="Label" parent="CanvasLayer/enemy3" unique_id=1498399990]
+layout_mode = 0
+offset_left = -66.0
+offset_top = -428.0
+offset_right = 31.0
+offset_bottom = -379.0
+text = "Name:
+Hp 100/100"
+
+[node name="e3texture" type="TextureRect" parent="CanvasLayer/enemy3" unique_id=1578805222]
+layout_mode = 0
+offset_left = -96.0
+offset_top = -350.0
+offset_right = 50.0
+offset_bottom = -188.0
+mouse_filter = 2
+expand_mode = 1
+
+[node name="enemy2" type="ColorRect" parent="CanvasLayer" unique_id=56439528]
+offset_left = 1406.0
+offset_top = 1091.0
+offset_right = 1509.0
+offset_bottom = 1264.0
+color = Color(0.9662439, 0.6084216, 0.7558147, 1)
+
+[node name="e2label" type="Label" parent="CanvasLayer/enemy2" unique_id=66899625]
+layout_mode = 0
+offset_left = -70.0
+offset_top = -457.0
+offset_right = 27.0
+offset_bottom = -408.0
+text = "Name:
+Hp 100/100"
+
+[node name="e2texture" type="TextureRect" parent="CanvasLayer/enemy2" unique_id=1636861482]
+layout_mode = 0
+offset_left = -131.0
+offset_top = -396.0
+offset_right = 70.0
+offset_bottom = -196.0
+mouse_filter = 2
+expand_mode = 1
+
+[node name="Menu_button" type="ColorRect" parent="CanvasLayer" unique_id=1189959655]
+offset_left = 640.0
+offset_top = 971.0
+offset_right = 1450.0
+offset_bottom = 1048.0
+color = Color(0.61079496, 0.5742272, 0.5877648, 1)
+
+[node name="HBoxContainer" type="HBoxContainer" parent="CanvasLayer/Menu_button" unique_id=175781720]
+layout_mode = 1
+anchors_preset = 12
+anchor_top = 1.0
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = 26.0
+offset_top = -66.0
+offset_right = -49.0
+offset_bottom = -13.0
+grow_horizontal = 2
+grow_vertical = 0
+size_flags_horizontal = 3
+theme_override_constants/separation = 29
+
+[node name="attackbutton" type="Button" parent="CanvasLayer/Menu_button/HBoxContainer" unique_id=434758157]
+layout_mode = 2
+size_flags_horizontal = 3
+theme_override_styles/normal_mirrored = SubResource("StyleBoxFlat_ip7xm")
+theme_override_styles/pressed_mirrored = SubResource("StyleBoxFlat_oxp8w")
+theme_override_styles/hover_mirrored = SubResource("StyleBoxFlat_7sfm4")
+theme_override_styles/hover_pressed = SubResource("StyleBoxFlat_i431l")
+theme_override_styles/hover_pressed_mirrored = SubResource("StyleBoxFlat_6t8i5")
+theme_override_styles/disabled_mirrored = SubResource("StyleBoxFlat_dw4jg")
+text = "Attack"
+
+[node name="Button2" type="Button" parent="CanvasLayer/Menu_button/HBoxContainer" unique_id=307113882]
+layout_mode = 2
+size_flags_horizontal = 3
+theme_override_styles/normal_mirrored = SubResource("StyleBoxFlat_0npn6")
+text = "Item"
+
+[node name="Button3" type="Button" parent="CanvasLayer/Menu_button/HBoxContainer" unique_id=504285176]
+layout_mode = 2
+size_flags_horizontal = 3
+text = "Block"
+
+[node name="p1turn" type="TextureRect" parent="CanvasLayer" unique_id=1822501326]
+offset_left = 638.0
+offset_top = 433.0
+offset_right = 776.0
+offset_bottom = 601.0
+texture = ExtResource("8_834tv")
+expand_mode = 1
+
+[node name="p2turn" type="TextureRect" parent="CanvasLayer" unique_id=1986901122]
+offset_left = 444.0
+offset_top = 502.0
+offset_right = 582.0
+offset_bottom = 670.0
+texture = ExtResource("8_834tv")
+expand_mode = 1
+
+[node name="p3turn" type="TextureRect" parent="CanvasLayer" unique_id=1517781438]
+offset_left = 304.0
+offset_top = 558.0
+offset_right = 442.0
+offset_bottom = 726.0
+texture = ExtResource("8_834tv")
+expand_mode = 1
+
+[node name="p4turn" type="TextureRect" parent="CanvasLayer" unique_id=1762723807]
+offset_left = 147.0
+offset_top = 528.0
+offset_right = 285.0
+offset_bottom = 696.0
+texture = ExtResource("8_834tv")
+expand_mode = 1
+
+[node name="e1turn" type="TextureRect" parent="CanvasLayer" unique_id=1247749491]
+offset_left = 1109.0
+offset_top = 426.0
+offset_right = 1247.0
+offset_bottom = 594.0
+texture = ExtResource("8_834tv")
+expand_mode = 1
+
+[node name="e2turn" type="TextureRect" parent="CanvasLayer" unique_id=1157767663]
+offset_left = 1314.0
+offset_top = 456.0
+offset_right = 1452.0
+offset_bottom = 624.0
+texture = ExtResource("8_834tv")
+expand_mode = 1
+
+[node name="e3turn" type="TextureRect" parent="CanvasLayer" unique_id=587208120]
+offset_left = 1532.0
+offset_top = 478.0
+offset_right = 1670.0
+offset_bottom = 646.0
+texture = ExtResource("8_834tv")
+expand_mode = 1
+
+[node name="e4turn" type="TextureRect" parent="CanvasLayer" unique_id=531780648]
+offset_left = 1729.0
+offset_top = 451.0
+offset_right = 1867.0
+offset_bottom = 619.0
+texture = ExtResource("8_834tv")
+expand_mode = 1
+
+[node name="CE2" type="CollisionShape2D" parent="." unique_id=544511057]
+position = Vector2(851, 362)
+shape = SubResource("RectangleShape2D_i431l")
+
+[node name="combat1" type="AudioStreamPlayer" parent="." unique_id=1655389063]
+stream = ExtResource("8_txmw6")
+
+[node name="combat2" type="AudioStreamPlayer" parent="." unique_id=261977037]
+stream = ExtResource("9_v3dvn")
+
+[node name="combat3" type="AudioStreamPlayer" parent="." unique_id=1418493097]
+stream = ExtResource("10_hfqqo")
+
+[node name="combatrain" type="AudioStreamPlayer" parent="." unique_id=1951434046]
+stream = ExtResource("11_834tv")
+
+[node name="combatplaceholder" type="AudioStreamPlayer" parent="." unique_id=1759697812]
+stream = ExtResource("12_txmw6")
+
+[node name="e1hitbox4" type="Area2D" parent="." unique_id=1827515529]
+position = Vector2(-1072, 4160)
+
+[node name="Sprite2D" type="Sprite2D" parent="e1hitbox4" unique_id=451002352]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="e1hitbox4" unique_id=1822641291]
+position = Vector2(2882, -3414)
+shape = SubResource("RectangleShape2D_b1i6x")
+
+[node name="e1hitbox3" type="Area2D" parent="." unique_id=1800516202]
+position = Vector2(-536, 2080)
+
+[node name="Sprite2D" type="Sprite2D" parent="e1hitbox3" unique_id=741987178]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="e1hitbox3" unique_id=1980980872]
+position = Vector2(2122, -1305)
+shape = SubResource("RectangleShape2D_b1i6x")
+
+[node name="e1hitbox2" type="Area2D" parent="." unique_id=2081026970]
+position = Vector2(-268, 1040)
+
+[node name="Sprite2D" type="Sprite2D" parent="e1hitbox2" unique_id=1824070342]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="e1hitbox2" unique_id=1201591255]
+position = Vector2(1648, -326.25)
+shape = SubResource("RectangleShape2D_b1i6x")
+
+[node name="e1hitbox" type="Area2D" parent="." unique_id=1523846432]
+position = Vector2(-134, 520)
+
+[node name="Sprite2D" type="Sprite2D" parent="e1hitbox" unique_id=1700295495]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="e1hitbox" unique_id=373761531]
+position = Vector2(1295, 219)
+shape = SubResource("RectangleShape2D_b1i6x")
+
+[node name="TurnOrderDisplay" type="PanelContainer" parent="." unique_id=1906470704]
+offset_right = 117.0
+offset_bottom = 207.0
+
+[node name="VBoxContainer" type="VBoxContainer" parent="TurnOrderDisplay" unique_id=1661239373]
+layout_mode = 2
+
+[connection signal="input_event" from="." to="." method="_on_input_event"]
+[connection signal="pressed" from="CanvasLayer/Menu_button/HBoxContainer/attackbutton" to="." method="_on_button_pressed"]
+[connection signal="pressed" from="CanvasLayer/Menu_button/HBoxContainer/Button3" to="." method="_on_button_3_pressed"]
+[connection signal="input_event" from="e1hitbox4" to="." method="_on_e_1_hitbox_4_input_event"]
+[connection signal="input_event" from="e1hitbox3" to="." method="_on_e_1_hitbox_3_input_event"]
+[connection signal="input_event" from="e1hitbox2" to="." method="_on_e_1_hitbox_2_input_event"]
+[connection signal="input_event" from="e1hitbox" to="." method="_on_e_1_hitbox_input_event"]

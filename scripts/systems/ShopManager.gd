@@ -48,11 +48,28 @@ func close_shop() -> void:
 	shop_closed.emit()
 
 
+func get_buy_price(item_id: String) -> int:
+	var item: Dictionary = _item_catalogue.get(item_id, {})
+	if item.is_empty():
+		return 0
+	var base: int = item.get("price", 0)
+	var faction_id: String = _current_shop.get("faction", "")
+	if faction_id.is_empty():
+		return base
+	var rep: int = FactionManager.get_rep(faction_id)
+	if rep >= 50:
+		return int(base * 0.80)
+	elif rep >= 10:
+		return int(base * 0.90)
+	return base
+
+
 func buy_item(item_id: String) -> void:
 	var item: Dictionary = _item_catalogue.get(item_id, {})
 	if item.is_empty():
 		return
-	if not EconomyManager.spend(item["price"]):
+	var price: int = get_buy_price(item_id)
+	if not EconomyManager.spend(price):
 		purchase_failed.emit(item)
 		return
 	InventoryManager.add_item(item_id)

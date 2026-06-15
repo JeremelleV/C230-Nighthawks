@@ -28,6 +28,23 @@
 						"rep_delta": { "crystal_faction": 2 }
 					},
 					{
+						"label": "Can you use my help?",
+						"next": "scout_quest_offer"
+					},
+					{
+						"label": "Any word from the Crystal Faction?",
+						"condition": { "type": "rep_above", "faction": "crystal_faction", "threshold": 10 },
+						"next": "scout_crystal_friendly"
+					},
+					{
+						"label": "I found your crystal shard.",
+						"condition": [
+							{ "type": "quest_active", "id": "scouts_request" },
+							{ "type": "has_item", "id": "crystal_shard" }
+						],
+						"next": "scout_turnin"
+					},
+					{
 						"label": "Say nothing and leave"
 					}
 				]
@@ -61,6 +78,166 @@
 			{
 				"speaker": "Scout",
 				"text": "If you're serious about doing something about him — you'll need every faction you can get. Every single one."
+			}
+		]
+	},
+	{
+		"id": "scout_quest_offer",
+		"lines": [
+			{
+				"speaker": "Scout",
+				"text": "Actually, yes. Something was taken from our cache in the eastern grove — a crystal shard. Its energy signature was being tracked. I need someone to retrieve it."
+			},
+			{
+				"speaker": "You",
+				"text": "...",
+				"choices": [
+					{
+						"label": "I actually already have one.",
+						"condition": { "type": "has_item", "id": "crystal_shard" },
+						"quest_start": "scouts_request",
+						"complete_quest": "scouts_request",
+						"remove_item": { "id": "crystal_shard", "quantity": 1 },
+						"earn_money": 25,
+						"give_item": { "id": "med_stim_basic", "quantity": 1 },
+						"next": "scout_turnin_instant"
+					},
+					{
+						"label": "I'll find it.",
+						"quest_start": "scouts_request",
+						"earn_money": 25,
+						"give_item": { "id": "med_stim_basic", "quantity": 1 },
+						"next": "scout_also_herd"
+					},
+					{
+						"label": "That's not my problem."
+					}
+				]
+			}
+		]
+	},
+	{
+		"id": "scout_also_herd",
+		"lines": [
+			{
+				"speaker": "Scout",
+				"text": "Good. One more thing — the Traders' Guild has been asking for help. Hostiles are blocking the northern crossing. Clearing them out would make you some powerful friends."
+			},
+			{
+				"speaker": "You",
+				"text": "...",
+				"choices": [
+					{
+						"label": "I'll handle them too.",
+						"quest_start": "thin_the_herd",
+						"next": "scout_quest_done"
+					},
+					{
+						"label": "One thing at a time.",
+						"next": "scout_quest_done"
+					}
+				]
+			}
+		]
+	},
+	{
+		"id": "scout_quest_done",
+		"lines": [
+			{
+				"speaker": "Scout",
+				"text": "Good luck out there. I'll be here when you're done."
+			}
+		]
+	},
+	{
+		"id": "scout_crystal_friendly",
+		"lines": [
+			{
+				"speaker": "Scout",
+				"text": "They've noticed you. That doesn't happen often with outsiders. Whatever you did, it opened a door. The Crystal Grove vendor will cut you a deal now — they look after those the faction respects."
+			}
+		]
+	},
+	{
+		"id": "scout_turnin_instant",
+		"lines": [
+			{
+				"speaker": "Scout",
+				"text": "You already had it? Ha. Then we skip the waiting. Here — a Med-Stim and your advance. You've already earned it."
+			}
+		]
+	},
+	{
+		"id": "scout_turnin",
+		"lines": [
+			{
+				"speaker": "Scout",
+				"text": "You actually found it. I wasn't sure you would. This is exactly what we needed.",
+				"choices": [
+					{
+						"label": "[Hand over the crystal shard]",
+						"complete_quest": "scouts_request",
+						"remove_item": { "id": "crystal_shard", "quantity": 1 }
+					}
+				]
+			}
+		]
+	},
+	{
+		"id": "alien_near_town_exit",
+		"lines": [
+			{
+				"speaker": "Civ",
+				"text": "Heading out? I’d be careful if I were you. In fact, if I were you, I probably wouldn’t even head out at all. You haven’t lived here nearly as long to get a proper grasp of how to deal with the things out there."
+			},
+			{
+				"speaker": "You",
+				"text": "Considering some of the things we’ve seen, I’d normally listen to you, but we don’t have much of a choice."
+			},
+			{
+				"speaker": "Civ",
+				"text": "Yeah, word has spread quickly around town about you guys and your mission. Rather insane, if you ask me."
+			},
+			{
+				"speaker": "Civ",
+				"text": "If you want some advice, you might want to take your chances with the Sons of Mars. They’re crazy, but you just might be able to reason with them."
+			},
+			{
+				"speaker": "Civ",
+				"text": "Jungle creatures on the other hand, ehhhhh… Can’t exactly reason with a feral animal that only speaks in *RRARrRrrAaAAr GRagGhhh RArargh*, ya know?"
+			},
+			{
+				"speaker": "Civ",
+				"text": "That translates to “I’m gonna eat your guts” by the way."
+			}
+		]
+	},
+	{
+		"id": "alien_near_town_exit_som",
+		"lines": [
+			{
+				"speaker": "You",
+				"text": "Why are you all so itching for a fight? You don't have any apparent goals other than fighting, and you don't seem to have any other worldly desires that I can make out."
+			},
+			{
+				"speaker": "Son of Mars",
+				"text": "..."
+			},
+			{
+				"speaker": "You",
+				"text": "Oh, don't give me that. I know you guys are smarter than you let on."
+			},
+			{
+				"speaker": "Son of Mars",
+				"text": "The “Life-Giving Planet” commands it so. Were we not meant to be this way, Mars would not have instilled us with the “Battle-Crave” that compels us so."
+			},
+			{
+				"speaker": "You",
+				"text": "So that really is just it? Because you feel like it?!?"
+			},
+			{
+				"speaker": "Son of Mars",
+				"text": "We would not expect the alien to know how deeply our “Life-Being” binds us to the “Life-Giver”. Within ourselves, we know their will is true. We know their will is deliberate."
 			}
 		]
 	},

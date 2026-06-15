@@ -1,0 +1,19 @@
+[remap]
+
+importer="mp3"
+type="AudioStreamMP3"
+uid="uid://c8xswj1mydhjy"
+path="res://.godot/imported/Rainy Morning — Zackross  Free Background Music  Audio Library Release.mp3-966fb6e6fdc32160902f3fbf2f47f56a.mp3str"
+
+[deps]
+
+source_file="res://assets/audio/Rainy Morning — Zackross  Free Background Music  Audio Library Release.mp3"
+dest_files=["res://.godot/imported/Rainy Morning — Zackross  Free Background Music  Audio Library Release.mp3-966fb6e6fdc32160902f3fbf2f47f56a.mp3str"]
+
+[params]
+
+loop=false
+loop_offset=0
+bpm=0
+beat_count=0
+bar_beats=4
