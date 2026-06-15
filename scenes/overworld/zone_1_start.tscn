@@ -16,6 +16,11 @@
 [ext_resource type="PackedScene" uid="uid://x61xvjvbheb6" path="res://scenes/ui/shop/ShopUI.tscn" id="11_2nvop"]
 [ext_resource type="PackedScene" uid="uid://cdgr5nt0iy003" path="res://scenes/ui/dialogue/DialogueBox.tscn" id="12_sjfqg"]
 [ext_resource type="PackedScene" uid="uid://dy1h13pblohyb" path="res://scenes/ui/hud/minimap.tscn" id="16_by876"]
+[ext_resource type="PackedScene" path="res://scenes/ui/hud/EconomyHUD.tscn" id="17_rhsuh"]
+[ext_resource type="PackedScene" path="res://scenes/ui/inventory/InventoryScreen.tscn" id="18_pqu38"]
+[ext_resource type="PackedScene" path="res://scenes/ui/quest_log/QuestLog.tscn" id="19_v6tdx"]
+[ext_resource type="PackedScene" path="res://scenes/ui/quest_log/QuestTracker.tscn" id="20_40l0h"]
+[ext_resource type="PackedScene" path="res://scenes/ui/reputation/ReputationToast.tscn" id="21_v6a16"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_7gboy"]
 texture = ExtResource("3_tmumg")
@@ -1318,11 +1323,31 @@ idle_flip_interval = 15.0
 [node name="CollisionShape2D" parent="npc_dialogue9/InteractionArea" parent_id_path=PackedInt32Array(699667010, 886098454) index="0" unique_id=1299023387]
 position = Vector2(1, 9.5)
 
+[node name="npc_dialogue10" parent="." unique_id=2038530022 instance=ExtResource("9_8yey6")]
+position = Vector2(2608, 2655)
+dialogue_id = "test_npc_intro"
+sprite_frames = SubResource("SpriteFrames_ve7vu")
+idle_sequence = Array[String](["left", "down"])
+idle_flip_interval = 15.0
+
+[node name="CollisionShape2D" parent="npc_dialogue10/InteractionArea" parent_id_path=PackedInt32Array(2038530022, 886098454) index="0" unique_id=1299023387]
+position = Vector2(1, 9.5)
+
 [node name="ShopUI" parent="." unique_id=2073960939 instance=ExtResource("11_2nvop")]
 
 [node name="DialogueBox" parent="." unique_id=457813804 instance=ExtResource("12_sjfqg")]
 
 [node name="minimap" parent="." unique_id=1925678804 instance=ExtResource("16_by876")]
+
+[node name="EconomyHUD" parent="." unique_id=1225023183 instance=ExtResource("17_rhsuh")]
+
+[node name="InventoryScreen" parent="." unique_id=681736963 instance=ExtResource("18_pqu38")]
+
+[node name="QuestLog" parent="." unique_id=1829707356 instance=ExtResource("19_v6tdx")]
+
+[node name="QuestTracker" parent="." unique_id=988152513 instance=ExtResource("20_40l0h")]
+
+[node name="ReputationToast" parent="." unique_id=306553484 instance=ExtResource("21_v6a16")]
 
 [connection signal="body_entered" from="doors/door_zone_1_start" to="doors/door_zone_1_start" method="_on_body_entered"]
 
@@ -1337,3 +1362,4 @@ position = Vector2(1, 9.5)
 [editable path="npc_dialogue7"]
 [editable path="npc_dialogue8"]
 [editable path="npc_dialogue9"]
+[editable path="npc_dialogue10"]

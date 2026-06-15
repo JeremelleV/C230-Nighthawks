@@ -21,10 +21,10 @@ script = ExtResource("1_1lug7")
 [node name="CanvasLayer" type="CanvasLayer" parent="." unique_id=1610461227]
 
 [node name="Panel" type="Panel" parent="CanvasLayer" unique_id=399951310]
-offset_left = 27.0
-offset_top = 87.0
-offset_right = 237.0
-offset_bottom = 297.0
+offset_left = 17.0
+offset_top = 69.0
+offset_right = 227.0
+offset_bottom = 279.0
 theme_override_styles/panel = SubResource("StyleBoxFlat_radbx")
 metadata/_edit_use_anchors_ = true
 
