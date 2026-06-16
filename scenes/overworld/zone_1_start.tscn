@@ -1305,7 +1305,7 @@ position = Vector2(1, 9.5)
 
 [node name="npc_dialogue8" parent="." unique_id=1058861766 instance=ExtResource("9_8yey6")]
 position = Vector2(2566, 2456)
-dialogue_id = "civ_player_1"
+dialogue_id = "test_npc_intro2"
 sprite_frames = SubResource("SpriteFrames_v6tdx")
 idle_sequence = Array[String](["right", "left"])
 idle_flip_interval = 8.0
