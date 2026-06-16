@@ -15,9 +15,13 @@ func _ready() -> void:
 
 
 func _input(event: InputEvent) -> void:
-	if visible and event is InputEventKey and event.pressed and event.keycode == KEY_ESCAPE:
-		hide()
-		get_viewport().set_input_as_handled()
+	if event is InputEventKey and event.pressed and not event.echo:
+		if event.keycode == KEY_I:
+			toggle()
+			get_viewport().set_input_as_handled()
+		elif visible and event.keycode == KEY_ESCAPE:
+			hide()
+			get_viewport().set_input_as_handled()
 
 
 func toggle() -> void:

@@ -172,8 +172,7 @@ stream = ExtResource("5_swlpu")
 stream = ExtResource("6_nm0l4")
 volume_db = -15.0
 
-[node name="controls_menu" parent="." unique_id=159529700 node_paths=PackedStringArray("main_menu") instance=ExtResource("7_nm0l4")]
-main_menu = NodePath("..")
+[node name="controls_menu" parent="." unique_id=159529700 instance=ExtResource("7_nm0l4")]
 
 [connection signal="mouse_entered" from="button_start" to="." method="_on_button_start_mouse_entered"]
 [connection signal="pressed" from="button_start" to="." method="_on_button_start_pressed"]

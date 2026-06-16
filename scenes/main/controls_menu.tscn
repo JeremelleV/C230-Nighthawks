@@ -3,6 +3,7 @@
 [ext_resource type="Script" uid="uid://dgs42yccbpbgf" path="res://scripts/elements/controls_menu.gd" id="1_oa2ck"]
 [ext_resource type="FontFile" uid="uid://bcvfhp67mv8pw" path="res://assets/ui/fonts/PixelOperator.ttf" id="1_qgrvf"]
 [ext_resource type="AudioStream" uid="uid://4fkj0rmbkb0e" path="res://assets/audio/button_click.mp3" id="2_oa2ck"]
+[ext_resource type="Script" uid="uid://dmejohph3djd3" path="res://scenes/main/volume_slider.gd" id="3_rejgj"]
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_qgrvf"]
 bg_color = Color(0.8627451, 0.69803923, 0.68235296, 1)
@@ -442,6 +443,141 @@ theme_override_styles/disabled = SubResource("StyleBoxFlat_rejgj")
 disabled = true
 text = "Interact"
 
+[node name="background_square5" type="Button" parent="." unique_id=1989849331]
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = 152.0
+offset_top = 69.0
+offset_right = 419.0
+offset_bottom = 150.0
+grow_horizontal = 2
+grow_vertical = 2
+size_flags_vertical = 3
+theme_override_colors/font_color = Color(0.8627451, 0.69803923, 0.68235296, 1)
+theme_override_fonts/font = ExtResource("1_qgrvf")
+theme_override_font_sizes/font_size = 24
+theme_override_styles/normal = SubResource("StyleBoxFlat_rejgj")
+theme_override_styles/pressed = SubResource("StyleBoxFlat_tvr0n")
+theme_override_styles/hover = SubResource("StyleBoxFlat_g6sgh")
+theme_override_styles/disabled = SubResource("StyleBoxFlat_wxpit")
+disabled = true
+
+[node name="button_key7" type="Button" parent="." unique_id=1534033083]
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = 352.0
+offset_top = 91.0
+offset_right = 386.0
+offset_bottom = 124.0
+grow_horizontal = 2
+grow_vertical = 2
+size_flags_vertical = 3
+theme_override_colors/font_color = Color(0.4745098, 0, 0, 1)
+theme_override_fonts/font = ExtResource("1_qgrvf")
+theme_override_font_sizes/font_size = 28
+theme_override_styles/normal = SubResource("StyleBoxFlat_qgrvf")
+theme_override_styles/pressed = SubResource("StyleBoxFlat_oa2ck")
+theme_override_styles/hover = SubResource("StyleBoxFlat_ujq7x")
+text = "I"
+
+[node name="button_description5" type="Button" parent="." unique_id=683708847]
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = 165.0
+offset_top = 91.0
+offset_right = 288.0
+offset_bottom = 127.0
+grow_horizontal = 2
+grow_vertical = 2
+size_flags_vertical = 3
+theme_override_colors/font_color = Color(0.8627451, 0.69803923, 0.68235296, 1)
+theme_override_colors/font_disabled_color = Color(0.8627451, 0.69803923, 0.68235296, 1)
+theme_override_fonts/font = ExtResource("1_qgrvf")
+theme_override_font_sizes/font_size = 24
+theme_override_styles/normal = SubResource("StyleBoxFlat_rejgj")
+theme_override_styles/pressed = SubResource("StyleBoxFlat_tvr0n")
+theme_override_styles/hover = SubResource("StyleBoxFlat_g6sgh")
+theme_override_styles/disabled = SubResource("StyleBoxFlat_rejgj")
+disabled = true
+text = "Inventory"
+
+[node name="background_square6" type="Button" parent="." unique_id=189763753]
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = 152.0
+offset_top = 171.0
+offset_right = 419.0
+offset_bottom = 252.0
+grow_horizontal = 2
+grow_vertical = 2
+size_flags_vertical = 3
+theme_override_colors/font_color = Color(0.8627451, 0.69803923, 0.68235296, 1)
+theme_override_fonts/font = ExtResource("1_qgrvf")
+theme_override_font_sizes/font_size = 24
+theme_override_styles/normal = SubResource("StyleBoxFlat_rejgj")
+theme_override_styles/pressed = SubResource("StyleBoxFlat_tvr0n")
+theme_override_styles/hover = SubResource("StyleBoxFlat_g6sgh")
+theme_override_styles/disabled = SubResource("StyleBoxFlat_wxpit")
+disabled = true
+
+[node name="button_key8" type="Button" parent="." unique_id=1222304566]
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = 352.0
+offset_top = 193.0
+offset_right = 386.0
+offset_bottom = 226.0
+grow_horizontal = 2
+grow_vertical = 2
+size_flags_vertical = 3
+theme_override_colors/font_color = Color(0.4745098, 0, 0, 1)
+theme_override_fonts/font = ExtResource("1_qgrvf")
+theme_override_font_sizes/font_size = 28
+theme_override_styles/normal = SubResource("StyleBoxFlat_qgrvf")
+theme_override_styles/pressed = SubResource("StyleBoxFlat_oa2ck")
+theme_override_styles/hover = SubResource("StyleBoxFlat_ujq7x")
+text = "Q
+"
+
+[node name="button_description6" type="Button" parent="." unique_id=95219506]
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = 185.0
+offset_top = 193.0
+offset_right = 316.0
+offset_bottom = 229.0
+grow_horizontal = 2
+grow_vertical = 2
+size_flags_vertical = 3
+theme_override_colors/font_color = Color(0.8627451, 0.69803923, 0.68235296, 1)
+theme_override_colors/font_disabled_color = Color(0.8627451, 0.69803923, 0.68235296, 1)
+theme_override_fonts/font = ExtResource("1_qgrvf")
+theme_override_font_sizes/font_size = 24
+theme_override_styles/normal = SubResource("StyleBoxFlat_rejgj")
+theme_override_styles/pressed = SubResource("StyleBoxFlat_tvr0n")
+theme_override_styles/hover = SubResource("StyleBoxFlat_g6sgh")
+theme_override_styles/disabled = SubResource("StyleBoxFlat_rejgj")
+disabled = true
+text = "Quest Tracker"
+
 [node name="background_square" type="Button" parent="." unique_id=1352922463]
 anchors_preset = 8
 anchor_left = 0.5
@@ -479,7 +615,10 @@ grow_vertical = 2
 theme_override_styles/slider = SubResource("StyleBoxFlat_6bb1a")
 theme_override_styles/grabber_area = SubResource("StyleBoxFlat_qhiog")
 theme_override_styles/grabber_area_highlight = SubResource("StyleBoxFlat_d87pk")
-value = 100.0
+max_value = 1.0
+step = 0.001
+value = 0.5
+script = ExtResource("3_rejgj")
 
 [node name="button_description4" type="Button" parent="." unique_id=1703716107]
 anchors_preset = 8
