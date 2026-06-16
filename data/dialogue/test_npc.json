@@ -52,6 +52,41 @@
 		]
 	},
 	{
+		"id": "test_npc_intro2",
+		"lines": [
+			{
+				"speaker": "Scout",
+				"text": "These days life in the jungle is so much harder."
+			},
+			{
+				"speaker": "You",
+				"text": "...",
+				"choices": [
+					{
+						"label": "Can you use my help?",
+						"next": "scout_quest_offer"
+					},
+					{
+						"label": "Any word from the Crystal Faction?",
+						"condition": { "type": "rep_above", "faction": "crystal_faction", "threshold": 10 },
+						"next": "scout_crystal_friendly"
+					},
+					{
+						"label": "I found your crystal shard.",
+						"condition": [
+							{ "type": "quest_active", "id": "scouts_request" },
+							{ "type": "has_item", "id": "crystal_shard" }
+						],
+						"next": "scout_turnin"
+					},
+					{
+						"label": "Say nothing and leave"
+					}
+				]
+			}
+		]
+	},
+	{
 		"id": "scout_area",
 		"lines": [
 			{
