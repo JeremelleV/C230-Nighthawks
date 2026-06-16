@@ -16,6 +16,7 @@ extends CanvasLayer
 ##           ContinueHint (Label)
 
 
+@onready var _panel: Panel                    = $Panel
 @onready var _portrait: TextureRect           = $Panel/HBoxContainer/Portrait
 @onready var _speaker_label: Label            = $Panel/HBoxContainer/VBoxContainer/SpeakerLabel
 @onready var _dialogue_text: RichTextLabel    = $Panel/HBoxContainer/VBoxContainer/DialogueText
@@ -26,6 +27,12 @@ var _has_played_type_sfx := false
 
 const PORTRAIT_DIR = "res://assets/portraits/"
 const CHARS_PER_SECOND: float = 40.0
+
+# Panel height (bottom-anchored, grows upward): compact for plain lines,
+# taller when choice buttons are shown so they never run off-screen.
+const COMPACT_TOP: float    = -180.0
+const CHOICE_BASE_TOP: float = -150.0
+const PER_CHOICE_PX: float   = 52.0
 
 var _full_text: String = ""
 var _char_index: int = 0
@@ -76,6 +83,7 @@ func _on_started(_id: String) -> void:
 	_pending_choices = []
 	_choices_container.visible = false
 	_continue_hint.visible = false
+	_panel.offset_top = COMPACT_TOP
 	show()
 
 
@@ -87,6 +95,7 @@ func _on_line(speaker: String, text: String, portrait_name: String) -> void:
 	_pending_choices = []
 	_choices_container.visible = false
 	_continue_hint.visible = false
+	_panel.offset_top = COMPACT_TOP
 	_speaker_label.text = speaker
 	_load_portrait(portrait_name)
 	_start_typewriter(text)
@@ -151,6 +160,8 @@ func _build_choice_buttons() -> void:
 		btn.pressed.connect(func(): DialogueManager.make_choice(idx))
 		_choices_container.add_child(btn)
 	_choices_container.visible = true
+	# Grow the panel upward so all options fit on-screen
+	_panel.offset_top = CHOICE_BASE_TOP - PER_CHOICE_PX * _pending_choices.size()
 
 
 # ── Portrait ──────────────────────────────────────────────────────────────────
