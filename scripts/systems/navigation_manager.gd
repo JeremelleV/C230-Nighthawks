@@ -11,7 +11,7 @@ const scene_zone_6 = preload("res://scenes/overworld/zone_6.tscn")
 const scene_zone_7 = preload("res://scenes/overworld/zone_7.tscn")
 const scene_zone_8 = preload("res://scenes/overworld/zone_8.tscn")
 const scene_main_menu = preload("res://scenes/main/main_menu.tscn")
-const scene_battle = preload("res://scenes/combat/battle.tscn")
+const scene_battle = preload("res://scenes/combat/CombatScene.tscn")
 
 const transition_scene = preload("res://scenes/elements/transition.tscn")
 
