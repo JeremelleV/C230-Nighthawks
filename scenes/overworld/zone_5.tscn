@@ -39,7 +39,7 @@
 texture = ExtResource("1_liex4")
 texture_region_size = Vector2i(32, 32)
 0:0/0 = 0
-0:0/0/custom_data_0 = "stone"
+0:0/0/custom_data_0 = "unknown"
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_rrxmo"]
 texture = ExtResource("2_dc4tq")
