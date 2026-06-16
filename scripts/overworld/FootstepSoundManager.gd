@@ -4,7 +4,8 @@ var enabled: bool = true #testing
 const footstep_volume = {
 	"road": -12,
 	"grass": -18,
-	"stone": -17
+	"stone": -17,
+	"unknown":-20
 }
 
 var tilemaps:Array[TileMapLayer] = []
@@ -12,7 +13,8 @@ var tilemaps:Array[TileMapLayer] = []
 const footstep_sounds = {
 	"road":preload("res://assets/audio/walk_on_path.wav"),
 	"grass":preload("res://assets/audio/walk_on_grass.mp3"),
-	"stone":preload("res://assets/audio/walk_on_stone.mp3")
+	"stone":preload("res://assets/audio/walk_on_stone.mp3"),
+	"unknown":preload("res://assets/audio/walk_on_unknown_material.wav")
 }
 
 func play_footstep(position: Vector2):

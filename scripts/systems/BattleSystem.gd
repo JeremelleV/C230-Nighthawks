@@ -606,6 +606,16 @@ func end_battle(player_won: bool):
 	# Freeze the timeline completely
 	is_waiting_for_input = true 
 	set_process(false) 
+	
+	#test
+	combat1.stop()
+	combat2.stop()
+	combat3.stop()
+	combatrain.stop()
+	combatplaceholder.stop()
+	
+	#test
+	AudioPlayer.play_music_level()
 
 	if player_won == true:
 		QuestManager.notify_enemies_defeated(enemy_team.size())
@@ -645,6 +655,7 @@ func generate_background():
 
 
 func _ready():
+	AudioPlayer.stop_music() #test
 	generate_background()
 	generate_enemies()
 	var p1 = Unit.new("Lissandra", 100, 14, 0, 5, "player", 0, false, 0)
@@ -698,6 +709,23 @@ func _do_player_turn(unit: Unit) -> void:
 		if unit.blockturn <= 0:
 			unit.blocking = false
 
+	#change sound volume
+	var music = randi_range(0, 4)
+	if music == 0: 
+		combat1.volume_db = -20
+		combat1.play()
+	elif music == 1: 
+		combat2.volume_db = -20
+		combat2.play()
+	elif music == 2: 
+		combat3.volume_db = -20
+		combat3.play()
+	elif music == 3: 
+		combatrain.volume_db = -20
+		combatrain.play()
+	elif music == 4: 
+		combatplaceholder.volume_db = -20
+		combatplaceholder.play()
 
 func _do_enemy_turn(unit: Unit) -> void:
 	_action_panel.visible = false
