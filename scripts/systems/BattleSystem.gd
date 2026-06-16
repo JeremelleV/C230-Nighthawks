@@ -178,22 +178,7 @@ func _build_hud() -> void:
 	_hud.layer = 10
 	add_child(_hud)
 
-	# Dark bar spanning the top
-	var bar := ColorRect.new()
-	bar.color = C_TOP_BAR
-	bar.size = Vector2(SCREEN_W, 106)
-	bar.position = Vector2.ZERO
-	bar.mouse_filter = Control.MOUSE_FILTER_IGNORE
-	_hud.add_child(bar)
-
-	var bar_line := ColorRect.new()
-	bar_line.color = C_BORDER
-	bar_line.size = Vector2(SCREEN_W, 2)
-	bar_line.position = Vector2(0, 105)
-	bar_line.mouse_filter = Control.MOUSE_FILTER_IGNORE
-	_hud.add_child(bar_line)
-
-	# Player portrait cards
+	# Portrait cards overlay directly on the battlefield (no opaque top bar)
 	var hbox := HBoxContainer.new()
 	hbox.position = Vector2(18, 12)
 	hbox.mouse_filter = Control.MOUSE_FILTER_IGNORE
@@ -218,6 +203,18 @@ func _build_hud() -> void:
 
 
 func _make_player_card(i: int) -> Control:
+	# Translucent plate so the HP reads over the battlefield art
+	var plate := PanelContainer.new()
+	plate.mouse_filter = Control.MOUSE_FILTER_IGNORE
+	var plate_style := StyleBoxFlat.new()
+	plate_style.bg_color = Color(0.05, 0.04, 0.04, 0.55)
+	plate_style.set_corner_radius_all(8)
+	plate_style.content_margin_left = 8
+	plate_style.content_margin_right = 10
+	plate_style.content_margin_top = 6
+	plate_style.content_margin_bottom = 6
+	plate.add_theme_stylebox_override("panel", plate_style)
+
 	var card := HBoxContainer.new()
 	card.mouse_filter = Control.MOUSE_FILTER_IGNORE
 	card.add_theme_constant_override("separation", 10)
@@ -260,6 +257,8 @@ func _make_player_card(i: int) -> Control:
 	var name_lbl := Label.new()
 	name_lbl.text = player_team[i].name
 	name_lbl.add_theme_color_override("font_color", C_TEXT)
+	name_lbl.add_theme_color_override("font_outline_color", Color(0, 0, 0, 0.9))
+	name_lbl.add_theme_constant_override("outline_size", 5)
 	name_lbl.add_theme_font_size_override("font_size", 15)
 	name_lbl.mouse_filter = Control.MOUSE_FILTER_IGNORE
 	vbox.add_child(name_lbl)
@@ -299,7 +298,8 @@ func _make_player_card(i: int) -> Control:
 	vbox.add_child(hp_row)
 
 	card.add_child(vbox)
-	return card
+	plate.add_child(card)
+	return plate
 
 
 # ─── Action menu (bottom-right, player turn only) ────────────────────────────
