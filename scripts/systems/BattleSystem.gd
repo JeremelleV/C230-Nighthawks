@@ -40,6 +40,12 @@ const C_BORDER     := Color(0.49, 0.13, 0.13, 1.00)
 const C_PANEL_BG   := Color(0.10, 0.08, 0.08, 0.93)
 const C_HP_FILL    := Color(0.18, 0.72, 0.22, 1.00)
 const C_HP_BG      := Color(0.16, 0.16, 0.16, 1.00)
+const C_MP_FILL    := Color(0.26, 0.52, 0.96, 1.00)
+
+# MP costs
+const MAX_MP          := 30
+const SPECIAL_MP_COST := 12
+const HEAL_MP_COST    := 8
 const C_TEXT       := Color(0.94, 0.91, 0.88, 1.00)
 const C_MUTED      := Color(0.66, 0.56, 0.50, 1.00)
 const C_GOLD       := Color(0.95, 0.82, 0.38, 1.00)
@@ -83,6 +89,7 @@ var active_target: Unit = null
 # ─── UI nodes (populated in _ready) ──────────────────────────────────────────
 var _hud: CanvasLayer
 var _player_hp_bars:    Array[ProgressBar] = []
+var _player_mp_bars:    Array[ProgressBar] = []
 var _player_turn_glows: Array[ColorRect]   = []
 var _player_sprites:    Array[TextureRect] = []
 var _enemy_sprites:     Array[TextureRect] = []
@@ -124,6 +131,11 @@ func _init_units() -> void:
 	var e2 := Unit.new("Floater",   60, 12, 0, 15, "enemy", 1, false, 0)
 	var e3 := Unit.new("Brute",    120, 20, 0,  4, "enemy", 2, false, 0)
 	var e4 := Unit.new("Stalker",   80, 14, 0,  9, "enemy", 3, false, 0)
+
+	p1.max_mp = MAX_MP; p1.mp = MAX_MP
+	p2.max_mp = MAX_MP; p2.mp = MAX_MP
+	p3.max_mp = MAX_MP; p3.mp = MAX_MP
+	p4.max_mp = MAX_MP; p4.mp = MAX_MP
 
 	player_team   = [p1, p2, p3, p4]
 	enemy_team    = [e1, e2, e3, e4]
@@ -296,6 +308,40 @@ func _make_player_card(i: int) -> Control:
 	hp_row.add_child(hp_bar)
 	_player_hp_bars.append(hp_bar)
 	vbox.add_child(hp_row)
+
+	# MP label + bar on one horizontal row (blue, under HP)
+	var mp_row := HBoxContainer.new()
+	mp_row.mouse_filter = Control.MOUSE_FILTER_IGNORE
+	mp_row.add_theme_constant_override("separation", 6)
+
+	var mp_tag := Label.new()
+	mp_tag.text = "MP"
+	mp_tag.add_theme_color_override("font_color", C_MUTED)
+	mp_tag.add_theme_font_size_override("font_size", 13)
+	mp_tag.mouse_filter = Control.MOUSE_FILTER_IGNORE
+	mp_row.add_child(mp_tag)
+
+	var mp_bar := ProgressBar.new()
+	mp_bar.max_value = player_team[i].max_mp
+	mp_bar.value     = player_team[i].mp
+	mp_bar.custom_minimum_size = Vector2(HP_BAR_W - 30, HP_BAR_H)
+	mp_bar.size_flags_horizontal = Control.SIZE_EXPAND_FILL
+	mp_bar.show_percentage = false
+	mp_bar.mouse_filter = Control.MOUSE_FILTER_IGNORE
+
+	var mp_fill_s := StyleBoxFlat.new()
+	mp_fill_s.bg_color = C_MP_FILL
+	mp_fill_s.set_corner_radius_all(4)
+	mp_bar.add_theme_stylebox_override("fill", mp_fill_s)
+
+	var mp_bg_s := StyleBoxFlat.new()
+	mp_bg_s.bg_color = C_HP_BG
+	mp_bg_s.set_corner_radius_all(4)
+	mp_bar.add_theme_stylebox_override("background", mp_bg_s)
+
+	mp_row.add_child(mp_bar)
+	_player_mp_bars.append(mp_bar)
+	vbox.add_child(mp_row)
 
 	card.add_child(vbox)
 	plate.add_child(card)
@@ -552,6 +598,8 @@ func _on_action_block() -> void:
 
 func _on_action_special() -> void:
 	if not _check_needs_target(): return
+	if not _check_mp(SPECIAL_MP_COST): return
+	active_unit.mp -= SPECIAL_MP_COST
 	var dmg := int(active_unit.strength * 1.6)
 	var tgt_sprite := _enemy_sprites[active_target.glabel]
 	_lunge(_player_sprites[active_unit.glabel], Vector2(90, 0))
@@ -568,6 +616,8 @@ func _on_action_special() -> void:
 
 func _on_action_item() -> void:
 	if active_unit == null: return
+	if not _check_mp(HEAL_MP_COST): return
+	active_unit.mp -= HEAL_MP_COST
 	var heal: int = mini(30, active_unit.max_hp - active_unit.hp)
 	active_unit.healed(heal)
 	_status_label.text = "%s heals %d HP!" % [active_unit.name, heal]
@@ -575,6 +625,15 @@ func _on_action_item() -> void:
 	_spawn_number(pcenter, "+%d" % heal, C_HEAL_GREEN)
 	_play_effect(FX_HEAL_SHEET, 4, 1, 4, pcenter, 320)
 	_after_player_action()
+
+
+func _check_mp(cost: int) -> bool:
+	if active_unit == null:
+		return false
+	if active_unit.mp < cost:
+		_status_label.text = "%s doesn't have enough MP! (needs %d)" % [active_unit.name, cost]
+		return false
+	return true
 
 
 func _check_needs_target() -> bool:
@@ -640,6 +699,8 @@ func _refresh_hud() -> void:
 		var u := player_team[i]
 		_player_hp_bars[i].max_value = u.max_hp
 		_player_hp_bars[i].value     = maxi(0, u.hp)
+		_player_mp_bars[i].max_value = u.max_mp
+		_player_mp_bars[i].value     = maxi(0, u.mp)
 
 
 # ─── Effect animation (plays a sprite-sheet then frees itself) ───────────────

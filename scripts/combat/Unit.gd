@@ -5,6 +5,8 @@ extends RefCounted
 var name: String
 var hp: int
 var max_hp: int
+var mp: int = 0
+var max_mp: int = 0
 var strength: int
 var turn_bar: float
 var speed: int
