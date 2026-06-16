@@ -354,7 +354,7 @@ func _build_action_menu() -> void:
 	_action_buttons.append(btn_special)
 
 	var btn_item := Button.new()
-	btn_item.text = "Item"
+	btn_item.text = "Heal"
 	btn_item.custom_minimum_size = Vector2(162, 58)
 	UIStyle.style_button(btn_item)
 	btn_item.pressed.connect(_on_action_item)
@@ -570,6 +570,7 @@ func _on_action_item() -> void:
 	if active_unit == null: return
 	var heal: int = mini(30, active_unit.max_hp - active_unit.hp)
 	active_unit.healed(heal)
+	_status_label.text = "%s heals %d HP!" % [active_unit.name, heal]
 	var pcenter := _player_sprites[active_unit.glabel].position + _player_sprites[active_unit.glabel].size * 0.5
 	_spawn_number(pcenter, "+%d" % heal, C_HEAL_GREEN)
 	_play_effect(FX_HEAL_SHEET, 4, 1, 4, pcenter, 320)
