@@ -26,8 +26,8 @@ const ENEMY_POS_N: Array = [
 ]
 
 # Sprite sizes as fraction of screen height (preserves feel at any resolution)
-const PLAYER_SPRITE_H_N := 0.6296   # 680/1080
-const PLAYER_SPRITE_W_N := 0.2813   # 540/1920
+const PLAYER_SPRITE_H_N := 0.4197   # was 0.6296, reduced by a third
+const PLAYER_SPRITE_W_N := 0.1875   # was 0.2813, reduced by a third
 const ENEMY_SPRITE_H_N  := 0.4352   # 470/1080
 const ENEMY_SPRITE_W_N  := 0.2448   # 470/1920
 
@@ -76,19 +76,29 @@ const HEAL_MP_COST    := 8
 
 # Asset paths
 const PLAYER_TEXTURES = [
-	"res://assets/sprites/characters/Mars_Athena.png",
-	"res://assets/sprites/characters/Mars_Zeus.png",
-	"res://assets/sprites/characters/Mars_Hermes.png",
-	"res://assets/sprites/characters/Mars_Poseidon.png",
+	#"res://assets/sprites/characters/Mars_Athena.png",
+	#"res://assets/sprites/characters/Mars_Zeus.png",
+	#"res://assets/sprites/characters/Mars_Hermes.png",
+	#"res://assets/sprites/characters/Mars_Poseidon.png",
+	"res://assets/sprites/characters/alien_partymember_1.png",
+	"res://assets/sprites/characters/astronaut_1_player.png",
+	"res://assets/sprites/characters/astronaut_2_partymember.png",
+	"res://assets/sprites/characters/astronaut_3_partymember.png"
 ]
 const ENEMY_TEXTURES = [
-	"res://assets/sprites/enemies/Mars_crawler.png",
-	"res://assets/sprites/enemies/Mars_floater.png",
-	"res://assets/sprites/enemies/Mars_Brute.png",
-	"res://assets/sprites/enemies/Mars_stalker.png",
+	#"res://assets/sprites/enemies/Mars_crawler.png",
+	#"res://assets/sprites/enemies/Mars_floater.png",
+	#"res://assets/sprites/enemies/Mars_Brute.png",
+	#"res://assets/sprites/enemies/Mars_stalker.png",
+	"res://assets/sprites/enemies/jungle_creature_1.png",
+	"res://assets/sprites/enemies/jungle_creature_floater.png",
+	"res://assets/sprites/enemies/som_basic.png",
+	"res://assets/sprites/enemies/som_beast.png"
 ]
 const BG_TEXTURES = [
-	"res://assets/backgrounds/combat_background_outdoors.png",
+	#"res://assets/backgrounds/combat_background_outdoors.png",
+	"res://assets/backgrounds/combat_background_som.png",
+	"res://assets/backgrounds/combat_background_jungle.png"
 ]
 const FX_MELEE_SHEET := "res://assets/sprites/effects/Mars_Animation_MeleeSlash.png"
 const FX_PULSE_SHEET := "res://assets/sprites/effects/Mars_Animation_Pulse.png"
@@ -166,10 +176,10 @@ func _resolve_layout() -> void:
 
 # ─── Unit initialisation ──────────────────────────────────────────────────────
 func _init_units() -> void:
-	var p1 := Unit.new("Athena",   100, 14, 50,  5, "player", 0, false, 0)
-	var p2 := Unit.new("Zeus",      80, 12, 50, 12, "player", 1, false, 0)
-	var p3 := Unit.new("Hermes",   120, 18, 50,  8, "player", 2, false, 0)
-	var p4 := Unit.new("Poseidon",  90, 15, 50, 10, "player", 3, false, 0)
+	var p1 := Unit.new("Truck",   100, 14, 50,  5, "player", 0, false, 0)
+	var p2 := Unit.new("Mike",      80, 12, 50, 12, "player", 1, false, 0)
+	var p3 := Unit.new("Lissandra",   120, 18, 50,  8, "player", 2, false, 0)
+	var p4 := Unit.new("Chris",  90, 15, 50, 10, "player", 3, false, 0)
 	var e1 := Unit.new("Crawler",   50,  8, 0, 10, "enemy", 0, false, 0)
 	var e2 := Unit.new("Floater",   60, 12, 0, 15, "enemy", 1, false, 0)
 	var e3 := Unit.new("Brute",    120, 20, 0,  4, "enemy", 2, false, 0)
