@@ -1,5 +1,11 @@
 extends Node2D
 
+#test
+const SFX_ATTACK := "res://assets/audio/fist_attack.mp3"
+const SFX_SPECIAL := "res://assets/audio/explode.mp3"
+const SFX_HEAL := "res://assets/audio/heal.wav"
+const SFX_BLOCK := "res://assets/audio/block.mp3"
+
 # ─── Design reference (original art was made for this resolution) ─────────────
 const REF_W := 1920.0
 const REF_H := 1080.0
@@ -114,8 +120,15 @@ var _active_arrow_base_y := 0.0
 var _target_arrow_base_y := 0.0
 var _ind_time := 0.0
 
+#───audio──────────────────────────────────────────────────────────────────────
+var _sfx_player: AudioStreamPlayer #test
+
 # ─────────────────────────────────────────────────────────────────────────────
 func _ready() -> void:
+	#test
+	_sfx_player = AudioStreamPlayer.new()
+	add_child(_sfx_player)
+	
 	# Resolve actual viewport size first — everything else derives from this
 	var vp := get_viewport_rect().size
 	SW = vp.x
@@ -513,6 +526,7 @@ func _do_enemy_turn(unit: Unit) -> void:
 		return
 	if randf() < 0.20:
 		_status_label.text = "%s regenerates!" % unit.name
+		_play_sfx(SFX_HEAL, 13.0) #test
 		var heal := 15
 		unit.healed(heal)
 		var ecenter := _enemy_sprites[unit.glabel].position + _enemy_sprites[unit.glabel].size * 0.5
@@ -528,6 +542,7 @@ func _do_enemy_turn(unit: Unit) -> void:
 		var tsprite := _player_sprites[target.glabel]
 		_point_arrow(_target_arrow, tsprite)
 		_status_label.text = "%s attacks %s!" % [unit.name, target.name]
+		_play_sfx(SFX_ATTACK, 3.0) #test
 		await get_tree().create_timer(0.5).timeout
 		_lunge(_enemy_sprites[unit.glabel], -1.0)
 		var dmg := unit.strength / 2 if target.blocking else unit.strength
@@ -549,6 +564,8 @@ func _do_enemy_turn(unit: Unit) -> void:
 # ─── Player actions ───────────────────────────────────────────────────────────
 func _on_action_attack() -> void:
 	if not _check_needs_target(): return
+	_play_sfx(SFX_ATTACK, 3.0) #test
+	var dmg := active_unit.strength
 	var tgt_sprite := _enemy_sprites[active_target.glabel]
 	_lunge(_player_sprites[active_unit.glabel], 1.0)
 	active_target.take_dmg(active_unit.strength)
@@ -564,6 +581,7 @@ func _on_action_attack() -> void:
 
 func _on_action_block() -> void:
 	if active_unit == null: return
+	_play_sfx(SFX_BLOCK, 10.0) #test
 	active_unit.blocking  = true
 	active_unit.blockturn = 2
 	_status_label.text = "%s braces for impact!" % active_unit.name
@@ -573,6 +591,7 @@ func _on_action_block() -> void:
 func _on_action_special() -> void:
 	if not _check_needs_target(): return
 	if not _check_mp(SPECIAL_MP_COST): return
+	_play_sfx(SFX_SPECIAL, 2.5) #test
 	active_unit.mp -= SPECIAL_MP_COST
 	var dmg := int(active_unit.strength * 1.6)
 	var tgt_sprite := _enemy_sprites[active_target.glabel]
@@ -591,6 +610,7 @@ func _on_action_special() -> void:
 func _on_action_item() -> void:
 	if active_unit == null: return
 	if not _check_mp(HEAL_MP_COST): return
+	_play_sfx(SFX_HEAL, 13.0) #test
 	active_unit.mp -= HEAL_MP_COST
 	var heal: int = mini(30, active_unit.max_hp - active_unit.hp)
 	active_unit.healed(heal)
@@ -745,3 +765,16 @@ func _end_battle(player_won: bool) -> void:
 
 	NavigationManager.saved_player_position = NavigationManager.battle_return_position
 	NavigationManager.go_to_level(NavigationManager.battle_return_level, null)
+
+# ─── Audio management ───────────────────────────────────────────────────────────────
+
+func _play_sfx(path: String, volume_db: float = -4.0) -> void:
+	var stream := load(path) as AudioStream
+	if stream == null:
+		push_warning("Missing SFX: %s" % path)
+		return
+
+	_sfx_player.stop()
+	_sfx_player.stream = stream
+	_sfx_player.volume_db = volume_db
+	_sfx_player.play()

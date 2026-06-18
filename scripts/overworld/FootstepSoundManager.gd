@@ -2,10 +2,10 @@ extends Node
 var enabled: bool = true #testing
 
 const footstep_volume = {
-	"road": -12,
-	"grass": -18,
-	"stone": -17,
-	"unknown":-20
+	"road": -10,
+	"grass": -16,
+	"stone": -15,
+	"unknown":-18
 }
 
 var tilemaps:Array[TileMapLayer] = []
